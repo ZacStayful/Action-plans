@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunjana Islam — Newcastle Property Income Action Plan | Stayful</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0ede8; color: #1a1a1a; line-height: 1.6; }
+  a { color: #5d8156; }
+
+  /* PAGE WRAPPER */
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(140deg, #2d4a2d 0%, #5d8156 60%, #6d9a64 100%); color: white; padding: 0; margin: 0 -20px 32px; border-radius: 0 0 16px 16px; }
+  .hero-bar { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .logo-text { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
+  .hero-tagline { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero-body { padding: 40px 32px 44px; }
+  .hero-for { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 8px; }
+  .hero-name { font-size: 38px; font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+  .hero-title { font-size: 20px; font-weight: 400; opacity: 0.85; margin-bottom: 24px; }
+  .hero-sub { font-size: 14px; opacity: 0.65; margin-bottom: 28px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 5px 14px; font-size: 13px; }
+
+  /* PROGRESS STRIP */
+  .progress-strip { background: #2d4a2d; padding: 14px 32px; display: flex; align-items: center; justify-content: center; gap: 0; overflow-x: auto; }
+  .ps-step { display: flex; align-items: center; gap: 8px; color: white; font-size: 12px; white-space: nowrap; }
+  .ps-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+  .ps-done .ps-dot { background: white; color: #2d4a2d; font-weight: 700; }
+  .ps-done { opacity: 1; }
+  .ps-current .ps-dot { background: rgba(255,255,255,0.35); border: 2px solid white; color: white; font-weight: 700; }
+  .ps-future { opacity: 0.4; }
+  .ps-future .ps-dot { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); }
+  .ps-line { width: 24px; height: 2px; background: rgba(255,255,255,0.3); flex-shrink: 0; margin: 0 4px; }
+
+  /* CARDS */
+  .card { background: white; border: 1px solid #e8e4de; border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; }
+  .card-title { font-size: 18px; font-weight: 700; color: #2d4a2d; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid #f0ede8; }
+  .card-title-sm { font-size: 15px; font-weight: 700; color: #2d4a2d; margin-bottom: 12px; }
+
+  /* SECTION LABEL */
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #999; font-weight: 600; margin: 32px 0 12px; }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .stat { background: #f8f7f4; border: 1px solid #e8e4de; border-radius: 12px; padding: 18px 16px; text-align: center; }
+  .stat-value { font-size: 26px; font-weight: 800; color: #5d8156; line-height: 1; }
+  .stat-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* BAR CHART */
+  .chart-wrap { margin-bottom: 10px; }
+  .chart-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; border-bottom: 2px solid #e8e4de; padding-bottom: 0; }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .bar { width: 100%; background: #5d8156; border-radius: 4px 4px 0 0; transition: filter 0.2s; }
+  .bar.lo { background: #a8c4a4; }
+  .bar.peak { background: #2d4a2d; }
+  .bar-lbl { font-size: 9px; color: #999; text-align: center; margin-top: 4px; }
+  .chart-note { font-size: 11px; color: #999; margin-top: 8px; }
+
+  /* MONTHLY TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+  th { background: #f0ede8; text-align: left; padding: 8px 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #888; font-weight: 600; }
+  td { padding: 9px 10px; border-bottom: 1px solid #f0ede8; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+  .badge-peak { background: #2d4a2d; color: white; }
+  .badge-shoulder { background: #e8f4e5; color: #5d8156; }
+  .badge-low { background: #f5f5f5; color: #999; }
+  .footnote { font-size: 11px; color: #999; margin-top: 10px; font-style: italic; }
+
+  /* DEMAND DRIVERS */
+  .driver-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .driver { background: #f8f7f4; border: 1px solid #e8e4de; border-radius: 12px; padding: 18px; border-left: 4px solid #5d8156; }
+  .driver-icon { font-size: 24px; margin-bottom: 8px; }
+  .driver-name { font-size: 14px; font-weight: 700; color: #2d4a2d; margin-bottom: 6px; }
+  .driver-text { font-size: 13px; color: #555; line-height: 1.5; }
+
+  /* WHAT STAYFUL HANDLES */
+  .handles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .handle { display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: #f8f7f4; border-radius: 10px; border: 1px solid #e8e4de; }
+  .handle-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .handle-text { font-size: 13px; }
+  .handle-title { font-weight: 600; color: #2d4a2d; }
+  .handle-sub { color: #777; font-size: 12px; }
+  .owner-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .owner-pill { background: #fff3cd; border: 1px solid #ffd43b; color: #7a5c00; border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
+
+  /* QA CARDS */
+  .qa-card { background: #f8f7f4; border: 1px solid #e8e4de; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; border-left: 4px solid #5d8156; }
+  .qa-q { font-size: 14px; font-weight: 700; color: #2d4a2d; margin-bottom: 8px; }
+  .qa-a { font-size: 13px; color: #555; line-height: 1.6; }
+
+  /* COMPARISON */
+  .comp-table td:nth-child(2) { color: #5d8156; font-weight: 600; }
+  .comp-table td:nth-child(3) { color: #888; }
+  .comp-total { background: #f0ede8; font-weight: 700; }
+  .win-bar { background: linear-gradient(135deg, #2d4a2d, #5d8156); color: white; border-radius: 10px; padding: 14px 20px; text-align: center; font-weight: 700; font-size: 15px; margin-top: 14px; }
+  .comp-note { font-size: 11px; color: #999; margin-top: 8px; text-align: center; }
+
+  /* SETUP TIMELINE */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before { content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 2px; background: #e8e4de; }
+  .tl-step { position: relative; margin-bottom: 20px; }
+  .tl-dot { position: absolute; left: -30px; width: 24px; height: 24px; background: #5d8156; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px; font-weight: 700; top: 2px; }
+  .tl-dot.muted { background: #d0ccc8; }
+  .tl-title { font-size: 14px; font-weight: 700; color: #2d4a2d; }
+  .tl-detail { font-size: 13px; color: #666; margin-top: 2px; }
+  .tl-date { font-size: 12px; color: #5d8156; font-weight: 600; margin-top: 2px; }
+
+  /* DOCS */
+  .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .doc { background: #f8f7f4; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; }
+  .doc-icon { font-size: 24px; flex-shrink: 0; }
+  .doc-title { font-size: 13px; font-weight: 700; color: #2d4a2d; margin-bottom: 3px; }
+  .doc-desc { font-size: 12px; color: #777; }
+
+  /* URGENCY CARD */
+  .urgency { background: linear-gradient(135deg, #2d4a2d, #5d8156); color: white; border-radius: 14px; padding: 32px; margin-bottom: 20px; }
+  .urgency h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .urgency p { opacity: 0.8; font-size: 14px; margin-bottom: 24px; }
+  .urgency-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+  .urgency-stat { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 14px; text-align: center; }
+  .urgency-stat-val { font-size: 20px; font-weight: 800; line-height: 1; }
+  .urgency-stat-lbl { font-size: 11px; opacity: 0.7; margin-top: 3px; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 32px 0 0; border-top: 1px solid #e8e4de; margin-top: 32px; color: #999; font-size: 13px; line-height: 1.8; }
+  .footer strong { color: #5d8156; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bar">
+    <div class="logo-text" style="color:white;">Stayful</div>
+    <div class="hero-tagline">Short-Let Management</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-for">Prepared exclusively for</div>
+    <div class="hero-name">Sunjana Islam</div>
+    <div class="hero-title">Your Newcastle Property Income Action Plan</div>
+    <div class="hero-sub">Based on your web meeting with Zac on 19 May 2026 — covering your income projections, what drives demand in Newcastle, how Stayful works, and your questions answered directly.</div>
+    <div class="pills">
+      <span class="pill">📍 Heaton, Newcastle NE6</span>
+      <span class="pill">🛏 2 Bedrooms</span>
+      <span class="pill">🏢 Flat</span>
+      <span class="pill">↔ Switching from Long-Let</span>
+      <span class="pill">📅 Prepared 19 May 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS STRIP -->
+<div class="progress-strip">
+  <div class="ps-step ps-done"><div class="ps-dot">✓</div><span>Enquiry</span></div>
+  <div class="ps-line"></div>
+  <div class="ps-step ps-done"><div class="ps-dot">✓</div><span>Web Meeting</span></div>
+  <div class="ps-line"></div>
+  <div class="ps-step ps-current"><div class="ps-dot">→</div><span>Documents Sent</span></div>
+  <div class="ps-line"></div>
+  <div class="ps-step ps-future"><div class="ps-dot"></div><span>Agreement Signed</span></div>
+  <div class="ps-line"></div>
+  <div class="ps-step ps-future"><div class="ps-dot"></div><span>Setup</span></div>
+  <div class="ps-line"></div>
+  <div class="ps-step ps-future"><div class="ps-dot"></div><span>Live</span></div>
+</div>
+
+<div class="wrap">
+
+<!-- REVENUE PROJECTIONS -->
+<div class="section-label">Your Income Projections</div>
+<div class="card">
+  <div class="card-title">📊 What Your Newcastle Property Can Earn</div>
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-value">£46,700</div><div class="stat-label">Annual Gross</div></div>
+    <div class="stat"><div class="stat-value">£24,150</div><div class="stat-label">Annual Net to You</div></div>
+    <div class="stat"><div class="stat-value">£2,012</div><div class="stat-label">Monthly Average Net</div></div>
+    <div class="stat"><div class="stat-value">£10,800</div><div class="stat-label">Current Long-Let</div></div>
+    <div class="stat"><div class="stat-value">+£13,350</div><div class="stat-label">Extra Per Year</div></div>
+  </div>
+
+  <div class="card-title-sm">Monthly Gross Revenue</div>
+  <div class="chart-wrap">
+    <div class="chart-bars">
+      <div class="bar-col"><div class="bar lo" style="height:37%"></div><div class="bar-lbl">Jan</div></div>
+      <div class="bar-col"><div class="bar lo" style="height:45%"></div><div class="bar-lbl">Feb</div></div>
+      <div class="bar-col"><div class="bar" style="height:56%"></div><div class="bar-lbl">Mar</div></div>
+      <div class="bar-col"><div class="bar peak" style="height:96%"></div><div class="bar-lbl">Apr</div></div>
+      <div class="bar-col"><div class="bar peak" style="height:96%"></div><div class="bar-lbl">May</div></div>
+      <div class="bar-col"><div class="bar peak" style="height:100%"></div><div class="bar-lbl">Jun</div></div>
+      <div class="bar-col"><div class="bar peak" style="height:96%"></div><div class="bar-lbl">Jul</div></div>
+      <div class="bar-col"><div class="bar" style="height:74%"></div><div class="bar-lbl">Aug</div></div>
+      <div class="bar-col"><div class="bar" style="height:70%"></div><div class="bar-lbl">Sep</div></div>
+      <div class="bar-col"><div class="bar lo" style="height:37%"></div><div class="bar-lbl">Oct</div></div>
+      <div class="bar-col"><div class="bar lo" style="height:45%"></div><div class="bar-lbl">Nov</div></div>
+      <div class="bar-col"><div class="bar lo" style="height:45%"></div><div class="bar-lbl">Dec</div></div>
+    </div>
+    <div class="chart-note">🟢 Peak &nbsp; 🟩 Shoulder &nbsp; ◻ Low season &nbsp;|&nbsp; Heights show relative gross revenue</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Month</th><th>Gross</th><th>Net to You</th><th>Avg Rate</th><th>Season</th></tr></thead>
+    <tbody>
+      <tr><td>January</td><td>£2,615</td><td>£1,368</td><td>£85/night</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>February</td><td>£3,175</td><td>£1,661</td><td>£95/night</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>March</td><td>£3,923</td><td>£2,052</td><td>£110/night</td><td><span class="badge badge-shoulder">Shoulder</span></td></tr>
+      <tr><td>April</td><td>£5,044</td><td>£2,638</td><td>£140/night</td><td><span class="badge badge-peak">Peak</span></td></tr>
+      <tr><td>May</td><td>£5,044</td><td>£2,638</td><td>£140/night</td><td><span class="badge badge-peak">Peak</span></td></tr>
+      <tr><td>June</td><td>£5,250</td><td>£2,746</td><td>£145/night</td><td><span class="badge badge-peak">Peak</span></td></tr>
+      <tr><td>July</td><td>£5,044</td><td>£2,638</td><td>£140/night</td><td><span class="badge badge-peak">Peak</span></td></tr>
+      <tr><td>August</td><td>£3,923</td><td>£2,052</td><td>£115/night</td><td><span class="badge badge-shoulder">Shoulder</span></td></tr>
+      <tr><td>September</td><td>£3,700</td><td>£1,935</td><td>£110/night</td><td><span class="badge badge-shoulder">Shoulder</span></td></tr>
+      <tr><td>October</td><td>£2,615</td><td>£1,368</td><td>£85/night</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>November</td><td>£3,175</td><td>£1,661</td><td>£95/night</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>December</td><td>£3,192</td><td>£1,670</td><td>£100/night</td><td><span class="badge badge-low">Low</span></td></tr>
+    </tbody>
+  </table>
+  <div class="footnote">* Figures are projections based on comparable properties in Newcastle NE6 — not guaranteed. Net = gross after 15%+VAT management, platform fees and cleaning.</div>
+</div>
+
+<!-- LONG-LET COMPARISON -->
+<div class="section-label">Short-Let vs Long-Let</div>
+<div class="card">
+  <div class="card-title">📈 Why Short-Let Makes Sense for Heaton Park Road</div>
+  <table class="comp-table">
+    <thead><tr><th>Item</th><th>Short-Let (Stayful)</th><th>Long-Let (Agent)</th></tr></thead>
+    <tbody>
+      <tr><td>Annual gross income</td><td>£46,700</td><td>£10,800</td></tr>
+      <tr><td>Management / platform fees</td><td>−£7,005 (15%+VAT)</td><td>−£1,080 (10%)</td></tr>
+      <tr><td>Cleaning & linen (charged to guests)</td><td>£0 to you</td><td>£0</td></tr>
+      <tr><td>Void periods / voids cover</td><td>Low (dynamic pricing fills gaps)</td><td>Occasional (1–2 months/yr)</td></tr>
+      <tr><td>Wear & maintenance</td><td>Professional inventory, covered by AirCover</td><td>Tenant liability</td></tr>
+      <tr class="comp-total"><td><strong>Annual net to owner</strong></td><td><strong>~£24,150</strong></td><td><strong>~£9,720</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="win-bar">🏆 Short-let puts an extra £14,430/year in your pocket — that's your mortgage covered with income to spare.</div>
+  <div class="comp-note">Estimates based on your property specifics. Not financial advice. Long-let figures use your current £900/month.</div>
+</div>
+
+<!-- DEMAND DRIVERS -->
+<div class="section-label">What Drives Demand in Newcastle NE6</div>
+<div class="card">
+  <div class="card-title">🗺 Why Newcastle Bookings Stay Strong Year-Round</div>
+  <div class="driver-grid">
+    <div class="driver">
+      <div class="driver-icon">🏥</div>
+      <div class="driver-name">NHS & Healthcare</div>
+      <div class="driver-text">Newcastle upon Tyne Hospitals NHS Trust is one of the UK's largest — the Royal Victoria Infirmary and Freeman Hospital attract hundreds of visiting consultants, agency nurses and clinical placement workers needing short-term accommodation year-round.</div>
+    </div>
+    <div class="driver">
+      <div class="driver-icon">⚽</div>
+      <div class="driver-name">Newcastle United</div>
+      <div class="driver-text">St James' Park — one of the UK's largest stadiums — is minutes from Heaton. Match days fill the city with away fans, corporate guests and overnight visitors. The current club trajectory means increasing European fixtures too.</div>
+    </div>
+    <div class="driver">
+      <div class="driver-icon">🎓</div>
+      <div class="driver-name">Universities</div>
+      <div class="driver-text">Newcastle University and Northumbria University together have over 50,000 students. They generate sustained demand from visiting academics, parents on open days, PhD examiners, conference delegates and international students seeking monthly lets.</div>
+    </div>
+    <div class="driver">
+      <div class="driver-icon">🏙</div>
+      <div class="driver-name">City Centre & Business</div>
+      <div class="driver-text">Heaton is a 10-minute walk or short Metro ride from Newcastle city centre. Business visitors, contractors and corporate stays are a key booking segment — particularly during the week when hotels are expensive and availability is tight.</div>
+    </div>
+    <div class="driver">
+      <div class="driver-icon">🎭</div>
+      <div class="driver-name">Events & Tourism</div>
+      <div class="driver-text">The Sage Gateshead, Utilita Arena, Great North Run, Race for Life and Newcastle's famous Quayside all pull major event crowds. The city also draws strong domestic leisure tourism, particularly April to September.</div>
+    </div>
+    <div class="driver">
+      <div class="driver-icon">🚇</div>
+      <div class="driver-name">Metro & Transport Links</div>
+      <div class="driver-text">Heaton's proximity to the Tyne and Wear Metro gives guests easy access to the airport, Central Station and the whole city. This makes it particularly attractive to business travellers who need flexibility without a car.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT STAYFUL HANDLES -->
+<div class="section-label">How Stayful Works</div>
+<div class="card">
+  <div class="card-title">🤝 Everything Stayful Manages for You</div>
+  <div style="background:#f0ede8;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#5d8156;font-weight:600;">
+    ✅ Your property passed our assessment. Heaton Park Road is a strong short-let candidate.
+  </div>
+  <div class="handles-grid">
+    <div class="handle"><div class="handle-icon">💬</div><div class="handle-text"><div class="handle-title">Guest Communication</div><div class="handle-sub">All enquiries, check-in support, and reviews managed 24/7</div></div></div>
+    <div class="handle"><div class="handle-icon">🧹</div><div class="handle-text"><div class="handle-title">Cleaning & Linen</div><div class="handle-sub">Professional changeovers after every stay, charged to guests</div></div></div>
+    <div class="handle"><div class="handle-icon">💰</div><div class="handle-text"><div class="handle-title">Dynamic Pricing</div><div class="handle-sub">Real-time rate optimisation across all seasons and events</div></div></div>
+    <div class="handle"><div class="handle-icon">🔧</div><div class="handle-text"><div class="handle-title">Maintenance</div><div class="handle-sub">Routine issues handled up to £300 without prior approval</div></div></div>
+    <div class="handle"><div class="handle-icon">🔑</div><div class="handle-text"><div class="handle-title">Key & Access</div><div class="handle-sub">Smart key management via key safe and digital access</div></div></div>
+    <div class="handle"><div class="handle-icon">📊</div><div class="handle-text"><div class="handle-title">Monthly Reports</div><div class="handle-sub">Statements on 1st–5th of each month with full breakdown</div></div></div>
+    <div class="handle"><div class="handle-icon">📢</div><div class="handle-text"><div class="handle-title">Multi-Platform</div><div class="handle-sub">Listed on Airbnb, Booking.com, Google Hotels & direct</div></div></div>
+    <div class="handle"><div class="handle-icon">📸</div><div class="handle-text"><div class="handle-title">Photography</div><div class="handle-sub">Professional listing photos included in setup</div></div></div>
+  </div>
+  <div class="card-title-sm" style="margin-top:20px;">Your Only Responsibilities</div>
+  <div class="owner-pills">
+    <span class="owner-pill">💡 Utilities & WiFi</span>
+    <span class="owner-pill">🏛 Council Tax</span>
+    <span class="owner-pill">🌡 Smart Thermostat (~£200 one-time)</span>
+    <span class="owner-pill">🔐 Key Safe (~£60 one-time)</span>
+  </div>
+</div>
+
+<!-- YOUR QUESTIONS ANSWERED -->
+<div class="section-label">Your Questions, Answered Honestly</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q: What if I'm not kept informed about what's happening at the property?</div>
+  <div class="qa-a">This was your biggest stated concern and it's addressed structurally, not just with a promise. You'll have a dedicated Slack channel with Zac directly — real-time updates on bookings, maintenance and any guest issues. Monthly statements arrive on the 1st–5th every month, and we schedule a video review call at one month after go-live and quarterly thereafter. You see the live booking calendar at all times. You are never out of the loop.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q: How does Stayful compare to Pass the Keys?</div>
+  <div class="qa-a">Pass the Keys is a large national operator — they manage hundreds of properties with a centralised team. Stayful is deliberately selective and smaller, which means more direct communication (you deal with Zac, not a call centre), faster responses, and a genuine interest in maximising your specific property's performance. The Slack channel and quarterly calls aren't a promise on a website — they're built into the agreement.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q: What's the honest worst case if the projections aren't hit?</div>
+  <div class="qa-a">Honest answer: Year 1 typically runs at 80–85% of full run-rate as the listing builds reviews and ranking. On these numbers, 80% would give you ~£37,360 gross and ~£19,300 net — still nearly double your current £10,800 long-let. The projections are based on comparable 2-bed flats actively listed in NE6 right now, so they're grounded in real market data, not optimistic assumptions. The figures I shared on the call are conservative relative to top performers in the area.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q: My renovation finishes mid-July to early August — does the timing work?</div>
+  <div class="qa-a">Yes, and here's why it's still worth signing the agreement now. The July peak (from about 10th July) is partially in range if renovation completes mid-July. August is still a strong shoulder month. The bigger opportunity is locking in the autumn student/academic season (September–October) and building reviews during the quieter winter months so you're fully optimised for next spring's peak. Signing now means photography, listing setup and Airbnb ranking all start as soon as the builders are done.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q: What if I want to use the property myself occasionally?</div>
+  <div class="qa-a">Completely straightforward. You block dates in the calendar via Slack or directly through the booking platform. Confirmed bookings take priority, so ideally give 2–3 weeks' notice for personal use. The only thing to be mindful of is keeping June–August as available as possible — those months have the highest nightly rates and filling them is where the biggest income uplift comes from.</div>
+</div>
+
+<!-- SETUP TIMELINE -->
+<div class="section-label">Your Setup Timeline</div>
+<div class="card">
+  <div class="card-title">🗓 Getting You Live — Step by Step</div>
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-dot">1</div>
+      <div class="tl-title">Sign Management Agreement</div>
+      <div class="tl-detail">Review terms and sign — this locks in your setup slot and management fee.</div>
+      <div class="tl-date">As soon as you're ready (ideally before July)</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">2</div>
+      <div class="tl-title">Renovation Completes & Property Assessment</div>
+      <div class="tl-detail">Builders finish painting and tiling. Zac visits to confirm the property is guest-ready. Your built-in furniture and dining table are already in place — just beds to add.</div>
+      <div class="tl-date">Mid-July to early August (your timeline)</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">3</div>
+      <div class="tl-title">Beds, Smart Thermostat & Key Safe</div>
+      <div class="tl-detail">Beds sourced and delivered. Smart thermostat (~£200) and key safe (~£60) installed — one-time costs, both arranged around your schedule.</div>
+      <div class="tl-date">During or immediately after renovation</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">4</div>
+      <div class="tl-title">Professional Photography</div>
+      <div class="tl-detail">Half-day shoot with a professional photographer, editing included. Listing photos are critical — they directly affect nightly rate and occupancy.</div>
+      <div class="tl-date">Within 1 week of property being ready</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot">5</div>
+      <div class="tl-title">Listing Goes Live</div>
+      <div class="tl-detail">Published across Airbnb, Booking.com, Google Hotels and direct. Dynamic pricing activated. Your Slack channel and booking calendar are live.</div>
+      <div class="tl-date">~1 week after photography</div>
+    </div>
+    <div class="tl-step">
+      <div class="tl-dot muted">6</div>
+      <div class="tl-title" style="color:#999;">Target: First Booking</div>
+      <div class="tl-detail" style="color:#aaa;">Early listings often receive enquiries before going fully live. August bookings are achievable if setup completes in late July.</div>
+      <div class="tl-date" style="color:#bbb;">August 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- PEAK SEASON URGENCY -->
+<div class="urgency">
+  <h2>⏰ Why August Still Matters</h2>
+  <p>The peak window is April–July. But getting live in August means you capture shoulder-season bookings while building the reviews and ranking that drive next spring's peak — the highest-earning period of the year.</p>
+  <div class="urgency-stats">
+    <div class="urgency-stat"><div class="urgency-stat-val">£5,250</div><div class="urgency-stat-lbl">Peak Month Gross (Jun)</div></div>
+    <div class="urgency-stat"><div class="urgency-stat-val">~£700</div><div class="urgency-stat-lbl">Cost of Each Week's Delay</div></div>
+    <div class="urgency-stat"><div class="urgency-stat-val">Aug 2026</div><div class="urgency-stat-lbl">Realistic First Live Date</div></div>
+    <div class="urgency-stat"><div class="urgency-stat-val">Apr 2027</div><div class="urgency-stat-lbl">First Full Peak Season</div></div>
+  </div>
+</div>
+
+<!-- DOCUMENTS BEING SENT -->
+<div class="section-label">What Zac Is Sending You</div>
+<div class="card">
+  <div class="card-title">📬 Documents From Today's Call</div>
+  <div class="doc-grid">
+    <div class="doc"><div class="doc-icon">📄</div><div><div class="doc-title">This Action Plan</div><div class="doc-desc">Full income breakdown, demand drivers and everything from today's call — shareable with your partner.</div></div></div>
+    <div class="doc"><div class="doc-icon">📋</div><div><div class="doc-title">Management Agreement</div><div class="doc-desc">Stayful's standard terms of service — the contract that governs how we work together.</div></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Stayful — MWB Stays Ltd</strong><br>
+  Prepared for Sunjana Islam &nbsp;|&nbsp; 19 May 2026<br>
+  <a href="https://stayful.co.uk">stayful.co.uk</a> &nbsp;|&nbsp; <a href="mailto:zac@stayful.co.uk">zac@stayful.co.uk</a><br><br>
+  <span style="font-size:11px;">Figures are projections based on comparable market data — not guaranteed. This document does not constitute financial or investment advice.</span>
+</div>
+
+</div><!-- end wrap -->
+</body>
+</html>
