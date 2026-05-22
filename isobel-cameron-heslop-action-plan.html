@@ -362,8 +362,26 @@ table.months tr:nth-child(even) td{background:#fafaf8}
 <!-- MONTHLY CHART + TABLE -->
 <div class="card">
   <div class="card-title">📊 12-Month Income Breakdown</div>
-  <div class="chart-wrap">
-    <div class="chart" id="monthChart"></div>
+      <div style="display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap">
+      <span style="display:flex;align-items:center;gap:6px;font-size:11px"><span style="width:12px;height:12px;background:#2a3f26;border-radius:2px;display:inline-block"></span>Peak (Jun–Aug)</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:11px"><span style="width:12px;height:12px;background:#5d8156;border-radius:2px;display:inline-block"></span>Shoulder</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:11px"><span style="width:12px;height:12px;background:#a8d49f;border-radius:2px;display:inline-block"></span>Low Season</span>
+    </div>
+    <div class="chart-wrap">
+<div class="chart">
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:76%;background:#a8d49f" title="Jan: £2,452"></div><div class="chart-label">Jan</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:86%;background:#a8d49f" title="Feb: £2,798"></div><div class="chart-label">Feb</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:95%;background:#5d8156" title="Mar: £3,073"></div><div class="chart-label">Mar</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:80%;background:#5d8156" title="Apr: £2,606"></div><div class="chart-label">Apr</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:83%;background:#5d8156" title="May: £2,694"></div><div class="chart-label">May</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:100%;background:#2a3f26" title="Jun: £3,240"></div><div class="chart-label">Jun</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:81%;background:#2a3f26" title="Jul: £2,635"></div><div class="chart-label">Jul</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:88%;background:#2a3f26" title="Aug: £2,838"></div><div class="chart-label">Aug</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:70%;background:#a8d49f" title="Sep: £2,267"></div><div class="chart-label">Sep</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:89%;background:#5d8156" title="Oct: £2,885"></div><div class="chart-label">Oct</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:85%;background:#a8d49f" title="Nov: £2,760"></div><div class="chart-label">Nov</div></div>
+      <div class="chart-bar-wrap"><div class="chart-bar" style="height:71%;background:#a8d49f" title="Dec: £2,290"></div><div class="chart-label">Dec</div></div>
+    </div>
   </div>
   <table class="months">
     <tr>
@@ -675,23 +693,6 @@ table.months tr:nth-child(even) td{background:#fafaf8}
 </div>
 
 <script>
-// BAR CHART
-(function(){
-  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var gross=[2452,2798,3073,2606,2694,3240,2635,2838,2267,2885,2760,2290];
-  var seasons=['low','low','shoulder','shoulder','shoulder','peak','peak','peak','low','shoulder','low','low'];
-  var max=Math.max.apply(null,gross);
-  var chart=document.getElementById('monthChart');
-  months.forEach(function(m,i){
-    var pct=Math.round((gross[i]/max)*100);
-    var wrap=document.createElement('div');wrap.className='chart-bar-wrap';
-    var bar=document.createElement('div');bar.className='chart-bar bar-'+seasons[i];
-    bar.style.height=pct+'%';bar.title=m+': £'+gross[i].toLocaleString();
-    var lbl=document.createElement('div');lbl.className='chart-label';lbl.textContent=m;
-    wrap.appendChild(bar);wrap.appendChild(lbl);chart.appendChild(wrap);
-  });
-})();
-
 // FAQ
 function toggleFaq(el){
   var item=el.parentElement;
