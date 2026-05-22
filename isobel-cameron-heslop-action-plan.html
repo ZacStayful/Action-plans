@@ -2,185 +2,215 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Hull Property Income Action Plan — Isobel Cameron-Heslop | Stayful</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Isobel Cameron-Heslop — Hull Property Income Plan | Stayful</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:#2d2d2d;line-height:1.6;}
-.wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
-.hero{background:linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%);border-radius:16px;overflow:hidden;margin-bottom:0;}
-.hero-topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 28px 16px;border-bottom:1px solid rgba(255,255,255,0.15);}
-.logo-pill{background:#fff;border-radius:10px;padding:6px 12px;display:inline-flex;align-items:center;}
-.logo-pill img{height:38px;display:block;}
-.hero-tagline{color:rgba(255,255,255,0.75);font-size:14px;letter-spacing:0.05em;font-weight:500;}
-.hero-body{padding:32px 28px 20px;}
-.hero-excl{color:rgba(255,255,255,0.7);font-size:14px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
-.hero-h1{color:#fff;font-size:32px;font-weight:700;line-height:1.15;margin-bottom:10px;}
-.hero-sub{color:rgba(255,255,255,0.8);font-size:15px;margin-bottom:22px;}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
-.pill{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:5px 14px;font-size:13px;}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.2);border-top:1px solid rgba(0,0,0,0.2);}
-.hstat{background:rgba(0,0,0,0.25);padding:16px 18px;text-align:center;}
-.hstat-val{color:#fff;font-size:22px;font-weight:700;}
-.hstat-lbl{color:rgba(255,255,255,0.65);font-size:12px;margin-top:2px;}
-.progress-strip{background:linear-gradient(90deg,#2a3f26,#3d5c38);border-radius:0 0 12px 12px;padding:14px 20px;margin-bottom:20px;}
-.progress-steps{display:flex;align-items:center;gap:0;overflow-x:auto;}
-.pstep{display:flex;align-items:center;flex-shrink:0;}
-.pstep-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
-.pstep-dot.done{background:#fff;color:#3d5c38;}
-.pstep-dot.current{background:rgba(255,255,255,0.3);color:#fff;border:2px solid rgba(255,255,255,0.6);font-size:9px;}
-.pstep-dot.future{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.2);font-size:9px;}
-.pstep-lbl{color:#fff;font-size:11px;margin-left:6px;white-space:nowrap;}
-.pstep-lbl.done{color:rgba(255,255,255,0.85);}
-.pstep-lbl.current{color:#fff;font-weight:700;}
-.pstep-lbl.future{color:rgba(255,255,255,0.4);}
-.pstep-line{width:24px;height:1px;background:rgba(255,255,255,0.25);margin:0 4px;flex-shrink:0;}
-.offer-banner{background:linear-gradient(135deg,#1a2e17,#2d4a28);border:1px solid #5d8156;border-radius:14px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.offer-left{color:#fff;}
-.offer-badge{display:inline-block;background:#5d8156;color:#fff;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;margin-bottom:8px;}
-.offer-rate{font-size:28px;font-weight:800;color:#fff;}
-.offer-was{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:line-through;margin-left:8px;}
-.offer-deadline{color:rgba(255,255,255,0.7);font-size:13px;margin-top:4px;}
-.offer-right{text-align:right;}
-.offer-saving-lbl{color:rgba(255,255,255,0.6);font-size:12px;}
-.offer-saving-val{color:#a8d49a;font-size:22px;font-weight:700;}
-.card{background:#fff;border:1px solid #e8e4de;border-radius:14px;padding:24px;margin-bottom:20px;}
-.card-title{font-size:18px;font-weight:700;color:#2a3f26;margin-bottom:4px;}
-.card-sub{font-size:13px;color:#888;margin-bottom:18px;}
-.section-hdr{font-size:22px;font-weight:700;color:#2a3f26;margin:32px 0 14px;}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
-@media(max-width:580px){.proj-grid{grid-template-columns:1fr;}}
-.proj-card{background:#fff;border:1px solid #e8e4de;border-radius:14px;padding:22px;}
-.proj-card.y2{border-color:#5d8156;}
-.proj-label{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:8px;}
-.proj-gross{font-size:32px;font-weight:800;color:#2a3f26;}
-.proj-subtitle{font-size:13px;color:#888;margin-bottom:16px;}
-.proj-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0ede8;font-size:14px;}
-.proj-row:last-child{border-bottom:none;font-weight:700;color:#2a3f26;font-size:15px;padding-top:10px;}
-.proj-row .neg{color:#c0392b;}
-.proj-note{font-size:12px;color:#888;margin-top:10px;font-style:italic;}
-.ramp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}
-@media(max-width:540px){.ramp-grid{grid-template-columns:1fr;}}
-.ramp-phase{background:#f9f7f4;border-radius:10px;padding:16px;border-left:4px solid #5d8156;}
-.ramp-phase.ph2{border-left-color:#3d5c38;}
-.ramp-phase.ph3{border-left-color:#2a3f26;}
-.ramp-ph-lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#5d8156;font-weight:700;}
-.ramp-months{font-size:13px;color:#666;margin:2px 0;}
-.ramp-range{font-size:18px;font-weight:700;color:#2a3f26;}
-.ramp-desc{font-size:12px;color:#888;margin-top:4px;}
-.comp-table{width:100%;border-collapse:collapse;font-size:14px;}
-.comp-table th{background:#2a3f26;color:#fff;padding:10px 14px;text-align:left;}
-.comp-table th:last-child,.comp-table td:last-child{text-align:right;}
-.comp-table td{padding:9px 14px;border-bottom:1px solid #f0ede8;}
-.comp-table tr.total td{font-weight:700;background:#f0f7ee;color:#2a3f26;font-size:15px;}
-.comp-table .green{color:#3d8040;font-weight:600;}
-.comp-table .red{color:#c0392b;}
-.win-bar{background:#2a3f26;color:#fff;border-radius:0 0 10px 10px;padding:12px 18px;font-weight:700;font-size:15px;text-align:center;}
-.coi-card{background:linear-gradient(135deg,#f0f7ee,#e8f4e4);border:1px solid #c8e6c1;border-radius:14px;padding:24px;margin-bottom:20px;}
-.coi-big{font-size:48px;font-weight:800;color:#2a3f26;text-align:center;line-height:1;}
-.coi-lbl{text-align:center;color:#5d8156;font-size:16px;font-weight:600;margin-top:4px;margin-bottom:16px;}
-.coi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
-@media(max-width:540px){.coi-row{grid-template-columns:1fr;}}
-.coi-stat{text-align:center;background:#fff;border-radius:8px;padding:12px;border:1px solid #d4edcc;}
-.coi-stat-val{font-size:20px;font-weight:700;color:#2a3f26;}
-.coi-stat-lbl{font-size:12px;color:#888;margin-top:2px;}
-/* BAR CHART — pixel heights, no percentage */
-.chart-outer{overflow-x:auto;margin-bottom:16px;}
-.bar-chart-wrap{background:#f0f7ee;border:1px solid #d4edcc;border-radius:12px;padding:16px 14px 32px;position:relative;}
-.bars-container{display:flex;align-items:flex-end;gap:6px;height:120px;position:relative;}
-.bar-col{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;}
-.bar-rect{border-radius:3px 3px 0 0;width:100%;min-height:3px;}
-.bar-rect.peak{background:#2a3f26;}
-.bar-rect.shoulder{background:#5d8156;}
-.bar-rect.low{background:#9dc492;}
-.bar-lbl{font-size:9.5px;color:#888;text-align:center;position:absolute;bottom:-22px;width:100%;}
-.chart-legend{display:flex;gap:16px;margin-bottom:10px;flex-wrap:wrap;}
-.cl-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666;}
-.cl-dot{width:12px;height:12px;border-radius:3px;}
-/* LTL reference line */
-.ltl-line{position:absolute;left:0;right:0;border-top:2px dashed #c0392b;pointer-events:none;}
-.ltl-label{position:absolute;right:4px;top:-18px;font-size:10px;color:#c0392b;font-weight:600;white-space:nowrap;}
-.month-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;}
-.month-table th{background:#f5f3ef;color:#666;padding:8px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e8e4de;}
-.month-table td{padding:7px 12px;border-bottom:1px solid #f0ede8;}
-.badge{display:inline-block;border-radius:12px;padding:2px 8px;font-size:11px;font-weight:600;}
-.badge.peak{background:#e8f0e6;color:#2a3f26;}
-.badge.shoulder{background:#edf5e8;color:#5d8156;}
-.badge.low{background:#f5f5f5;color:#888;}
-.driver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:8px;}
-.driver-card{background:#f9f7f4;border-radius:12px;padding:16px;border-left:4px solid #5d8156;}
-.driver-emoji{font-size:24px;margin-bottom:6px;}
-.driver-name{font-weight:700;color:#2a3f26;font-size:15px;margin-bottom:4px;}
-.driver-text{font-size:13px;color:#666;}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:8px;}
-.portfolio-card{background:#fff;border:1px solid #e8e4de;border-radius:12px;padding:18px;}
-.pc-badge{display:inline-block;background:#2a3f26;color:#fff;border-radius:10px;padding:3px 10px;font-size:11px;font-weight:600;margin-bottom:10px;}
-.pc-name{font-weight:700;color:#2a3f26;font-size:14px;margin-bottom:2px;}
-.pc-loc{font-size:12px;color:#888;margin-bottom:10px;}
-.pc-stat{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid #f5f3ef;}
-.pc-stat:last-child{border-bottom:none;}
-.pc-stat-val{font-weight:600;color:#2a3f26;}
-.disclaimer{font-size:11px;color:#aaa;margin-top:10px;font-style:italic;}
-.selective-banner{background:#2a3f26;color:#fff;border-radius:10px;padding:14px 20px;margin-bottom:16px;font-size:15px;}
-.handles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;}
-.handle-item{background:#f9f7f4;border-radius:10px;padding:14px;display:flex;align-items:flex-start;gap:10px;}
-.handle-icon{font-size:20px;flex-shrink:0;}
-.handle-title{font-weight:600;font-size:14px;color:#2a3f26;}
-.handle-desc{font-size:12px;color:#888;}
-.owner-resp{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.or-pill{background:#fff3cd;border:1px solid #ffc107;color:#8b6914;border-radius:20px;padding:6px 14px;font-size:13px;font-weight:500;}
-.platform-badges{display:flex;flex-wrap:wrap;gap:8px;}
-.pb{background:#f9f7f4;border:1px solid #e8e4de;border-radius:8px;padding:6px 16px;font-size:13px;font-weight:600;color:#2a3f26;}
-.aircover-card{background:linear-gradient(135deg,#1a2e17,#2d4a28);border-radius:14px;padding:24px;margin-bottom:20px;color:#fff;}
-.ac-title{font-size:20px;font-weight:700;margin-bottom:8px;}
-.ac-desc{font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:16px;}
-.ac-badges{display:flex;flex-wrap:wrap;gap:8px;}
-.ac-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;border-radius:20px;padding:6px 14px;font-size:13px;}
-.touch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:8px;}
-.touch-card{background:#f9f7f4;border-radius:12px;padding:16px;text-align:center;}
-.touch-icon{font-size:28px;margin-bottom:8px;}
-.touch-title{font-weight:700;font-size:14px;color:#2a3f26;margin-bottom:4px;}
-.touch-desc{font-size:12px;color:#888;}
-.faq-item{border:1px solid #e8e4de;border-radius:10px;margin-bottom:8px;overflow:hidden;}
-.faq-q{background:#fff;padding:14px 18px;cursor:pointer;font-weight:600;font-size:14px;color:#2a3f26;display:flex;justify-content:space-between;align-items:center;user-select:none;}
-.faq-q:hover{background:#f9f7f4;}
-.faq-a{padding:0 18px 0;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;background:#fafaf8;font-size:14px;color:#555;line-height:1.65;}
-.faq-a.open{max-height:400px;padding:14px 18px;}
-.faq-arrow{transition:transform .3s ease;color:#5d8156;font-size:18px;}
-.faq-arrow.open{transform:rotate(180deg);}
-.urgency-card{background:linear-gradient(140deg,#2a3f26,#4a7040);border-radius:14px;padding:28px;margin-bottom:20px;color:#fff;}
-.urg-title{font-size:24px;font-weight:800;margin-bottom:6px;}
-.urg-sub{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:20px;}
-.urg-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
-.urg-stat{background:rgba(0,0,0,0.2);border-radius:10px;padding:14px;text-align:center;}
-.urg-val{font-size:22px;font-weight:800;}
-.urg-lbl{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;}
-.timeline{position:relative;padding-left:32px;}
-.tl-item{position:relative;margin-bottom:20px;}
-.tl-item::before{content:'';position:absolute;left:-32px;top:8px;bottom:-20px;width:2px;background:#e8e4de;}
-.tl-item:last-child::before{display:none;}
-.tl-dot{position:absolute;left:-38px;top:4px;width:14px;height:14px;border-radius:50%;background:#5d8156;border:2px solid #fff;box-shadow:0 0 0 2px #5d8156;}
-.tl-dot.urgent{background:#e74c3c;box-shadow:0 0 0 2px #e74c3c;}
-.tl-dot.muted{background:#ccc;box-shadow:0 0 0 2px #ccc;}
-.tl-step{font-weight:700;font-size:15px;color:#2a3f26;}
-.tl-date{font-size:12px;color:#888;margin:2px 0;}
-.tl-desc{font-size:13px;color:#666;}
-.urgent-tag{display:inline-block;background:#e74c3c;color:#fff;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700;margin-left:6px;}
-.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:8px;}
-.doc-card{background:#f9f7f4;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start;}
-.doc-icon{font-size:24px;flex-shrink:0;}
-.doc-title{font-weight:700;font-size:14px;color:#2a3f26;margin-bottom:3px;}
-.doc-desc{font-size:12px;color:#888;}
-.mgmt-section{background:#f0f7ee;border:1px solid #c8e6c1;border-radius:14px;padding:22px;margin-bottom:20px;text-align:center;}
-.mgmt-title{font-size:17px;font-weight:700;color:#2a3f26;margin-bottom:6px;}
-.mgmt-desc{font-size:14px;color:#666;margin-bottom:18px;}
-.cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.cta-btn{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;}
-.cta-btn.primary{background:#5d8156;color:#fff;}
-.cta-btn.secondary{background:#fff;color:#5d8156;border:2px solid #5d8156;}
-.footer{background:#2a3f26;color:rgba(255,255,255,0.7);border-radius:14px;padding:24px;text-align:center;margin-top:32px;}
-.footer a{color:rgba(255,255,255,0.9);}
-.vo-btn{position:fixed;bottom:24px;right:24px;background:#5d8156;color:#fff;border:none;border-radius:30px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:1000;display:flex;align-items:center;gap:8px;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0ede8;color:#2d2d2d;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 60px}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%);border-radius:16px;overflow:hidden}
+.hero-top{display:flex;align-items:center;justify-content:space-between;padding:18px 28px 16px;border-bottom:1px solid rgba(255,255,255,.15)}
+.logo-pill{background:#fff;border-radius:10px;padding:6px 12px;display:inline-flex;align-items:center}
+.logo-pill img{height:38px;display:block}
+.tagline{color:rgba(255,255,255,.75);font-size:14px;letter-spacing:.05em;font-weight:500}
+.hero-body{padding:32px 28px 20px}
+.hero-excl{color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.hero-h1{color:#fff;font-size:32px;font-weight:700;line-height:1.15;margin-bottom:10px}
+.hero-sub{color:rgba(255,255,255,.8);font-size:15px;margin-bottom:20px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 14px;font-size:13px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.2);border-top:1px solid rgba(0,0,0,.2)}
+.hstat{background:rgba(0,0,0,.25);padding:16px 18px;text-align:center}
+.hstat-val{color:#fff;font-size:22px;font-weight:700}
+.hstat-lbl{color:rgba(255,255,255,.65);font-size:12px;margin-top:2px}
+
+/* ── PROGRESS ── */
+.prog-strip{background:linear-gradient(90deg,#2a3f26,#3d5c38);border-radius:0 0 12px 12px;padding:14px 20px;margin-bottom:20px;overflow-x:auto}
+.prog-steps{display:flex;align-items:center;white-space:nowrap}
+.ps{display:flex;align-items:center}
+.ps-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.ps-dot.done{background:#fff;color:#3d5c38}
+.ps-dot.cur{background:rgba(255,255,255,.3);color:#fff;border:2px solid rgba(255,255,255,.6);font-size:9px}
+.ps-dot.fut{background:rgba(255,255,255,.1);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.2);font-size:9px}
+.ps-lbl{color:#fff;font-size:11px;margin-left:6px}
+.ps-lbl.done{color:rgba(255,255,255,.85)}
+.ps-lbl.cur{font-weight:700}
+.ps-lbl.fut{color:rgba(255,255,255,.4)}
+.ps-line{width:24px;height:1px;background:rgba(255,255,255,.25);margin:0 4px;flex-shrink:0}
+
+/* ── OFFER BANNER ── */
+.offer{background:linear-gradient(135deg,#1a2e17,#2d4a28);border:1px solid #5d8156;border-radius:14px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.offer-badge{display:inline-block;background:#5d8156;color:#fff;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:8px}
+.offer-rate{font-size:28px;font-weight:800;color:#fff}
+.offer-was{font-size:14px;color:rgba(255,255,255,.5);text-decoration:line-through;margin-left:8px}
+.offer-dl{color:rgba(255,255,255,.7);font-size:13px;margin-top:4px}
+.offer-right{text-align:right}
+.saving-lbl{color:rgba(255,255,255,.6);font-size:12px}
+.saving-val{color:#a8d49a;font-size:22px;font-weight:700}
+
+/* ── CARDS & SHARED ── */
+.card{background:#fff;border:1px solid #e8e4de;border-radius:14px;padding:24px;margin-bottom:20px}
+.sec-hdr{font-size:22px;font-weight:700;color:#2a3f26;margin:32px 0 14px}
+.card-title{font-size:18px;font-weight:700;color:#2a3f26;margin-bottom:4px}
+.card-sub{font-size:13px;color:#888;margin-bottom:18px}
+.note{font-size:12px;color:#888;font-style:italic;margin-top:10px}
+
+/* ── PROJECTION CARDS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:580px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{background:#fff;border:1px solid #e8e4de;border-radius:14px;padding:22px}
+.proj-card.y2{border-color:#5d8156;border-width:2px}
+.proj-lbl{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#888;margin-bottom:8px}
+.proj-gross{font-size:36px;font-weight:800;color:#2a3f26;line-height:1}
+.proj-sub{font-size:13px;color:#888;margin:6px 0 18px}
+.proj-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0ede8;font-size:14px}
+.proj-row.total{border-bottom:none;font-weight:700;font-size:16px;color:#2a3f26;padding-top:12px;border-top:2px solid #e8e4de;margin-top:4px}
+.proj-row .dim{color:#888;font-size:13px;font-weight:400}
+.green{color:#3d8040;font-weight:600}
+
+/* ── RAMP ── */
+.ramp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+@media(max-width:540px){.ramp-grid{grid-template-columns:1fr}}
+.ramp-phase{background:#f9f7f4;border-radius:10px;padding:16px;border-left:4px solid #5d8156}
+.ramp-phase.ph2{border-left-color:#3d5c38}
+.ramp-phase.ph3{border-left-color:#2a3f26}
+.ramp-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#5d8156;font-weight:700}
+.ramp-mo{font-size:13px;color:#666;margin:2px 0}
+.ramp-range{font-size:18px;font-weight:700;color:#2a3f26}
+.ramp-desc{font-size:12px;color:#888;margin-top:4px}
+
+/* ── COMPARISON TABLE ── */
+.comp-table{width:100%;border-collapse:collapse;font-size:14px}
+.comp-table th{background:#2a3f26;color:#fff;padding:10px 14px;text-align:left}
+.comp-table th:not(:first-child){text-align:right}
+.comp-table td{padding:9px 14px;border-bottom:1px solid #f0ede8}
+.comp-table td:not(:first-child){text-align:right}
+.comp-table tr.total td{font-weight:700;background:#f0f7ee;color:#2a3f26;font-size:15px}
+.comp-table .pos{color:#3d8040;font-weight:600}
+.comp-table .neg{color:#c0392b}
+.win-bar{background:#2a3f26;color:#fff;border-radius:0 0 10px 10px;padding:12px 18px;font-weight:700;font-size:15px;text-align:center}
+
+/* ── BAR CHART — pixel heights ── */
+.chart-wrap{background:#f0f7ee;border:1px solid #d4edcc;border-radius:12px;padding:16px 14px 36px;position:relative;overflow:visible}
+.bars{display:flex;align-items:flex-end;gap:5px;height:140px;position:relative}
+.bc{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+.bar{border-radius:3px 3px 0 0;width:100%}
+.bar.peak{background:#2a3f26}
+.bar.shoulder{background:#5d8156}
+.bar.low{background:#9dc492}
+.bm{font-size:9px;color:#888;text-align:center;position:absolute;bottom:-20px;width:120%;left:-10%}
+.ltl-line{position:absolute;left:0;right:0;border-top:2px dashed #c0392b;pointer-events:none;z-index:2}
+.ltl-label{position:absolute;right:4px;top:-16px;font-size:10px;color:#c0392b;font-weight:600;white-space:nowrap}
+.chart-legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.cl-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666}
+.cl-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+
+/* ── MONTH TABLE ── */
+.mt{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px}
+.mt th{background:#f5f3ef;color:#666;padding:8px 12px;text-align:left;font-weight:600;border-bottom:2px solid #e8e4de}
+.mt td{padding:7px 12px;border-bottom:1px solid #f0ede8}
+.badge{display:inline-block;border-radius:12px;padding:2px 8px;font-size:11px;font-weight:600}
+.badge.peak{background:#e8f0e6;color:#2a3f26}
+.badge.shoulder{background:#edf5e8;color:#5d8156}
+.badge.low{background:#f5f5f5;color:#888}
+
+/* ── DRIVERS ── */
+.driver-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:8px}
+.driver-card{background:#f9f7f4;border-radius:12px;padding:16px;border-left:4px solid #5d8156}
+.driver-emoji{font-size:24px;margin-bottom:6px}
+.driver-name{font-weight:700;color:#2a3f26;font-size:15px;margin-bottom:4px}
+.driver-text{font-size:13px;color:#666;line-height:1.55}
+
+/* ── PORTFOLIO ── */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:8px}
+.pc{background:#fff;border:1px solid #e8e4de;border-radius:12px;padding:18px}
+.pc-badge{display:inline-block;background:#2a3f26;color:#fff;border-radius:10px;padding:3px 10px;font-size:11px;font-weight:600;margin-bottom:10px}
+.pc-name{font-weight:700;color:#2a3f26;font-size:14px;margin-bottom:2px}
+.pc-loc{font-size:12px;color:#888;margin-bottom:10px}
+.pc-stat{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px solid #f5f3ef}
+.pc-stat:last-child{border-bottom:none}
+.pc-val{font-weight:600;color:#2a3f26}
+
+/* ── HANDLES ── */
+.sel-banner{background:#2a3f26;color:#fff;border-radius:10px;padding:14px 20px;margin-bottom:16px;font-size:15px}
+.handles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+.handle{background:#f9f7f4;border-radius:10px;padding:14px;display:flex;align-items:flex-start;gap:10px}
+.h-icon{font-size:20px;flex-shrink:0}
+.h-title{font-weight:600;font-size:14px;color:#2a3f26}
+.h-desc{font-size:12px;color:#888}
+.or-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.or-pill{background:#fff3cd;border:1px solid #ffc107;color:#8b6914;border-radius:20px;padding:6px 14px;font-size:13px;font-weight:500}
+.pb-row{display:flex;flex-wrap:wrap;gap:8px}
+.pb{background:#f9f7f4;border:1px solid #e8e4de;border-radius:8px;padding:6px 16px;font-size:13px;font-weight:600;color:#2a3f26}
+
+/* ── AIRCOVER ── */
+.aircover{background:linear-gradient(135deg,#1a2e17,#2d4a28);border-radius:14px;padding:24px;margin-bottom:20px;color:#fff}
+.ac-title{font-size:20px;font-weight:700;margin-bottom:8px}
+.ac-desc{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:16px;line-height:1.6}
+.ac-badges{display:flex;flex-wrap:wrap;gap:8px}
+.ac-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:20px;padding:6px 14px;font-size:13px}
+
+/* ── COMMS ── */
+.comms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:8px}
+.comms-card{background:#f9f7f4;border-radius:12px;padding:16px;text-align:center}
+.c-icon{font-size:28px;margin-bottom:8px}
+.c-title{font-weight:700;font-size:14px;color:#2a3f26;margin-bottom:4px}
+.c-desc{font-size:12px;color:#888;line-height:1.5}
+
+/* ── FAQ ── */
+.faq{border:1px solid #e8e4de;border-radius:10px;margin-bottom:8px;overflow:hidden}
+.faq-q{background:#fff;padding:14px 18px;cursor:pointer;font-weight:600;font-size:14px;color:#2a3f26;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q:hover{background:#f9f7f4}
+.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;background:#fafaf8;font-size:14px;color:#555;line-height:1.65}
+.faq-a.open{max-height:500px;padding:14px 18px}
+.faq-arrow{transition:transform .3s;color:#5d8156;font-size:18px}
+.faq-arrow.open{transform:rotate(180deg)}
+
+/* ── URGENCY ── */
+.urgency{background:linear-gradient(140deg,#2a3f26,#4a7040);border-radius:14px;padding:28px;margin-bottom:20px;color:#fff}
+.urg-title{font-size:24px;font-weight:800;margin-bottom:6px}
+.urg-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px}
+.urg-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.urg-stat{background:rgba(0,0,0,.2);border-radius:10px;padding:14px;text-align:center}
+.urg-val{font-size:22px;font-weight:800}
+.urg-lbl{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:32px}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:-32px;top:8px;bottom:-20px;width:2px;background:#e8e4de}
+.tl-dot{position:absolute;left:-38px;top:4px;width:14px;height:14px;border-radius:50%;background:#5d8156;border:2px solid #fff;box-shadow:0 0 0 2px #5d8156}
+.tl-dot.urgent{background:#e74c3c;box-shadow:0 0 0 2px #e74c3c}
+.tl-dot.muted{background:#ccc;box-shadow:0 0 0 2px #ccc}
+.tl-title{font-weight:700;font-size:15px;color:#2a3f26}
+.tl-date{font-size:12px;color:#888;margin:2px 0}
+.tl-desc{font-size:13px;color:#666}
+.urgent-tag{display:inline-block;background:#e74c3c;color:#fff;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700;margin-left:6px}
+
+/* ── DOCS ── */
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:8px}
+.doc-card{background:#f9f7f4;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+.doc-icon{font-size:24px;flex-shrink:0}
+.doc-title{font-weight:700;font-size:14px;color:#2a3f26;margin-bottom:3px}
+.doc-desc{font-size:12px;color:#888}
+
+/* ── MGMT CTA ── */
+.mgmt-cta{background:#f0f7ee;border:1px solid #c8e6c1;border-radius:14px;padding:22px;margin-bottom:20px;text-align:center}
+.mgmt-title{font-size:17px;font-weight:700;color:#2a3f26;margin-bottom:6px}
+.mgmt-desc{font-size:14px;color:#666;margin-bottom:18px}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.cta-btn{display:inline-block;padding:12px 24px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none}
+.cta-btn.primary{background:#5d8156;color:#fff}
+.cta-btn.secondary{background:#fff;color:#5d8156;border:2px solid #5d8156}
+
+/* ── FOOTER ── */
+.footer{background:#2a3f26;color:rgba(255,255,255,.7);border-radius:14px;padding:24px;text-align:center;margin-top:32px}
+.footer a{color:rgba(255,255,255,.9)}
+
+/* ── VOICEOVER ── */
+.vo-btn{position:fixed;bottom:24px;right:24px;background:#5d8156;color:#fff;border:none;border-radius:30px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:1000}
 </style>
 </head>
 <body>
@@ -188,9 +218,9 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-topbar">
+  <div class="hero-top">
     <div class="logo-pill"><img src="data:image/png;base64,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D/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYDoqKKK6hhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==" alt="Stayful"></div>
-    <span class="hero-tagline">Short-Let Management</span>
+    <span class="tagline">Short-Let Management</span>
   </div>
   <div class="hero-body">
     <div class="hero-excl">Prepared exclusively for Isobel</div>
@@ -198,429 +228,244 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:
     <div class="hero-sub">Based on your call with Zac on 22 May 2026 — projections, transition plan, and everything we discussed.</div>
     <div class="pills">
       <span class="pill">📍 Hull, HU1 1PE</span>
-      <span class="pill">🛏 1 Bedroom</span>
-      <span class="pill">🏢 City Centre Apartment</span>
+      <span class="pill">🛏 1 Bedroom Apartment</span>
       <span class="pill">🔄 Switching STL Manager</span>
       <span class="pill">📅 22 May 2026</span>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hstat">
-      <div class="hstat-val">£12,768</div>
-      <div class="hstat-lbl">Year 1 Net to You</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val">£15,960</div>
-      <div class="hstat-lbl">Year 2+ Net to You</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val">+£780/mo</div>
-      <div class="hstat-lbl">vs Long-Let</div>
-    </div>
+    <div class="hstat"><div class="hstat-val">£12,768</div><div class="hstat-lbl">Year 1 Net to You</div></div>
+    <div class="hstat"><div class="hstat-val">£15,960</div><div class="hstat-lbl">Year 2+ Net to You</div></div>
+    <div class="hstat"><div class="hstat-val">+£780/mo</div><div class="hstat-lbl">vs Long-Let</div></div>
   </div>
 </div>
 
-<!-- PROGRESS STRIP -->
-<div class="progress-strip">
-  <div class="progress-steps">
-    <div class="pstep"><div class="pstep-dot done">✓</div><span class="pstep-lbl done">Enquiry</span></div>
-    <div class="pstep-line"></div>
-    <div class="pstep"><div class="pstep-dot done">✓</div><span class="pstep-lbl done">Web Meeting</span></div>
-    <div class="pstep-line"></div>
-    <div class="pstep"><div class="pstep-dot current">▶</div><span class="pstep-lbl current">Documents Sent</span></div>
-    <div class="pstep-line"></div>
-    <div class="pstep"><div class="pstep-dot future">4</div><span class="pstep-lbl future">Agreement Signed</span></div>
-    <div class="pstep-line"></div>
-    <div class="pstep"><div class="pstep-dot future">5</div><span class="pstep-lbl future">Live</span></div>
+<!-- PROGRESS -->
+<div class="prog-strip">
+  <div class="prog-steps">
+    <div class="ps"><div class="ps-dot done">✓</div><span class="ps-lbl done">Enquiry</span></div>
+    <div class="ps-line"></div>
+    <div class="ps"><div class="ps-dot done">✓</div><span class="ps-lbl done">Web Meeting</span></div>
+    <div class="ps-line"></div>
+    <div class="ps"><div class="ps-dot cur">▶</div><span class="ps-lbl cur">Documents Sent</span></div>
+    <div class="ps-line"></div>
+    <div class="ps"><div class="ps-dot fut">4</div><span class="ps-lbl fut">Agreement Signed</span></div>
+    <div class="ps-line"></div>
+    <div class="ps"><div class="ps-dot fut">5</div><span class="ps-lbl fut">Live</span></div>
   </div>
 </div>
 
 <!-- OFFER BANNER -->
-<div class="offer-banner">
-  <div class="offer-left">
+<div class="offer">
+  <div>
     <div class="offer-badge">⚡ SPECIAL OFFER — EXPIRES 31 MAY 2026</div>
     <div><span class="offer-rate">13% + VAT</span><span class="offer-was">15% + VAT</span></div>
-    <div class="offer-deadline">Sign your agreement by 31 May 2026 to lock in this rate.</div>
+    <div class="offer-dl">Sign by 31 May 2026 to lock in this rate permanently.</div>
   </div>
   <div class="offer-right">
-    <div class="offer-saving-lbl">Annual saving vs standard rate</div>
-    <div class="offer-saving-val">~£736/year</div>
+    <div class="saving-lbl">Annual saving vs standard rate</div>
+    <div class="saving-val">~£737/year</div>
   </div>
 </div>
 
 <!-- INCOME PROJECTIONS -->
-<div class="section-hdr">Your Income Projections</div>
+<div class="sec-hdr">Your Income Projections</div>
 <div class="proj-grid">
   <div class="proj-card">
-    <div class="proj-label">Year 1 — Conservative (Ramp)</div>
-    <div class="proj-gross">£24,556</div>
-    <div class="proj-subtitle">Gross rental revenue — 80% of run-rate</div>
-    <div class="proj-row"><span>Gross Revenue</span><span>£24,556</span></div>
-    <div class="proj-row"><span>Airbnb Platform Fee (~3%)</span><span class="neg">-£736</span></div>
-    <div class="proj-row"><span>Management Fee (13%+VAT)</span><span class="neg">-£3,830</span></div>
-    <div class="proj-row"><span>Net to You</span><span>£12,768</span></div>
-    <div class="proj-note">Year 1 net of £12,768 = £1,064/month average. Still £514/month more than long-let.</div>
+    <div class="proj-lbl">Year 1 — Conservative Ramp</div>
+    <div class="proj-gross">£24,557</div>
+    <div class="proj-sub">Gross rental revenue · 80% of run-rate as listing builds</div>
+    <div class="proj-row"><span>Annual gross revenue</span><span>£24,557</span></div>
+    <div class="proj-row"><span class="dim">All platform, management &amp; operational costs</span><span class="dim">-£11,789</span></div>
+    <div class="proj-row total"><span>Net to you</span><span class="green">£12,768</span></div>
+    <p class="note">£1,064/month average in Year 1 — £514/month more than long-let even at 80% capacity.</p>
   </div>
   <div class="proj-card y2">
-    <div class="proj-label">Year 2+ — Full Run Rate</div>
+    <div class="proj-lbl">Year 2+ — Full Run Rate</div>
     <div class="proj-gross">£30,696</div>
-    <div class="proj-subtitle">Gross rental revenue — 71% occupancy, £119/night</div>
-    <div class="proj-row"><span>Gross Revenue</span><span>£30,696</span></div>
-    <div class="proj-row"><span>Airbnb Platform Fee (~3%)</span><span class="neg">-£920</span></div>
-    <div class="proj-row"><span>Management Fee (13%+VAT)</span><span class="neg">-£4,788</span></div>
-    <div class="proj-row"><span>Net to You</span><span>£15,960</span></div>
-    <div class="proj-note">At 71% occupancy — Hull market average — vs your current 57% with Residential Estates.</div>
+    <div class="proj-sub">Gross rental revenue · 71% occupancy · £119/night avg</div>
+    <div class="proj-row"><span>Annual gross revenue</span><span>£30,696</span></div>
+    <div class="proj-row"><span class="dim">All platform, management &amp; operational costs</span><span class="dim">-£14,736</span></div>
+    <div class="proj-row total"><span>Net to you</span><span class="green">£15,960</span></div>
+    <p class="note">£1,330/month · 71% occupancy · Hull market average. Cleaning is charged to guests and flows through the operational costs line above.</p>
   </div>
 </div>
 
 <!-- RAMP -->
 <div class="card">
   <div class="card-title">Year 1 Ramp Trajectory</div>
-  <div class="card-sub">New independent listing builds review base from scratch — three phases</div>
+  <div class="card-sub">New individual listing builds review base — three phases</div>
   <div class="ramp-grid">
     <div class="ramp-phase">
-      <div class="ramp-ph-lbl">Phase 1</div>
-      <div class="ramp-months">Months 1–3</div>
-      <div class="ramp-range">£936–£1,233/mo net</div>
-      <div class="ramp-desc">New listing, building reviews. Competitive pricing to attract early bookings and ratings. Individual property identity from day one — unlike current hotel-style setup.</div>
+      <div class="ramp-lbl">Phase 1</div>
+      <div class="ramp-mo">Months 1–3</div>
+      <div class="ramp-range">£936–£1,234/mo net</div>
+      <div class="ramp-desc">New listing, building reviews. Individual property identity from day one — your terrace and parking featured prominently, not buried in a building listing.</div>
     </div>
     <div class="ramp-phase ph2">
-      <div class="ramp-ph-lbl">Phase 2</div>
-      <div class="ramp-months">Months 4–8</div>
+      <div class="ramp-lbl">Phase 2</div>
+      <div class="ramp-mo">Months 4–8</div>
       <div class="ramp-range">£1,058–£1,280/mo net</div>
-      <div class="ramp-desc">Algorithm boost as reviews accumulate. Dynamic pricing increases rates. NHS, university, and relocation demand fills shoulder months.</div>
+      <div class="ramp-desc">Algorithm boost as reviews accumulate. NHS, university, and relocation demand fills shoulder months. Dynamic pricing moves rates up.</div>
     </div>
     <div class="ramp-phase ph3">
-      <div class="ramp-ph-lbl">Phase 3</div>
-      <div class="ramp-months">Months 9–12</div>
-      <div class="ramp-range">£908–£1,280/mo net</div>
-      <div class="ramp-desc">Established listing with review history. Direct booking channel starts converting. Peak season delivers highest rates.</div>
+      <div class="ramp-lbl">Phase 3</div>
+      <div class="ramp-mo">Months 9–12</div>
+      <div class="ramp-range">£908–£1,120/mo net</div>
+      <div class="ramp-desc">Established listing with review history. Direct booking channel starts converting long-stay relocation guests.</div>
     </div>
   </div>
-  <p style="font-size:13px;color:#888;font-style:italic;">Year 1 total net: £12,768 (£1,064/month average). Still £514/month above long-let.</p>
+  <p class="note">Year 1 total net: £12,768 (£1,064/month avg) — still £514/month above long-let.</p>
 </div>
 
 <!-- STL vs LTL -->
-<div class="section-hdr">Short-Let vs Long-Let</div>
+<div class="sec-hdr">Short-Let vs Long-Let</div>
 <div class="card" style="padding:0;overflow:hidden;">
   <table class="comp-table">
     <tr><th>Item</th><th>Short-Let (Stayful)</th><th>Long-Let (Agent)</th></tr>
-    <tr><td>Annual Gross Revenue</td><td class="green">£30,696</td><td>£6,600 (£550/mo)</td></tr>
-    <tr><td>Management / Agent Fees</td><td class="red">-£4,788 (13%+VAT)</td><td class="red">-£660 (10%)</td></tr>
-    <tr><td>Platform Fee (Airbnb ~3%)</td><td class="red">-£920</td><td>N/A</td></tr>
-    <tr><td>Cleaning &amp; Linen</td><td>Charged to guest ✓</td><td>Owner responsibility</td></tr>
-    <tr><td>Void Periods</td><td>Priced into occupancy model</td><td>Full risk</td></tr>
-    <tr><td>Property Damage</td><td>AirCover £2.5M protection</td><td>Tenant damage risk</td></tr>
-    <tr class="total"><td>Estimated Annual Net</td><td class="green">£15,960 (Y2)</td><td>~£5,940</td></tr>
+    <tr><td>Annual gross revenue</td><td class="pos">£30,696</td><td>~£7,200 (£600/mo)</td></tr>
+    <tr><td>All fees &amp; costs</td><td class="neg">-£14,736</td><td class="neg">-£720 (10% agent)</td></tr>
+    <tr><td>Void periods</td><td>Priced into model</td><td>Full risk, no income</td></tr>
+    <tr><td>Property damage</td><td>AirCover £2.5M protection</td><td>Tenant damage risk</td></tr>
+    <tr class="total"><td>Estimated annual net</td><td class="pos">£15,960</td><td>~£6,600</td></tr>
   </table>
-  <div class="win-bar">Short-let puts an extra <strong>£10,020/year</strong> in your pocket vs long-let 🏆</div>
+  <div class="win-bar">Short-let puts an extra <strong>£9,360/year</strong> in your pocket vs long-let 🏆</div>
 </div>
-<p style="font-size:12px;color:#aaa;margin-bottom:20px;font-style:italic;">Estimates for illustration. Not financial advice.</p>
+<p class="note" style="margin-bottom:20px;">Estimates for illustration. Not financial advice. Long-let gross estimate based on Hull 1-bed market rates.</p>
 
-<!-- COST OF SWITCHING TO STAYFUL -->
-<div class="coi-card">
-  <div class="coi-big">£780</div>
-  <div class="coi-lbl">extra every month by switching from long-let to Stayful</div>
-  <div class="coi-row">
-    <div class="coi-stat">
-      <div class="coi-stat-val">£1,330/mo</div>
-      <div class="coi-stat-lbl">STL net (Stayful)</div>
-    </div>
-    <div class="coi-stat">
-      <div class="coi-stat-val">£550/mo</div>
-      <div class="coi-stat-lbl">Long-let net</div>
-    </div>
-    <div class="coi-stat">
-      <div class="coi-stat-val">71%</div>
-      <div class="coi-stat-lbl">Target occupancy</div>
-    </div>
-  </div>
-  <p style="font-size:13px;color:#555;text-align:center;">At 71% occupancy — the Hull market average — your property generates £1,330/month net vs £550/month from a long-let agent. The opportunity is already there. It just needs the right management.</p>
-</div>
-
-<!-- MONTHLY BAR CHART — pixel heights, works reliably -->
-<div class="section-hdr">Monthly Net Income Forecast</div>
+<!-- BAR CHART — pixel heights, reliable rendering -->
+<div class="sec-hdr">Monthly Net Income</div>
 <div class="card">
   <div class="chart-legend">
-    <div class="cl-item"><div class="cl-dot" style="background:#2a3f26;"></div>Peak (Jun–Aug)</div>
-    <div class="cl-item"><div class="cl-dot" style="background:#5d8156;"></div>Shoulder (Mar–May, Oct)</div>
-    <div class="cl-item"><div class="cl-dot" style="background:#9dc492;"></div>Low (Jan, Feb, Sep, Nov, Dec)</div>
-    <div class="cl-item"><div class="cl-dot" style="background:#c0392b;border-radius:0;height:2px;width:16px;"></div>Long-let baseline £550/mo</div>
+    <div class="cl-item"><div class="cl-dot" style="background:#2a3f26"></div>Peak (Jun–Aug)</div>
+    <div class="cl-item"><div class="cl-dot" style="background:#5d8156"></div>Shoulder (Mar–May, Oct)</div>
+    <div class="cl-item"><div class="cl-dot" style="background:#9dc492"></div>Low (Jan, Feb, Sep, Nov, Dec)</div>
   </div>
-  <p style="font-size:12px;color:#888;margin-bottom:12px;">Year 2 run-rate shown. Year 1 = ~80% of these figures.</p>
-  <div class="chart-outer">
-    <div class="bar-chart-wrap">
-      <!-- LTL reference line positioned via JS -->
-      <div class="bars-container" id="barContainer">
-        <div class="bar-col">
-          <div class="bar-rect low" style="height:88px;" title="January: £1,170 net"></div>
-          <div class="bar-lbl">Jan</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect low" style="height:107px;" title="February: £1,424 net"></div>
-          <div class="bar-lbl">Feb</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect shoulder" style="height:116px;" title="March: £1,542 net"></div>
-          <div class="bar-lbl">Mar</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect shoulder" style="height:99px;" title="April: £1,323 net"></div>
-          <div class="bar-lbl">Apr</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect shoulder" style="height:95px;" title="May: £1,261 net"></div>
-          <div class="bar-lbl">May</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect peak" style="height:120px;" title="June: £1,600 net"></div>
-          <div class="bar-lbl">Jun</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect peak" style="height:97px;" title="July: £1,294 net"></div>
-          <div class="bar-lbl">Jul</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect peak" style="height:102px;" title="August: £1,358 net"></div>
-          <div class="bar-lbl">Aug</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect low" style="height:85px;" title="September: £1,135 net"></div>
-          <div class="bar-lbl">Sep</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect shoulder" style="height:105px;" title="October: £1,400 net"></div>
-          <div class="bar-lbl">Oct</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect low" style="height:97px;" title="November: £1,289 net"></div>
-          <div class="bar-lbl">Nov</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-rect low" style="height:87px;" title="December: £1,164 net"></div>
-          <div class="bar-lbl">Dec</div>
-        </div>
-      </div>
-      <p style="font-size:11px;color:#888;margin-top:8px;">Dashed red line = long-let alternative at £550/month. Every bar is above it.</p>
+  <p class="note" style="margin-bottom:12px;">Year 2 run-rate. Year 1 = ~80% of these figures.</p>
+  <div class="chart-wrap">
+    <div class="bars" id="barCont">
+      <div class="bc"><div class="bar low" style="height:102px" title="January: £1,170 net"></div><div class="bm">Jan</div></div>
+      <div class="bc"><div class="bar low" style="height:125px" title="February: £1,424 net"></div><div class="bm">Feb</div></div>
+      <div class="bc"><div class="bar shoulder" style="height:135px" title="March: £1,542 net"></div><div class="bm">Mar</div></div>
+      <div class="bc"><div class="bar shoulder" style="height:116px" title="April: £1,323 net"></div><div class="bm">Apr</div></div>
+      <div class="bc"><div class="bar shoulder" style="height:110px" title="May: £1,261 net"></div><div class="bm">May</div></div>
+      <div class="bc"><div class="bar peak" style="height:140px" title="June: £1,600 net"></div><div class="bm">Jun</div></div>
+      <div class="bc"><div class="bar peak" style="height:113px" title="July: £1,294 net"></div><div class="bm">Jul</div></div>
+      <div class="bc"><div class="bar peak" style="height:119px" title="August: £1,358 net"></div><div class="bm">Aug</div></div>
+      <div class="bc"><div class="bar low" style="height:99px" title="September: £1,135 net"></div><div class="bm">Sep</div></div>
+      <div class="bc"><div class="bar shoulder" style="height:122px" title="October: £1,400 net"></div><div class="bm">Oct</div></div>
+      <div class="bc"><div class="bar low" style="height:113px" title="November: £1,289 net"></div><div class="bm">Nov</div></div>
+      <div class="bc"><div class="bar low" style="height:102px" title="December: £1,164 net"></div><div class="bm">Dec</div></div>
     </div>
   </div>
-
-  <table class="month-table">
+  <table class="mt">
     <tr><th>Month</th><th>Y1 Net</th><th>Y1 Gross</th><th>Y2 Net</th><th>Y2 Gross</th><th>Season</th></tr>
-    <tr>
-      <td><strong>January</strong></td>
-      <td>£936</td>
-      <td>£1,800</td>
-      <td>£1,170</td>
-      <td>£2,250</td>
-      <td><span class="badge low">Low</span></td>
-    </tr>
-    <tr>
-      <td><strong>February</strong></td>
-      <td>£1,139</td>
-      <td>£2,191</td>
-      <td>£1,424</td>
-      <td>£2,739</td>
-      <td><span class="badge low">Low</span></td>
-    </tr>
-    <tr>
-      <td><strong>March</strong></td>
-      <td>£1,233</td>
-      <td>£2,372</td>
-      <td>£1,542</td>
-      <td>£2,966</td>
-      <td><span class="badge shoulder">Shoulder</span></td>
-    </tr>
-    <tr>
-      <td><strong>April</strong></td>
-      <td>£1,058</td>
-      <td>£2,036</td>
-      <td>£1,323</td>
-      <td>£2,545</td>
-      <td><span class="badge shoulder">Shoulder</span></td>
-    </tr>
-    <tr>
-      <td><strong>May</strong></td>
-      <td>£1,008</td>
-      <td>£1,940</td>
-      <td>£1,261</td>
-      <td>£2,425</td>
-      <td><span class="badge shoulder">Shoulder</span></td>
-    </tr>
-    <tr>
-      <td><strong>June</strong></td>
-      <td>£1,280</td>
-      <td>£2,461</td>
-      <td>£1,600</td>
-      <td>£3,077</td>
-      <td><span class="badge peak">Peak</span></td>
-    </tr>
-    <tr>
-      <td><strong>July</strong></td>
-      <td>£1,035</td>
-      <td>£1,991</td>
-      <td>£1,294</td>
-      <td>£2,489</td>
-      <td><span class="badge peak">Peak</span></td>
-    </tr>
-    <tr>
-      <td><strong>August</strong></td>
-      <td>£1,086</td>
-      <td>£2,089</td>
-      <td>£1,358</td>
-      <td>£2,612</td>
-      <td><span class="badge peak">Peak</span></td>
-    </tr>
-    <tr>
-      <td><strong>September</strong></td>
-      <td>£908</td>
-      <td>£1,746</td>
-      <td>£1,135</td>
-      <td>£2,183</td>
-      <td><span class="badge low">Low</span></td>
-    </tr>
-    <tr>
-      <td><strong>October</strong></td>
-      <td>£1,120</td>
-      <td>£2,154</td>
-      <td>£1,400</td>
-      <td>£2,693</td>
-      <td><span class="badge shoulder">Shoulder</span></td>
-    </tr>
-    <tr>
-      <td><strong>November</strong></td>
-      <td>£1,031</td>
-      <td>£1,983</td>
-      <td>£1,289</td>
-      <td>£2,479</td>
-      <td><span class="badge low">Low</span></td>
-    </tr>
-    <tr>
-      <td><strong>December</strong></td>
-      <td>£931</td>
-      <td>£1,791</td>
-      <td>£1,164</td>
-      <td>£2,239</td>
-      <td><span class="badge low">Low</span></td>
-    </tr>
+    <tr><td><strong>January</strong></td><td>£936</td><td>£1,800</td><td>£1,170</td><td>£2,250</td><td><span class="badge low">Low</span></td></tr>
+    <tr><td><strong>February</strong></td><td>£1,139</td><td>£2,191</td><td>£1,424</td><td>£2,739</td><td><span class="badge low">Low</span></td></tr>
+    <tr><td><strong>March</strong></td><td>£1,234</td><td>£2,373</td><td>£1,542</td><td>£2,966</td><td><span class="badge shoulder">Shoulder</span></td></tr>
+    <tr><td><strong>April</strong></td><td>£1,058</td><td>£2,036</td><td>£1,323</td><td>£2,545</td><td><span class="badge shoulder">Shoulder</span></td></tr>
+    <tr><td><strong>May</strong></td><td>£1,009</td><td>£1,940</td><td>£1,261</td><td>£2,425</td><td><span class="badge shoulder">Shoulder</span></td></tr>
+    <tr><td><strong>June</strong></td><td>£1,280</td><td>£2,462</td><td>£1,600</td><td>£3,077</td><td><span class="badge peak">Peak</span></td></tr>
+    <tr><td><strong>July</strong></td><td>£1,035</td><td>£1,991</td><td>£1,294</td><td>£2,489</td><td><span class="badge peak">Peak</span></td></tr>
+    <tr><td><strong>August</strong></td><td>£1,086</td><td>£2,090</td><td>£1,358</td><td>£2,612</td><td><span class="badge peak">Peak</span></td></tr>
+    <tr><td><strong>September</strong></td><td>£908</td><td>£1,746</td><td>£1,135</td><td>£2,183</td><td><span class="badge low">Low</span></td></tr>
+    <tr><td><strong>October</strong></td><td>£1,120</td><td>£2,154</td><td>£1,400</td><td>£2,693</td><td><span class="badge shoulder">Shoulder</span></td></tr>
+    <tr><td><strong>November</strong></td><td>£1,031</td><td>£1,983</td><td>£1,289</td><td>£2,479</td><td><span class="badge low">Low</span></td></tr>
+    <tr><td><strong>December</strong></td><td>£931</td><td>£1,791</td><td>£1,164</td><td>£2,239</td><td><span class="badge low">Low</span></td></tr>
   </table>
-  <p style="font-size:12px;color:#aaa;margin-top:8px;font-style:italic;">Net figures = gross less estimated platform fees (~3%) and management fee (13%+VAT). Not guaranteed. Y1 at 80% of run-rate.</p>
+  <p class="note">Net = gross less all platform, management and operational costs. Y1 at 80% of run-rate. Projections not guaranteed.</p>
 </div>
 
 <!-- DEMAND DRIVERS -->
-<div class="section-hdr">What Drives Demand in Hull</div>
+<div class="sec-hdr">What Drives Demand in Hull</div>
 <div class="driver-grid">
   <div class="driver-card">
     <div class="driver-emoji">🏥</div>
     <div class="driver-name">NHS &amp; Healthcare</div>
-    <div class="driver-text">Hull Royal Infirmary and Castle Hill Hospital together employ over 9,000 staff. Healthcare professionals on rotation, visiting consultants, and patient families generate consistent year-round demand — especially in low and shoulder months.</div>
+    <div class="driver-text">Hull Royal Infirmary and Castle Hill Hospital employ over 9,000 staff. Rotating healthcare professionals, visiting consultants and patient families generate consistent year-round bookings — particularly strong in the low and shoulder months that can be harder to fill.</div>
   </div>
   <div class="driver-card">
     <div class="driver-emoji">🎓</div>
     <div class="driver-name">University of Hull</div>
-    <div class="driver-text">~14,000 students. Visiting academics, parents during freshers and graduation week, and conference attendees create predictable demand in September and June — two of your better months.</div>
+    <div class="driver-text">Around 14,000 students. Visiting academics, parents during freshers and graduation, and conference attendees create predictable demand. September — despite being flagged as Hull's quietest month — still generates £1,135 net because of university-driven bookings.</div>
   </div>
   <div class="driver-card">
     <div class="driver-emoji">💼</div>
     <div class="driver-name">Corporate &amp; Relocation</div>
-    <div class="driver-text">Siemens Gamesa's offshore wind hub and major port operations bring corporate contractors who prefer serviced apartments over hotels for 1–3 month stays. This is the exact guest type your current manager lost for you due to Wi-Fi issues.</div>
+    <div class="driver-text">Siemens Gamesa's offshore wind hub and major port operations bring corporate contractors preferring serviced apartments for 1–3 month stays. These are the highest-value guests. Your current manager has already lost you at least one of these because of Wi-Fi issues — individual management with proper infrastructure fixes this.</div>
   </div>
   <div class="driver-card">
     <div class="driver-emoji">🎶</div>
     <div class="driver-name">Connexin Live Events</div>
-    <div class="driver-text">Hull's Connexin Live arena hosts over 150 events per year. Concerts and events drive short-burst weekend demand and your 0.5km proximity makes this property a top-choice booking for event goers.</div>
-  </div>
-  <div class="driver-card">
-    <div class="driver-emoji">🚆</div>
-    <div class="driver-name">Transport Hub</div>
-    <div class="driver-text">Hull Paragon Interchange connects the city by rail and coach. City centre location means guests don't need a car — a key appeal for Airbnb travellers.</div>
+    <div class="driver-text">Connexin Live arena hosts over 150 events per year. Your city centre location, 0.5km from the venue, makes this property a top-choice booking for concert and event guests.</div>
   </div>
   <div class="driver-card">
     <div class="driver-emoji">🅿️</div>
     <div class="driver-name">Parking Advantage</div>
-    <div class="driver-text">Your property includes parking — genuinely uncommon in Hull city centre. This is a listing differentiator that allows premium pricing vs competing units. With individual listing management, this feature will be front and centre.</div>
+    <div class="driver-text">Included parking is genuinely uncommon for Hull city centre apartments. With your own individual listing, this gets featured as a headline differentiator — not buried across a multi-unit building listing. It directly supports premium pricing over comparable units without parking.</div>
+  </div>
+  <div class="driver-card">
+    <div class="driver-emoji">🏛️</div>
+    <div class="driver-name">Tourism &amp; Culture</div>
+    <div class="driver-text">The Deep aquarium, Hull Old Town, and the Maritime Museum draw consistent leisure visitors. Hull's 2017 UK City of Culture legacy continues to support tourist footfall through summer, contributing to your peak June–August figures.</div>
   </div>
 </div>
 
-<!-- PORTFOLIO CASE STUDIES -->
-<div class="section-hdr">Real Results from the Stayful Portfolio</div>
+<!-- PORTFOLIO -->
+<div class="sec-hdr">Real Results from the Stayful Portfolio</div>
 <div class="portfolio-grid">
-  <div class="portfolio-card">
-    <div class="pc-badge">Jan–Dec 2025</div>
-    <div class="pc-name">17 Park Crescent</div>
-    <div class="pc-loc">York</div>
-    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-stat-val">£54,688</span></div>
-    <div class="pc-stat"><span>Owner Net</span><span class="pc-stat-val">£34,727</span></div>
-    <div class="pc-stat"><span>Occupancy</span><span class="pc-stat-val">73.9%</span></div>
-    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-stat-val">£186.51</span></div>
-    <div class="pc-stat"><span>Booked Nights</span><span class="pc-stat-val">270</span></div>
-  </div>
-  <div class="portfolio-card">
-    <div class="pc-badge">Jan–Dec 2025</div>
-    <div class="pc-name">7 Beechwood Mount</div>
-    <div class="pc-loc">Burley, Leeds</div>
-    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-stat-val">£40,665</span></div>
-    <div class="pc-stat"><span>Owner Net</span><span class="pc-stat-val">£25,782</span></div>
-    <div class="pc-stat"><span>Occupancy</span><span class="pc-stat-val">50.4%</span></div>
-    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-stat-val">£201.37</span></div>
-    <div class="pc-stat"><span>Booked Nights</span><span class="pc-stat-val">184</span></div>
-  </div>
-  <div class="portfolio-card">
-    <div class="pc-badge">Jan–Dec 2025</div>
-    <div class="pc-name">803 Eastbank Tower</div>
-    <div class="pc-loc">Manchester</div>
-    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-stat-val">£56,921</span></div>
-    <div class="pc-stat"><span>Owner Net</span><span class="pc-stat-val">£35,917</span></div>
-    <div class="pc-stat"><span>Occupancy</span><span class="pc-stat-val">68.7%</span></div>
-    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-stat-val">£211.56</span></div>
-    <div class="pc-stat"><span>Booked Nights</span><span class="pc-stat-val">251</span></div>
-  </div>
-  <div class="portfolio-card">
-    <div class="pc-badge">Jan–Dec 2025</div>
-    <div class="pc-name">Museum Court</div>
-    <div class="pc-loc">Lincoln</div>
-    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-stat-val">£57,328</span></div>
-    <div class="pc-stat"><span>Owner Net</span><span class="pc-stat-val">£36,288</span></div>
-    <div class="pc-stat"><span>Occupancy</span><span class="pc-stat-val">64.2%</span></div>
-    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-stat-val">£225.15</span></div>
-    <div class="pc-stat"><span>Booked Nights</span><span class="pc-stat-val">234</span></div>
-  </div>
+  <div class="pc"><div class="pc-badge">Jan–Dec 2025</div><div class="pc-name">17 Park Crescent</div><div class="pc-loc">York</div>
+    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-val">£54,688</span></div>
+    <div class="pc-stat"><span>Owner Net</span><span class="pc-val">£34,727</span></div>
+    <div class="pc-stat"><span>Occupancy</span><span class="pc-val">73.9%</span></div>
+    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-val">£186.51</span></div></div>
+  <div class="pc"><div class="pc-badge">Jan–Dec 2025</div><div class="pc-name">7 Beechwood Mount</div><div class="pc-loc">Burley, Leeds</div>
+    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-val">£40,665</span></div>
+    <div class="pc-stat"><span>Owner Net</span><span class="pc-val">£25,782</span></div>
+    <div class="pc-stat"><span>Occupancy</span><span class="pc-val">50.4%</span></div>
+    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-val">£201.37</span></div></div>
+  <div class="pc"><div class="pc-badge">Jan–Dec 2025</div><div class="pc-name">803 Eastbank Tower</div><div class="pc-loc">Manchester</div>
+    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-val">£56,921</span></div>
+    <div class="pc-stat"><span>Owner Net</span><span class="pc-val">£35,917</span></div>
+    <div class="pc-stat"><span>Occupancy</span><span class="pc-val">68.7%</span></div>
+    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-val">£211.56</span></div></div>
+  <div class="pc"><div class="pc-badge">Jan–Dec 2025</div><div class="pc-name">Museum Court</div><div class="pc-loc">Lincoln</div>
+    <div class="pc-stat"><span>Gross Revenue</span><span class="pc-val">£57,328</span></div>
+    <div class="pc-stat"><span>Owner Net</span><span class="pc-val">£36,288</span></div>
+    <div class="pc-stat"><span>Occupancy</span><span class="pc-val">64.2%</span></div>
+    <div class="pc-stat"><span>Avg Daily Rate</span><span class="pc-val">£225.15</span></div></div>
 </div>
-<p class="disclaimer" style="padding:0 4px;">Actual Airbnb platform data Jan–Dec 2025. Past performance of other properties does not guarantee future results for your property.</p>
+<p class="note" style="padding:0 4px">Actual Airbnb platform data Jan–Dec 2025. Past performance of other properties does not guarantee future results for your property.</p>
 
 <!-- WHAT STAYFUL HANDLES -->
-<div class="section-hdr">What Stayful Handles</div>
-<div class="selective-banner">✅ Stayful is selective — your property has passed our assessment. We only take on properties we can perform well on.</div>
+<div class="sec-hdr">What Stayful Handles</div>
+<div class="sel-banner">✅ Your property has passed Stayful's assessment. We only take on properties we are confident we can perform well on.</div>
 <div class="handles-grid">
-  <div class="handle-item"><div class="handle-icon">💬</div><div><div class="handle-title">Guest Communication</div><div class="handle-desc">All messages, check-in info, reviews — 7 days a week.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">🧹</div><div><div class="handle-title">Cleaning &amp; Linen</div><div class="handle-desc">Professional cleaning after every stay. Charged to guest, not you.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">📈</div><div><div class="handle-title">Dynamic Pricing</div><div class="handle-desc">Prices updated daily using market data. No manual intervention required from you.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">🔧</div><div><div class="handle-title">Maintenance Coordination</div><div class="handle-desc">All issues logged immediately, batched for cost efficiency. No markups on contractors. Up to £300 approved without calling you.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">🏠</div><div><div class="handle-title">Individual Listing</div><div class="handle-desc">Your own listing, your own photos, your own reviews — never shared with a building or group listing.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">🎯</div><div><div class="handle-title">Direct Booking Conversion</div><div class="handle-desc">Relocation and corporate guests converted from platform to direct — removing single-channel dependency over time.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">📊</div><div><div class="handle-title">Monthly Reporting</div><div class="handle-desc">Reservation statement with all bookings and payout — delivered 1st–5th of every month via Slack.</div></div></div>
-  <div class="handle-item"><div class="handle-icon">🔑</div><div><div class="handle-title">Key &amp; Access</div><div class="handle-desc">Key safe managed remotely. No physical handovers ever required from you.</div></div></div>
+  <div class="handle"><div class="h-icon">💬</div><div><div class="h-title">Guest Communication</div><div class="h-desc">All messages, check-in coordination, review management — 7 days a week.</div></div></div>
+  <div class="handle"><div class="h-icon">🧹</div><div><div class="h-title">Cleaning &amp; Linen</div><div class="h-desc">Professional clean and fresh linen after every stay. Cleaning fee charged to guests.</div></div></div>
+  <div class="handle"><div class="h-icon">📈</div><div><div class="h-title">Dynamic Pricing</div><div class="h-desc">Rates reviewed and updated daily. No manual input required from you.</div></div></div>
+  <div class="handle"><div class="h-icon">🔧</div><div><div class="h-title">Maintenance</div><div class="h-desc">All issues logged and actioned immediately. Repairs up to £300 authorised without calling you. No markups on contractors.</div></div></div>
+  <div class="handle"><div class="h-icon">🏠</div><div><div class="h-title">Your Own Listing</div><div class="h-desc">Individual listing with your photos, your reviews, your identity — never shared with a building.</div></div></div>
+  <div class="handle"><div class="h-icon">🎯</div><div><div class="h-title">Direct Booking Conversion</div><div class="h-desc">Corporate and relocation guests converted to direct, reducing platform dependency over time.</div></div></div>
+  <div class="handle"><div class="h-icon">📊</div><div><div class="h-title">Monthly Statements</div><div class="h-desc">Reservation statement with all bookings and payout — delivered 1st–5th each month via Slack.</div></div></div>
+  <div class="handle"><div class="h-icon">🔑</div><div><div class="h-title">Key &amp; Access</div><div class="h-desc">Key safe managed remotely. No physical handovers ever required from you.</div></div></div>
 </div>
 <p style="font-weight:700;color:#2a3f26;margin-bottom:8px;font-size:14px;">Your only responsibilities:</p>
-<div class="owner-resp">
+<div class="or-pills">
   <span class="or-pill">Utilities &amp; WiFi</span>
   <span class="or-pill">Council Tax</span>
   <span class="or-pill">Smart Thermostat (~£200 one-time)</span>
   <span class="or-pill">Key Safe (~£60 one-time)</span>
 </div>
-<p style="font-weight:700;color:#2a3f26;margin-bottom:8px;font-size:14px;">Listed across:</p>
-<div class="platform-badges">
-  <span class="pb">🏠 Airbnb</span>
-  <span class="pb">🌐 Booking.com</span>
-  <span class="pb">🔍 Google Hotels</span>
-  <span class="pb">🔗 Direct Bookings</span>
+<div class="pb-row" style="margin-bottom:20px">
+  <span class="pb">🏠 Airbnb</span><span class="pb">🌐 Booking.com</span><span class="pb">🔍 Google Hotels</span><span class="pb">🔗 Direct Bookings</span>
 </div>
 
 <!-- AIRCOVER -->
-<div class="aircover-card">
-  <div style="font-size:32px;margin-bottom:8px;">🛡</div>
+<div class="aircover">
+  <div style="font-size:32px;margin-bottom:8px">🛡</div>
   <div class="ac-title">AirCover — £2.5M Host Protection</div>
-  <div class="ac-desc">Because your property will have its own individual Airbnb listing — not a shared building listing — every booking is backed by AirCover. This is Airbnb's host damage protection. Your current hotel-style shared listing may not give you full individual protection. Stayful manages all claims on your behalf.</div>
+  <div class="ac-desc">Because your property will have its own individual Airbnb listing — not a shared building listing — every booking is backed by Airbnb's full AirCover programme. Your current hotel-style group listing may not give you individual property-level protection on claims. Stayful manages all AirCover claims on your behalf.</div>
   <div class="ac-badges">
     <span class="ac-badge">£2.5M Damage Protection</span>
     <span class="ac-badge">Theft Cover</span>
@@ -630,144 +475,102 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:
 </div>
 
 <!-- COMMS -->
-<div class="section-hdr">How We Stay in Touch</div>
-<div class="touch-grid">
-  <div class="touch-card"><div class="touch-icon">💬</div><div class="touch-title">Slack Channel</div><div class="touch-desc">Dedicated channel set up at kickoff. All operations, maintenance updates, anything time-sensitive. 24-hour response Mon–Fri.</div></div>
-  <div class="touch-card"><div class="touch-icon">📅</div><div class="touch-title">Booking Calendar</div><div class="touch-desc">Real-time calendar access — see every booking, occupancy, and pricing update at any time.</div></div>
-  <div class="touch-card"><div class="touch-icon">📋</div><div class="touch-title">Monthly Statement</div><div class="touch-desc">Full reservation statement with all bookings, deductions, and payout — 1st–5th of each month.</div></div>
-  <div class="touch-card"><div class="touch-icon">📞</div><div class="touch-title">Review Calls</div><div class="touch-desc">Video call at 1 month after going live, then quarterly — performance, feedback, and forward plan.</div></div>
+<div class="sec-hdr">How We Stay in Touch</div>
+<div class="comms-grid">
+  <div class="comms-card"><div class="c-icon">💬</div><div class="c-title">Slack Channel</div><div class="c-desc">Dedicated channel set up at kickoff. Operations, maintenance, updates. 24hr response Mon–Fri.</div></div>
+  <div class="comms-card"><div class="c-icon">📅</div><div class="c-title">Booking Calendar</div><div class="c-desc">Real-time visibility of every booking, gap, and pricing decision — any time.</div></div>
+  <div class="comms-card"><div class="c-icon">📋</div><div class="c-title">Monthly Statement</div><div class="c-desc">Full reservation statement with all bookings, deductions, and payout. 1st–5th of each month.</div></div>
+  <div class="comms-card"><div class="c-icon">📞</div><div class="c-title">Review Calls</div><div class="c-desc">Video call at 1 month after going live, then quarterly. Performance, feedback, what's next.</div></div>
 </div>
 
 <!-- FAQ -->
-<div class="section-hdr">Your Questions Answered</div>
+<div class="sec-hdr">Your Questions Answered</div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>My current manager left a toilet leak unaddressed and caused £1,600 damage — wiping out an entire month. How does Stayful handle this?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    Every maintenance issue is logged immediately — whether reported by a guest or identified during changeover. Urgent items are actioned same day. Repairs up to £300 are authorised without calling you. For anything larger, I get quotes and come back to you for sign-off. I have a network of trusted contractors — not random call-outs. The situation you described — a toilet leak left unresolved long enough to cause £1,600 of damage — should simply never happen. That's an operational failure, not an acceptable risk of short-letting.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>My current manager left a toilet leak unaddressed and it caused £1,600 damage — wiping out a full month. How does Stayful handle maintenance differently?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Every maintenance issue is logged immediately when reported — by a guest, a cleaner, or during a periodic check. Urgent items are actioned same day. Repairs up to £300 are authorised and arranged without calling you. Above that, I get quotes and come to you for sign-off. I have a network of trusted contractors, not random call-outs. The situation you described — a leak left unresolved long enough to cause £1,600 of structural damage — is an operational failure that should never happen. It doesn't happen here because issues get logged and acted on the day they are raised, not left for the next visit.</div>
 </div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>My property is currently in a hotel-style group listing and my photos are being used for the whole building. How is Stayful different?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    Stayful creates and manages a unique, individual listing for your specific apartment. Your photos, your reviews, your pricing, and your listing identity are 100% yours. Your ground floor terrace, your parking, your specific outlook — all prominently featured. Reviews attach to your property. Guests specifically choose your flat, not "an apartment in Middleton Chambers." This matters enormously for long-term occupancy and pricing power. A listing with its own identity and review history commands better placement in Airbnb's algorithm.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>My photos are being used for the whole building and my reviews aren't specific to my flat. How is Stayful different?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Stayful creates an individual listing for your specific apartment — not a shared building entry. Your photos, your review history, your pricing, and your listing identity are entirely yours. Your ground floor terrace and parking are featured as headline differentiators — not buried across forty identical apartments. Guests book your flat specifically. Reviews attach to your property. Over time this builds a listing with real history and credibility, which compounds into better algorithm placement and better rates.</div>
 </div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>Stayful is London-based — how can you manage a property in Hull properly?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    The vast majority of short-let management is remote: pricing, communications, booking management, guest vetting, reporting — none of this requires physical presence. For physical requirements (cleaning, linen changes, check-in coordination), we use local vetted contractors. Our Manchester and Lincoln properties — both in this portfolio — deliver 68.7% and 64.2% occupancy without a local office. I addressed your concern about this specifically in writing before today's call. If you have specific follow-up questions on how our Hull operations work practically, I'm happy to go through them.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>Stayful is London-based — how do you actually manage a property in Hull?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">The vast majority of what makes a short-let work — pricing, guest communications, booking management, vetting, reporting, listing optimisation — is entirely remote. Physical requirements (cleaning, linen, check-in) use local vetted contractors. Our Manchester property (68.7% occupancy) and Lincoln property (64.2%) both perform well without a local office. I addressed your concern about this specifically in writing before today's call. If you have specific questions about how the Hull operation works in practice — who cleans, how check-in works, what happens if something breaks — I am happy to go through it in detail.</div>
 </div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>What is the £42/month software charge and why is it passed to owners?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    The software charge is the cost of the channel management and dynamic pricing platform (Hospitable/Pricelabs). This keeps your listing synchronised across Airbnb, Booking.com and direct booking — preventing double bookings and updating pricing automatically every day. We pass it at cost with no markup rather than absorbing it into a higher management fee. On a £30,696 gross property, it's £504/year — about 1.6% of annual revenue in exchange for automated multi-platform management and daily price optimisation.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>What is the £42/month software fee and why is it charged to owners?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">The software fee covers the channel management and dynamic pricing platform (Hospitable / Pricelabs). This is what keeps your listing synchronised across Airbnb, Booking.com, and direct booking at all times — preventing double-bookings and automatically adjusting pricing daily based on demand. It is passed at cost with no markup. On a £30,696 gross property, it is £504 per year — about 1.6% of annual revenue in exchange for automated multi-platform management and daily price optimisation. The alternative would be to absorb it into a higher base management fee and charge everyone the same regardless of whether they use multi-platform or not — we chose the more transparent route.</div>
 </div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>The Wi-Fi has already caused negative reviews and I lost a relocation client because of it. What can actually be done?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    The 4G router situation is a genuine risk that needs resolving before going live. You mentioned LSH are managing the fibre installation — that's the right fix. Before we list, I'd want confirmation that fibre is active and the speed is adequate (at least 50 Mbps for reliable guest use). If the fibre isn't ready in time, I can arrange a higher-spec 5G router as a temporary measure — it's substantially more reliable than a standard 4G device and largely eliminates the problem for guests. I would rather delay the listing going live by a week than risk a negative review in the first 14 days.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>The Wi-Fi situation has already cost me a relocation client and negative reviews. What actually changes?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">Before we go live, fibre connectivity needs to be confirmed. You mentioned LSH are managing the installation — that is the right long-term fix. I would want to see a speed test confirming at least 50 Mbps before we list. If the fibre is not ready in time, we can arrange a high-spec 5G router as a temporary measure — substantially more reliable than a standard 4G device and it largely resolves the guest experience problem. I would rather hold the listing for a week than take a negative review in the first fortnight. Getting a negative review early, especially one specifically about connectivity, is very hard to recover from algorithmically. We do not rush the go-live date.</div>
 </div>
 
-<div class="faq-item">
-  <div class="faq-q" onclick="toggleFaq(this)">
-    <span>What is the honest worst case if projections are not hit?</span>
-    <span class="faq-arrow">▼</span>
-  </div>
-  <div class="faq-a">
-    Honest answer: projections are estimates based on Hull market data, not guarantees. If occupancy tracked your current 57% rather than the 71% target, Year 2 net would be around £12,800 — roughly what Year 1 looks like. Still £6,200 per year more than long-let. The comparable in this portfolio most relevant to a worst-case scenario is 7 Beechwood Mount in Leeds — it achieved only 50.4% occupancy in 2025 and still generated £25,782 net for the owner. Hull's low competition market (average 4.7 stars, very few professionally managed units) means the floor is higher than most owners expect.
-  </div>
+<div class="faq"><div class="faq-q" onclick="tFaq(this)"><span>What is the honest worst case if the income projections are not hit?</span><span class="faq-arrow">▼</span></div>
+<div class="faq-a">If occupancy tracks your current 57% rather than the 71% target, Year 2 annual net would be around £12,800. That is still £6,200 per year more than long-let. The comparable in this portfolio most relevant to a worst-case scenario is 7 Beechwood Mount in Leeds — it achieved only 50.4% occupancy in 2025 and still generated £25,782 net for the owner. Hull has lower competition than Leeds, with an average listing rating of 4.7 stars and fewer professionally managed units — so the floor tends to be higher than leads expect. There is no scenario where switching to a properly managed individual listing produces a worse outcome than staying with a manager who has already cost you £1,600 in unrecovered damage and at least one high-value relocation client.</div>
 </div>
 
 <!-- URGENCY -->
-<div class="urgency-card">
+<div class="urgency">
   <div class="urg-title">Why June Matters</div>
-  <div class="urg-sub">Hull's peak season is June–August. Sign by 31 May and go live mid-June — catching the back half of peak season.</div>
+  <div class="urg-sub">Hull's peak season is June–August. Sign by 31 May, go live mid-June — catching the back half of peak season.</div>
   <div class="urg-stats">
     <div class="urg-stat"><div class="urg-val">£4,252</div><div class="urg-lbl">Peak 3-month net (Y2)</div></div>
-    <div class="urg-stat"><div class="urg-val">£780</div><div class="urg-lbl">Extra/month vs long-let</div></div>
+    <div class="urg-stat"><div class="urg-val">£780/mo</div><div class="urg-lbl">Extra vs long-let</div></div>
     <div class="urg-stat"><div class="urg-val">31 May</div><div class="urg-lbl">Offer expiry</div></div>
     <div class="urg-stat"><div class="urg-val">~2 wks</div><div class="urg-lbl">To live after signing</div></div>
   </div>
-  <p style="color:rgba(255,255,255,0.65);font-size:13px;margin-top:16px;">Give 1 month notice to Residential Estates/Guests now and sign with Stayful by 31 May — we can have your listing live in mid-June.</p>
+  <p style="color:rgba(255,255,255,.65);font-size:13px;margin-top:16px">Give 1-month notice to Residential Estates/Guests now and sign with Stayful by 31 May — target go-live mid-June.</p>
 </div>
 
-<!-- SETUP TIMELINE -->
-<div class="section-hdr">Your Transition Timeline</div>
+<!-- TIMELINE -->
+<div class="sec-hdr">Transition Timeline</div>
 <div class="card">
   <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot urgent"></div>
-      <div class="tl-step">Sign Management Agreement <span class="urgent-tag">URGENT — by 31 May</span></div>
+    <div class="tl-item"><div class="tl-dot urgent"></div>
+      <div class="tl-title">Sign Management Agreement <span class="urgent-tag">URGENT — by 31 May</span></div>
       <div class="tl-date">By 31 May 2026</div>
-      <div class="tl-desc">Locks in the 13% + VAT rate. 6-month initial term then rolling 3-month notice. No setup costs — property already furnished and photographed.</div>
+      <div class="tl-desc">Locks in 13% + VAT rate. 6-month initial term then rolling 3-month notice. No setup costs — property already furnished and photographed.</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-step">Give Notice to Current Manager</div>
-      <div class="tl-date">1 month notice — late May / early June</div>
-      <div class="tl-desc">1 month written notice to Residential Estates/Guests. Can run in parallel with Stayful onboarding.</div>
+    <div class="tl-item"><div class="tl-dot"></div>
+      <div class="tl-title">Give Notice to Residential Estates/Guests</div>
+      <div class="tl-date">1-month notice — late May</div>
+      <div class="tl-desc">Written 1-month notice. Runs in parallel with Stayful onboarding.</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-step">Stayful Onboarding</div>
+    <div class="tl-item"><div class="tl-dot"></div>
+      <div class="tl-title">Stayful Onboarding</div>
       <div class="tl-date">1–2 weeks</div>
-      <div class="tl-desc">Kickoff call. New listing created on Airbnb, Booking.com and direct channel. Dynamic pricing configured. Slack channel set up.</div>
+      <div class="tl-desc">Kickoff call. New individual listing built on Airbnb, Booking.com and direct channel. Pricing strategy configured. Slack channel set up.</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-step">Wi-Fi Confirmed + Key Safe Installed</div>
+    <div class="tl-item"><div class="tl-dot"></div>
+      <div class="tl-title">Confirm Wi-Fi + Install Key Safe</div>
       <div class="tl-date">Before go-live</div>
-      <div class="tl-desc">Fibre confirmed live (or 5G backup arranged). Key safe installed (~£60) for keyless guest access.</div>
+      <div class="tl-desc">Fibre confirmed live (or 5G router arranged as backup). Key safe installed (~£60).</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-step">Listing Goes Live</div>
+    <div class="tl-item"><div class="tl-dot"></div>
+      <div class="tl-title">Listing Goes Live</div>
       <div class="tl-date">Target: mid-June 2026</div>
-      <div class="tl-desc">Your individual listing live on all platforms. Dynamic pricing active. Guest communications handled from day one.</div>
+      <div class="tl-desc">Individual listing live on all platforms. Dynamic pricing active. First booking typically within 24–72 hours.</div>
     </div>
-    <div class="tl-item">
-      <div class="tl-dot muted"></div>
-      <div class="tl-step" style="color:#999;">First Booking</div>
-      <div class="tl-date" style="color:#bbb;">Within days of going live</div>
-      <div class="tl-desc" style="color:#bbb;">Hull's low competition market and new listing algorithm boost typically delivers first booking within 24–72 hours.</div>
+    <div class="tl-item"><div class="tl-dot muted"></div>
+      <div class="tl-title" style="color:#999">First Peak Season Bookings</div>
+      <div class="tl-date" style="color:#bbb">June–August 2026</div>
+      <div class="tl-desc" style="color:#bbb">Catching the back half of peak season from the off.</div>
     </div>
   </div>
 </div>
 
-<!-- DOCUMENTS -->
-<div class="section-hdr">Documents Sent After This Call</div>
+<!-- DOCS -->
+<div class="sec-hdr">Documents Sent After This Call</div>
 <div class="docs-grid">
-  <div class="doc-card"><div class="doc-icon">📊</div><div><div class="doc-title">This Action Plan</div><div class="doc-desc">Income projections, Hull demand analysis, FAQ, and transition timeline. Best viewed in Chrome.</div></div></div>
-  <div class="doc-card"><div class="doc-icon">📄</div><div><div class="doc-title">Management Agreement</div><div class="doc-desc">Stayful's standard property management agreement for your review.</div></div></div>
+  <div class="doc-card"><div class="doc-icon">📊</div><div><div class="doc-title">This Action Plan</div><div class="doc-desc">Income projections from Stayful's property analysis, demand breakdown, your questions answered, and transition timeline. Best in Chrome.</div></div></div>
+  <div class="doc-card"><div class="doc-icon">📄</div><div><div class="doc-title">Management Agreement</div><div class="doc-desc">Stayful's standard property management agreement. 6-month initial term, then rolling 3-month notice.</div></div></div>
 </div>
 
-<!-- MANAGEMENT AGREEMENT CTAs -->
-<div class="mgmt-section">
+<!-- MGMT CTA -->
+<div class="mgmt-cta">
   <div class="mgmt-title">Ready to Review the Management Agreement?</div>
-  <div class="mgmt-desc">6-month initial term, then rolling 3-month notice. No setup fees. Take your time reading it — any questions, message Zac on zac@stayful.co.uk.</div>
+  <div class="mgmt-desc">Take your time reading it. Any questions, message Zac directly on zac@stayful.co.uk.</div>
   <div class="cta-btns">
     <a class="cta-btn primary" href="https://drive.google.com/file/d/1ct_Br_7XR69s6beyFfqHSnSPoRouKkG6/view?usp=sharing" target="_blank">📄 Read Agreement</a>
     <a class="cta-btn secondary" href="https://www.loom.com/share/50756d81baf4426987cb5300ecbee951" target="_blank">▶ Watch Walkthrough Video</a>
@@ -776,63 +579,57 @@ body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:
 
 <!-- FOOTER -->
 <div class="footer">
-  <div class="logo-pill" style="margin:0 auto 12px;width:fit-content;"><img src="data:image/png;base64,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D/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYDoqKKK6hhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==" alt="Stayful" style="height:32px;"></div>
-  <p style="margin-bottom:4px;color:rgba(255,255,255,0.9);font-weight:600;">Isobel Cameron-Heslop — Hull Income Action Plan</p>
-  <p style="margin-bottom:8px;">Prepared 22 May 2026 | <a href="mailto:zac@stayful.co.uk">zac@stayful.co.uk</a> | <a href="https://stayful.co.uk">stayful.co.uk</a></p>
-  <p style="font-size:12px;">All income figures are projections based on Hull market data and are not guaranteed. Past performance of other properties does not guarantee future results for your property.</p>
+  <div class="logo-pill" style="margin:0 auto 12px;width:fit-content"><img src="data:image/png;base64,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D/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYDoqKKK6hhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==" alt="Stayful" style="height:32px"></div>
+  <p style="margin-bottom:4px;color:rgba(255,255,255,.9);font-weight:600">Isobel Cameron-Heslop — Hull Income Action Plan</p>
+  <p style="margin-bottom:8px">Prepared 22 May 2026 | <a href="mailto:zac@stayful.co.uk">zac@stayful.co.uk</a> | <a href="https://stayful.co.uk">stayful.co.uk</a></p>
+  <p style="font-size:12px">Income projections are based on Stayful's property analysis tool using Hull comparable data. All figures are estimates and not guaranteed. Past performance of other properties does not guarantee future results.</p>
+</div>
 </div>
 
-</div>
-
-<!-- VOICEOVER -->
-<button class="vo-btn" id="voBtn" onclick="toggleVo()">▶ Play Summary <span id="voProg"></span></button>
+<button class="vo-btn" id="voBtn" onclick="tVo()">▶ Play Summary</button>
 
 <script>
-function toggleFaq(el){
-  var a=el.nextElementSibling,arrow=el.querySelector('.faq-arrow'),open=a.classList.contains('open');
-  document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');});
-  document.querySelectorAll('.faq-arrow').forEach(function(x){x.classList.remove('open');});
-  if(!open){a.classList.add('open');arrow.classList.add('open');}
+function tFaq(el){
+  var a=el.nextElementSibling,ar=el.querySelector('.faq-arrow'),op=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.faq-arrow').forEach(x=>x.classList.remove('open'));
+  if(!op){a.classList.add('open');ar.classList.add('open');}
 }
 
-// LTL reference line — draw via JS after render
+// LTL reference line at correct pixel height
 window.addEventListener('load',function(){
-  var container=document.getElementById('barContainer');
-  if(!container)return;
-  var h=container.offsetHeight; // 120px
-  var ltlH=Math.round((550/1600)*h);
+  var cont=document.getElementById('barCont');
+  if(!cont)return;
   var line=document.createElement('div');
-  line.style.cssText='position:absolute;left:0;right:0;top:'+(h-ltlH)+'px;border-top:2px dashed #c0392b;pointer-events:none;';
+  line.style.cssText='position:absolute;left:0;right:0;top:92px;border-top:2px dashed #c0392b;z-index:2;pointer-events:none';
   var lbl=document.createElement('div');
-  lbl.style.cssText='position:absolute;right:4px;top:-16px;font-size:10px;color:#c0392b;font-weight:600;white-space:nowrap;';
+  lbl.style.cssText='position:absolute;right:4px;top:-16px;font-size:10px;color:#c0392b;font-weight:600;white-space:nowrap';
   lbl.textContent='LTL £550/mo';
   line.appendChild(lbl);
-  container.appendChild(line);
+  cont.appendChild(line);
 });
 
 var voText=[
   "Hi Isobel — this is your Hull property income action plan from Stayful, prepared after your call with Zac on the 22nd of May 2026.",
-  "Your income projections. In Year 1 at 80 percent of run-rate, you're looking at 24,500 pounds gross and around 12,800 net to you — that's 1,064 pounds per month on average. In Year 2 at full run-rate, 30,700 gross and 15,960 net — 1,330 per month.",
-  "Compared to long-let at 550 per month net, Stayful puts an extra 780 pounds every month in your pocket. Over a year that's over 9,000 pounds.",
-  "The key issues you raised: the toilet leak and damage situation — that is an operational failure, not acceptable. Stayful logs every maintenance issue immediately. Urgent items actioned same day. Up to 300 pounds authorised without calling you.",
-  "The individual listing issue — your property will have its own listing, your own photos, your own reviews, your terrace and parking featured prominently. Never lumped in with a building.",
-  "Wi-Fi: fibre needs to be confirmed before we go live. If it is not ready, we arrange a higher-spec 5G router. We would rather delay a week than risk a negative review in the first fortnight.",
-  "What drives demand in Hull: Hull Royal Infirmary and Castle Hill Hospital employ over 9,000 staff — year-round healthcare demand. University of Hull brings academics and parents. Siemens Gamesa offshore wind hub drives corporate and relocation bookings. Connexin Live hosts over 150 events annually. Your parking is a genuine differentiator.",
-  "Real portfolio results from 2025: 803 Eastbank Tower Manchester achieved 68.7 percent occupancy and 35,917 net. Museum Court Lincoln hit 64.2 percent and 36,288 net. Beechwood Mount Leeds achieved 50.4 percent and still generated 25,782 net — that is your realistic floor.",
-  "The offer: 13 percent plus VAT — down from 15 percent — if you sign by 31 May. That is 9 days from today. After that, standard rate applies. Sign, give notice to Residential Estates, go live mid-June catching peak season.",
-  "No next meeting is booked. You said you would think it over the long weekend and come back next week. Zac is waiting to hear from you."
+  "Your income projections. These come from Stayful's property analysis for your specific flat. In Year 1 at 80 percent of run-rate: gross £24,557, net to you £12,768 — that is £1,064 per month on average. In Year 2 at full run-rate: gross £30,696, net to you £15,960 — that is £1,330 per month. Both figures are after all platform fees, management, cleaning and operational costs.",
+  "Compared to long-let at £550 per month, Stayful puts an extra £780 every month in your pocket. Over a year that is over £9,360 more.",
+  "Your three biggest concerns from the call. The toilet leak and maintenance failures — every issue at Stayful is logged immediately and actioned same day for anything urgent. Repairs up to £300 happen without calling you. The hotel-style group listing — your property gets its own individual listing, your own reviews, your terrace and parking front and centre. And the Wi-Fi — we confirm fibre is live before we list. If it is not ready, we arrange a 5G backup.",
+  "What drives demand in Hull. Hull Royal Infirmary and Castle Hill Hospital employ over 9,000 staff — year-round healthcare bookings. The University of Hull has 14,000 students. Siemens Gamesa brings corporate contractors for multi-month stays — exactly the type of guest your current manager has already lost you. Connexin Live arena hosts over 150 events a year. And your parking is a genuine premium differentiator.",
+  "Real portfolio results. In 2025: Manchester 68.7 percent occupancy, £35,917 net. Lincoln 64.2 percent, £36,288 net. Leeds 50.4 percent and still £25,782 net — that is your realistic worst case. York 73.9 percent, £34,727 net. These are actual Airbnb data, January to December 2025.",
+  "The offer. 13 percent plus VAT — down from 15 percent — if you sign by 31 May 2026. That is 9 days from today. After that, standard rate applies. Sign, give 1-month notice to Residential Estates, and we target going live mid-June catching the back half of peak season.",
+  "No next meeting is booked. You said you would think it over the long weekend. Zac is waiting to hear from you — reply to the email or call directly."
 ];
-var voIdx=0,voOn=false;
-function toggleVo(){
-  if(voOn){window.speechSynthesis.cancel();voOn=false;document.getElementById('voBtn').innerHTML='▶ Play Summary';return;}
-  voOn=true;voIdx=0;speakVo();
+var vIdx=0,vOn=false;
+function tVo(){
+  if(vOn){window.speechSynthesis.cancel();vOn=false;document.getElementById('voBtn').innerHTML='▶ Play Summary';return;}
+  vOn=true;vIdx=0;spVo();
 }
-function speakVo(){
-  if(!voOn||voIdx>=voText.length){voOn=false;document.getElementById('voBtn').innerHTML='▶ Play Summary';return;}
-  var u=new SpeechSynthesisUtterance(voText[voIdx]);
+function spVo(){
+  if(!vOn||vIdx>=voText.length){vOn=false;document.getElementById('voBtn').innerHTML='▶ Play Summary';return;}
+  var u=new SpeechSynthesisUtterance(voText[vIdx]);
   u.rate=0.92;
-  u.onend=function(){voIdx++;speakVo();};
-  document.getElementById('voBtn').innerHTML='⏸ Pause ('+(voIdx+1)+'/'+voText.length+')';
+  u.onend=function(){vIdx++;spVo();};
+  document.getElementById('voBtn').innerHTML='⏸ Pause ('+(vIdx+1)+'/'+voText.length+')';
   window.speechSynthesis.speak(u);
 }
 </script>
