@@ -979,7 +979,7 @@
 <!-- ===== LUCY BUTTON ===== -->
 <a href="https://lucy.stayful.co.uk/" target="_blank"
   style="position:fixed;bottom:24px;left:24px;background:#5d8156;color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px">
-  💬 Speak to Lucy
+  💬 Interact with Lucy
 </a>
 
 <script>
@@ -1015,6 +1015,7 @@ function selectAnswer(sectionNum, optionKey, optionText) {
   event.target.classList.add('selected');
   responses.push('S' + sectionNum + ': ' + optionText);
   fireWebhook();
+  lucyOnAnswer(sectionNum);
   if(sectionNum < 4) {
     setTimeout(() => unlockSection(sectionNum + 1), 300);
   } else {
@@ -1039,57 +1040,150 @@ function toggleFaq(el) {
   }
 }
 
-// Voiceover
-const voiceScript = [
-  "This is Helen's personalised property action plan from Stayful, prepared after your web meeting with Zac on 27 May 2026.",
-  "Your income projections. The George Inn in Waterhouses is projected to generate £98,000 gross per year at full run rate. After all fees and costs, your owner net in Year 2 is approximately £49,000. Year 1 is a conservative 80 percent of that — around £39,000 — to account for the ramp-up period.",
-  "Your monthly breakdown. August is your strongest month at over £15,700 gross. December is also strong at nearly £10,000. The low months of January through March average around £5,000 gross each.",
-  "The break-even calculation. Every week of delay in peak season costs around £3,900 in missed August revenue. The offer deadline of 14 June gives enough time to be live before the full August peak.",
-  "What drives bookings in your area. Waterhouses is the gateway to the Peak District National Park. Dovedale — one of England's most visited gorge walks — is a 5-minute drive. The Manifold Track cycling trail starts in Waterhouses. Alton Towers is 10 miles away. And the property's unique features — the huge garden, beer garden, and car park — make it genuinely attractive for group celebrations.",
-  "Our real portfolio results. Four properties managed by Stayful in 2025: 17 Park Crescent in York earned £34,700 owner net. 803 Eastbank Tower in Manchester earned £35,900. Museum Court in Lincoln earned £36,300. These are actual Airbnb platform figures for January through December 2025.",
-  "What Stayful handles. Everything. Guest communication, cleaning and linen, dynamic pricing, maintenance up to three hundred pounds, key and access management, platform listings, photography, and monthly reporting. Your responsibilities are utilities, WiFi, council tax, a smart thermostat, and a key safe.",
-  "AirCover protection. Every booking through Airbnb carries 2.5 million pounds in damage protection. Stayful handles all claims. We also hold a 500 pound security deposit for The George given the property's value.",
-  "How you stay informed from the US. You have a dedicated Slack channel, a live booking calendar, a monthly income statement on the 1st of every month, and a quarterly review call by video.",
-  "Deadlines. The 13 percent plus VAT offer expires on 14 June 2026. This saves you around £4,000 per year versus the standard rate. The follow-up call is on Monday 1 June — please confirm a time with Zac.",
-  "Your next steps. Read the management agreement using the button in Section 4. Watch the 10-minute walkthrough video. If you're ready — sign. Any questions, reply to Zac's email or click the Speak to Lucy button at the bottom left of your screen."
-];
-let synth = window.speechSynthesis;
-let uttIdx = 0;
-let isPlaying = false;
-let paused = false;
+// ===== Lucy narration (ElevenLabs voice via /api/tts, browser-speech fallback) =====
+// Lucy introduces herself, summarises each section, then pauses at every question.
+// When an answer is selected she gives a short acknowledgement and continues.
+const ACK = "Thanks for that. Let's keep going.";
 
-function toggleVoice() {
-  if(!isPlaying && !paused) {
-    uttIdx = 0;
-    isPlaying = true;
-    playNext();
-  } else if(isPlaying) {
-    synth.pause();
-    isPlaying = false;
-    paused = true;
-    document.getElementById('voice-label').textContent = 'Resume';
-  } else {
-    synth.resume();
-    isPlaying = true;
-    paused = false;
-    document.getElementById('voice-label').textContent = 'Pause';
+const lucySteps = [
+  { kind:'say', scroll:'section1', text:
+    "Hi, I'm Lucy, and I'll be your guide through this action plan. This is Helen's personalised property plan from Stayful, prepared after your web meeting with Zac on the twenty-seventh of May 2026. I'll summarise each section as we go, and there are a few short questions along the way. When we reach one, I'll pause so you can answer, and then we'll carry on together. Let's begin with your income picture." },
+  { kind:'say', text:
+    "Your income projections. The George Inn in Waterhouses is projected to generate ninety-eight thousand pounds gross per year at full run rate. After all fees and costs, your owner net in year two is approximately forty-nine thousand pounds. Year one is a conservative eighty percent of that, around thirty-nine thousand pounds, to account for the ramp-up period." },
+  { kind:'say', text:
+    "Looking at the monthly breakdown, August is your strongest month at over fifteen thousand seven hundred pounds gross. December is also strong, at nearly ten thousand. The quieter months of January through March average around five thousand pounds gross each." },
+  { kind:'say', text:
+    "And the break-even point is worth noting. Every week of delay in peak season costs around three thousand nine hundred pounds in missed August revenue, so the offer deadline of the fourteenth of June gives enough time to be live before the full August peak." },
+  { kind:'prompt', section:1, text:
+    "That's your income picture. When you're ready, choose the answer above that best matches how these projections feel to you, and I'll continue." },
+  { kind:'wait', section:1 },
+
+  { kind:'say', text: ACK },
+  { kind:'say', scroll:'section2', text:
+    "Section two: the opportunity in the Staffordshire Moorlands. Waterhouses is the gateway to the Peak District National Park. Dovedale, one of England's most visited gorge walks, is a five-minute drive away. The Manifold Track cycling trail starts right in Waterhouses, and Alton Towers is just ten miles away. The property's own features, the huge garden, the beer garden, and the car park, make it genuinely attractive for group celebrations." },
+  { kind:'prompt', section:2, text:
+    "When you're ready, pick the option above that best describes how you feel about the remote side of things, and I'll move on." },
+  { kind:'wait', section:2 },
+
+  { kind:'say', text: ACK },
+  { kind:'say', scroll:'section3', text:
+    "Section three: how it works, and our real results. Four properties managed by Stayful in twenty twenty-five. Seventeen Park Crescent in York earned thirty-four thousand seven hundred pounds owner net. Eight oh three Eastbank Tower in Manchester earned thirty-five thousand nine hundred. And Museum Court in Lincoln earned thirty-six thousand three hundred. These are actual Airbnb platform figures for January through December twenty twenty-five." },
+  { kind:'say', text:
+    "Stayful handles everything. Guest communication, cleaning and linen, dynamic pricing, maintenance up to three hundred pounds, key and access management, platform listings, photography, and monthly reporting. Your responsibilities are simply utilities, wifi, council tax, a smart thermostat, and a key safe." },
+  { kind:'say', text:
+    "On protection: every booking through Airbnb carries two and a half million pounds in damage cover, and Stayful handles all claims. We also hold a five hundred pound security deposit for The George, given the property's value." },
+  { kind:'say', text:
+    "And to keep you informed from the US, you'll have a dedicated Slack channel, a live booking calendar, a monthly income statement on the first of every month, and a quarterly review call by video." },
+  { kind:'prompt', section:3, text:
+    "When you're ready, let me know above what matters most to you right now, and I'll carry on to your plan." },
+  { kind:'wait', section:3 },
+
+  { kind:'say', text: ACK },
+  { kind:'say', scroll:'section4', text:
+    "Section four: your plan and next steps. The thirteen percent plus VAT offer expires on the fourteenth of June twenty twenty-six, and it saves you around four thousand pounds a year versus the standard rate. Your follow-up call is on Monday the first of June, so please confirm a time with Zac." },
+  { kind:'say', text:
+    "Your next steps are simple. Read the management agreement using the button in section four, watch the ten-minute walkthrough video, and if you're ready, sign." },
+  { kind:'prompt', section:4, text:
+    "Last one. Choose the option above that best reflects where you are, and I'll wrap up." },
+  { kind:'wait', section:4 },
+
+  { kind:'say', text:
+    "That's everything from me. Thank you for taking the time to go through this with me today. If you have any questions, reply to Zac's email, or tap the Interact with Lucy button to chat with me directly. Speak soon." }
+];
+
+const lucy = { ptr:0, state:'idle', audio:null, utt:null, awaitSection:null, useFallback:false, answered:{}, prefetch:{} };
+
+function setVoiceLabel(t){ document.getElementById('voice-label').textContent = t; }
+function setVoiceProgress(t){ document.getElementById('voice-progress').textContent = t || ''; }
+
+function toggleVoice(){
+  if(lucy.state==='idle' || lucy.state==='done'){ startLucy(); return; }
+  if(lucy.state==='waiting' || lucy.state==='loading'){ return; }
+  if(lucy.state==='playing'){
+    if(lucy.useFallback){ window.speechSynthesis.pause(); }
+    else if(lucy.audio){ lucy.audio.pause(); }
+    lucy.state='paused'; setVoiceLabel('Resume'); return;
+  }
+  if(lucy.state==='paused'){
+    if(lucy.useFallback){ window.speechSynthesis.resume(); }
+    else if(lucy.audio){ lucy.audio.play(); }
+    lucy.state='playing'; setVoiceLabel('Pause'); return;
   }
 }
 
-function playNext() {
-  if(uttIdx >= voiceScript.length) {
-    isPlaying = false;
-    document.getElementById('voice-label').textContent = 'Listen';
-    document.getElementById('voice-progress').textContent = '';
+function startLucy(){
+  lucy.ptr=0; lucy.useFallback=false; lucy.answered={}; lucy.prefetch={};
+  if(window.speechSynthesis) window.speechSynthesis.cancel();
+  runStep();
+}
+
+function runStep(){
+  if(lucy.ptr >= lucySteps.length){ finishLucy(); return; }
+  const step = lucySteps[lucy.ptr];
+  if(step.kind==='wait'){
+    if(lucy.answered[step.section]){ lucy.ptr++; runStep(); return; }
+    lucy.state='waiting'; lucy.awaitSection=step.section;
+    setVoiceLabel('Answer above'); setVoiceProgress('to continue');
     return;
   }
-  const utt = new SpeechSynthesisUtterance(voiceScript[uttIdx]);
-  utt.rate = 0.95;
-  utt.pitch = 1.0;
-  document.getElementById('voice-label').textContent = 'Pause';
-  document.getElementById('voice-progress').textContent = (uttIdx+1) + ' / ' + voiceScript.length;
-  utt.onend = () => { uttIdx++; if(isPlaying) playNext(); };
-  synth.speak(utt);
+  if(step.scroll){ const el=document.getElementById(step.scroll); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  speakText(step.text);
+}
+
+function advance(){ lucy.audio=null; lucy.utt=null; lucy.ptr++; runStep(); }
+
+function speakText(text){
+  lucy.state='loading'; setVoiceLabel('Loading'); setVoiceProgress('');
+  if(lucy.useFallback){ speakFallback(text); return; }
+  const urlPromise = lucy.prefetch[lucy.ptr] || getAudioUrl(text);
+  delete lucy.prefetch[lucy.ptr];
+  urlPromise.then(url=>{
+    const a = new Audio(url);
+    lucy.audio = a;
+    a.onended = ()=>{ URL.revokeObjectURL(url); advance(); };
+    a.onerror = ()=>{ URL.revokeObjectURL(url); fallbackTo(text); };
+    a.play().then(()=>{ lucy.state='playing'; setVoiceLabel('Pause'); }).catch(()=>fallbackTo(text));
+    prefetchNext();
+  }).catch(()=>fallbackTo(text));
+}
+
+function getAudioUrl(text){
+  return fetch('/api/tts', {
+    method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({text})
+  }).then(res=>{ if(!res.ok) throw new Error('tts '+res.status); return res.blob(); })
+    .then(blob=>URL.createObjectURL(blob));
+}
+
+function prefetchNext(){
+  const next = lucySteps[lucy.ptr+1];
+  if(next && (next.kind==='say' || next.kind==='prompt') && !lucy.prefetch[lucy.ptr+1]){
+    lucy.prefetch[lucy.ptr+1] = getAudioUrl(next.text).catch(()=>null);
+  }
+}
+
+function fallbackTo(text){ lucy.useFallback=true; speakFallback(text); }
+
+function speakFallback(text){
+  if(!window.speechSynthesis){ advance(); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate=0.97; u.pitch=1.0;
+  lucy.utt=u;
+  lucy.state='playing'; setVoiceLabel('Pause');
+  u.onend=()=>advance();
+  window.speechSynthesis.speak(u);
+}
+
+function finishLucy(){
+  lucy.state='done'; setVoiceLabel('Replay'); setVoiceProgress('');
+}
+
+function lucyOnAnswer(section){
+  lucy.answered[section]=true;
+  if(lucy.state==='waiting' && lucy.awaitSection===section){
+    lucy.awaitSection=null;
+    lucy.ptr++;
+    runStep();
+  }
 }
 </script>
 </body>
