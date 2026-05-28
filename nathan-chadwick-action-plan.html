@@ -2,569 +2,989 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Nathan Chadwick — Stayful Action Plan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathan Chadwick — 375 Rossendale Road, Burnley — Action Plan</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:#1a1a1a}
-.page{max-width:860px;margin:0 auto;padding:0 0 80px}
-.hero{background:linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%);overflow:hidden}
-.hero-top{display:flex;justify-content:space-between;align-items:center;padding:18px 32px 14px}
-.logo-pill{background:white;border-radius:10px;padding:6px 12px;display:inline-flex;align-items:center}
-.logo-pill img{height:38px;display:block}
-.hero-tag{color:rgba(255,255,255,0.7);font-size:13px;font-style:italic}
-.hero-body{padding:24px 32px 0}
-.hero-prepared{color:rgba(255,255,255,0.65);font-size:13px;margin-bottom:8px}
-.hero-headline{color:white;font-size:32px;font-weight:700;line-height:1.2;margin-bottom:10px}
-.hero-subtitle{color:rgba(255,255,255,0.8);font-size:15px;margin-bottom:18px}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.pill{background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.25);padding:4px 12px;border-radius:999px;font-size:12px}
-.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.15)}
-.stat{padding:18px 24px;border-right:1px solid rgba(255,255,255,0.15)}
-.stat:last-child{border-right:none}
-.stat-label{color:rgba(255,255,255,0.6);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-.stat-value{color:white;font-size:24px;font-weight:700}
-.stat-note{color:rgba(255,255,255,0.5);font-size:11px;margin-top:2px}
-.progress-strip{background:#1a2e18;padding:14px 32px;display:flex;align-items:center;gap:0;overflow-x:auto}
-.ps-step{display:flex;align-items:center;flex-shrink:0}
-.ps-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
-.ps-dot.done{background:rgba(255,255,255,0.15);color:white}
-.ps-dot.current{background:rgba(255,255,255,0.35);color:white;box-shadow:0 0 0 3px rgba(255,255,255,0.15)}
-.ps-dot.future{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.3)}
-.ps-label{font-size:11px;margin:0 8px;white-space:nowrap}
-.ps-label.done{color:rgba(255,255,255,0.7)}
-.ps-label.current{color:white;font-weight:600}
-.ps-label.future{color:rgba(255,255,255,0.3)}
-.ps-line{width:24px;height:1px;background:rgba(255,255,255,0.15);flex-shrink:0}
-.section{padding:32px}
-.section-header{font-size:20px;font-weight:700;color:#2a3f26;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #e8e4de}
-.card{background:white;border:1px solid #e8e4de;border-radius:14px;padding:24px;margin-bottom:16px}
-.card-title{font-size:14px;font-weight:600;color:#5d8156;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
-.income-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-@media(max-width:600px){.income-grid{grid-template-columns:1fr}}
-.income-card{background:white;border:1px solid #e8e4de;border-radius:14px;padding:24px}
-.income-card.y1{border-top:4px solid #9db89a}
-.income-card.y2{border-top:4px solid #5d8156}
-.income-year{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:8px}
-.income-main{font-size:36px;font-weight:800;color:#2a3f26;margin-bottom:4px}
-.income-sub{font-size:13px;color:#666;margin-bottom:16px}
-.income-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0ede8;font-size:13px}
-.income-row:last-child{border-bottom:none;font-weight:700;color:#2a3f26}
-.ramp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
-.ramp-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:16px;text-align:center}
-.ramp-phase{font-size:11px;font-weight:700;text-transform:uppercase;color:#5d8156;margin-bottom:4px}
-.ramp-months{font-size:12px;color:#888;margin-bottom:8px}
-.ramp-net{font-size:18px;font-weight:700;color:#2a3f26;margin-bottom:6px}
-.ramp-desc{font-size:12px;color:#666;line-height:1.4}
-.chart-wrap{background:white;border:1px solid #e8e4de;border-radius:14px;padding:24px;margin-bottom:16px}
-.chart-title{font-size:14px;font-weight:600;color:#2a3f26;margin-bottom:16px}
-.chart-area{position:relative;height:200px;display:flex;align-items:flex-end;gap:3px}
-.bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:3px}
-.bar{width:100%;border-radius:3px 3px 0 0}
-.bar-amt{font-size:9px;color:#666;text-align:center;line-height:1}
-.bar-label{font-size:10px;color:#888;text-align:center}
-.ltl-line{position:absolute;left:0;right:0;border-top:2px dashed #e05a2b;pointer-events:none}
-.ltl-label{position:absolute;right:0;font-size:10px;color:#e05a2b;background:white;padding:0 4px}
-.chart-legend{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666}
-.legend-dot{width:10px;height:10px;border-radius:2px}
-.disclaimer{font-size:11px;color:#999;margin-top:8px;font-style:italic}
-.data-table{width:100%;border-collapse:collapse;font-size:13px}
-.data-table th{background:#f8f6f2;font-weight:600;color:#666;padding:8px 12px;text-align:left;border-bottom:2px solid #e8e4de;font-size:11px;text-transform:uppercase}
-.data-table td{padding:8px 12px;border-bottom:1px solid #f0ede8;color:#333}
-.comp-table{width:100%;border-collapse:collapse;font-size:13px}
-.comp-table th{padding:10px 16px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
-.comp-table th:first-child{background:#f8f6f2;color:#888}
-.comp-table th.ltl{background:#f0ede8;color:#888}
-.comp-table th.stl{background:#2a3f26;color:white}
-.comp-table td{padding:10px 16px;border-bottom:1px solid #f0ede8}
-.comp-table td:nth-child(3){background:rgba(93,129,86,.05);font-weight:600;color:#2a3f26}
-.be-card{background:white;border:1px solid #e8e4de;border-radius:14px;padding:24px;margin-bottom:16px}
-.be-months{font-size:72px;font-weight:800;color:#2a3f26;line-height:1}
-.be-label{font-size:14px;color:#666;margin-bottom:16px}
-.be-bar-bg{background:#f0ede8;border-radius:999px;height:8px;margin-bottom:16px;overflow:hidden}
-.be-bar-fill{background:linear-gradient(90deg,#5d8156,#2a3f26);height:8px;border-radius:999px;transition:width 1.5s ease}
-.drivers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
-.driver-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:16px}
-.driver-emoji{font-size:24px;margin-bottom:8px}
-.driver-name{font-size:13px;font-weight:700;color:#2a3f26;margin-bottom:6px}
-.driver-desc{font-size:12px;color:#666;line-height:1.5}
-.cs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin-bottom:12px}
-.cs-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:16px;position:relative}
-.cs-badge{position:absolute;top:12px;right:12px;background:#f0ede8;color:#888;font-size:10px;padding:2px 8px;border-radius:999px}
-.cs-prop{font-size:13px;font-weight:700;color:#2a3f26;margin-bottom:2px}
-.cs-loc{font-size:11px;color:#888;margin-bottom:10px}
-.cs-stat{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0ede8;font-size:12px}
-.cs-stat:last-child{border-bottom:none}
-.cs-stat-label{color:#888}
-.cs-stat-val{font-weight:600;color:#2a3f26}
-.cs-btn{display:block;text-align:center;background:#5d8156;color:white;text-decoration:none;border-radius:8px;padding:8px;margin-top:12px;font-size:12px;font-weight:600}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
-.service-item{background:white;border:1px solid #e8e4de;border-radius:10px;padding:12px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500}
-.service-icon{font-size:18px}
-.owner-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.owner-pill{background:#f8f6f2;border:1px solid #e8e4de;color:#666;padding:6px 14px;border-radius:999px;font-size:12px}
-.platform-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.platform-pill{background:#2a3f26;color:white;padding:5px 14px;border-radius:999px;font-size:12px;font-weight:600}
-.touch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.touch-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:16px;text-align:center}
-.touch-icon{font-size:28px;margin-bottom:8px}
-.touch-title{font-size:13px;font-weight:700;color:#2a3f26;margin-bottom:4px}
-.touch-desc{font-size:11px;color:#666;line-height:1.4}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
-@media(max-width:600px){.trust-grid{grid-template-columns:1fr}}
-.trust-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:18px;text-align:center;text-decoration:none;color:inherit}
-.trust-card:hover{border-color:#5d8156}
-.trust-icon{font-size:28px;margin-bottom:8px}
-.trust-title{font-size:14px;font-weight:700;color:#2a3f26;margin-bottom:6px}
-.trust-desc{font-size:11px;color:#666;line-height:1.4}
-.agreement-card{background:linear-gradient(135deg,#f8f6f2,#fff);border:2px solid #5d8156;border-radius:14px;padding:28px;margin-bottom:16px;text-align:center}
-.agreement-title{font-size:18px;font-weight:700;color:#2a3f26;margin-bottom:8px}
-.agreement-desc{font-size:13px;color:#666;margin-bottom:20px;line-height:1.5}
-.agreement-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:#5d8156;color:white;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px}
-.btn-secondary{background:white;color:#5d8156;border:2px solid #5d8156;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px}
-.faq-item{border:1px solid #e8e4de;border-radius:10px;margin-bottom:8px;overflow:hidden}
-.faq-q{padding:16px 20px;font-weight:600;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:white;user-select:none}
-.faq-q:hover{background:#fafaf8}
-.faq-arrow{font-size:16px;color:#5d8156;transition:transform .2s;margin-left:8px;flex-shrink:0}
-.faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:13px;color:#555;line-height:1.6;background:#fafaf8}
-.faq-a.open{max-height:400px;padding:16px 20px}
-.timeline{position:relative;padding-left:32px}
-.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:#e8e4de}
-.tl-item{position:relative;margin-bottom:20px}
-.tl-dot{position:absolute;left:-26px;width:20px;height:20px;border-radius:50%;background:#5d8156;display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700}
-.tl-content{background:white;border:1px solid #e8e4de;border-radius:10px;padding:14px 16px}
-.tl-title{font-size:13px;font-weight:700;color:#2a3f26;margin-bottom:4px}
-.tl-desc{font-size:12px;color:#666}
-.urgency-card{background:linear-gradient(135deg,#1a2e18,#2a3f26);border-radius:14px;padding:28px;color:white;margin-bottom:16px}
-.urgency-title{font-size:18px;font-weight:700;margin-bottom:16px}
-.urgency-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.urgency-stat{background:rgba(255,255,255,.08);border-radius:10px;padding:14px;text-align:center}
-.urgency-stat-val{font-size:22px;font-weight:800;color:white;margin-bottom:4px}
-.urgency-stat-label{font-size:11px;color:rgba(255,255,255,.6)}
-.docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.doc-card{background:white;border:1px solid #e8e4de;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start}
-.doc-icon{font-size:24px;flex-shrink:0}
-.doc-title{font-size:13px;font-weight:700;color:#2a3f26;margin-bottom:4px}
-.doc-desc{font-size:12px;color:#666}
-.q-block{background:white;border:2px solid #5d8156;border-radius:14px;padding:24px;margin-top:24px}
-.q-title{font-size:15px;font-weight:700;color:#2a3f26;margin-bottom:16px}
-.q-options{display:flex;flex-direction:column;gap:8px}
-.q-btn{background:#f8f6f2;border:1.5px solid #e8e4de;border-radius:10px;padding:12px 18px;font-size:14px;cursor:pointer;text-align:left;transition:all .2s;font-family:inherit}
-.q-btn:hover{border-color:#5d8156;background:#f0f5ef}
-.q-btn.selected{background:#5d8156;color:white;border-color:#5d8156}
-.q-btn:disabled{cursor:default;opacity:.7}
-.lock-overlay{text-align:center;padding:48px 24px;color:#999}
-.lock-icon{font-size:48px;margin-bottom:12px}
-.lock-msg{font-size:14px}
-.thankyou{background:linear-gradient(135deg,#2a3f26,#5d8156);color:white;border-radius:14px;padding:32px;text-align:center;margin-top:16px}
-.thankyou h3{font-size:22px;font-weight:700;margin-bottom:8px}
-.thankyou p{opacity:.85;font-size:14px;line-height:1.5}
-#vo-btn{position:fixed;bottom:24px;right:24px;background:#2a3f26;color:white;border:none;border-radius:999px;padding:12px 20px;cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:9998;font-family:inherit}
-.footer{background:#2a3f26;color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:12px;line-height:1.8}
-.warn-card{background:#fff9f0;border:1px solid #f0d5b0;border-radius:14px;padding:20px;margin-bottom:16px}
-.warn-title{font-size:14px;font-weight:700;color:#c07030;margin-bottom:10px}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0ede8; font-family: 'Segoe UI', system-ui, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+  .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 16px 80px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%); border-radius: 0 0 16px 16px; padding: 28px 32px 32px; color: white; position: relative; overflow: hidden; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .logo-pill { background: white; border-radius: 10px; padding: 6px 12px; display: inline-flex; align-items: center; }
+  .logo-pill img { height: 38px; display: block; }
+  .hero-exclusive { font-size: 13px; opacity: 0.8; text-align: right; }
+  .hero-headline { font-size: 32px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  .hero-subtitle { font-size: 14px; opacity: 0.85; margin-bottom: 18px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .pill { background: rgba(255,255,255,0.18); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
+  .hero-stat-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.5px; }
+  .hero-stat-value { font-size: 22px; font-weight: 700; margin-top: 2px; }
+  .hero-stat-sub { font-size: 12px; opacity: 0.7; }
+
+  /* PROGRESS STRIP */
+  .progress-strip { background: #1e2e1b; padding: 14px 24px; border-radius: 10px; margin: 16px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .prog-step { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .prog-dot { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+  .prog-done { background: #5d8156; color: white; }
+  .prog-current { background: rgba(93,129,86,0.4); color: white; border: 2px solid #5d8156; }
+  .prog-future { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+  .prog-label { color: rgba(255,255,255,0.7); }
+  .prog-label.current { color: white; font-weight: 600; }
+  .prog-label.done { color: rgba(255,255,255,0.5); }
+  .prog-arrow { color: rgba(255,255,255,0.3); font-size: 10px; }
+
+  /* CARDS */
+  .section { margin: 24px 0; }
+  .section-header { font-size: 20px; font-weight: 700; color: #2a3f26; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e8e4de; }
+  .card { background: white; border: 1px solid #e8e4de; border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-size: 15px; font-weight: 700; color: #2a3f26; margin-bottom: 12px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .income-card { border-left: 4px solid #5d8156; }
+  .income-card.y2 { border-left-color: #2a3f26; }
+  .income-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #f5f2ee; font-size: 14px; }
+  .income-row:last-child { border-bottom: none; }
+  .income-row .label { color: #666; }
+  .income-row .value { font-weight: 600; color: #1a1a1a; }
+  .income-row .value.green { color: #5d8156; }
+  .income-total { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 0; margin-top: 6px; border-top: 2px solid #5d8156; }
+  .income-total .label { font-weight: 700; font-size: 14px; }
+  .income-total .value { font-size: 20px; font-weight: 800; color: #2a3f26; }
+
+  /* PHASE RAMP */
+  .phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .phase-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; }
+  .phase-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #999; font-weight: 600; margin-bottom: 4px; }
+  .phase-range { font-size: 13px; color: #5d8156; font-weight: 600; margin-bottom: 6px; }
+  .phase-net { font-size: 18px; font-weight: 800; color: #2a3f26; margin-bottom: 6px; }
+  .phase-desc { font-size: 12px; color: #666; line-height: 1.4; }
+
+  /* BAR CHART */
+  .chart-wrap { overflow-x: auto; }
+  .chart-container { min-width: 600px; position: relative; }
+  .chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 200px; padding: 0 8px; }
+  .bar-col { display: flex; flex-col: column; align-items: center; flex: 1; }
+  .bar { width: 100%; border-radius: 4px 4px 0 0; position: relative; transition: opacity 0.2s; cursor: default; }
+  .bar:hover { opacity: 0.8; }
+  .bar-peak { background: #2a3f26; }
+  .bar-shoulder { background: #5d8156; }
+  .bar-low { background: #a8c4a0; }
+  .bar-label { font-size: 10px; color: #888; margin-top: 4px; text-align: center; }
+  .chart-legend { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #666; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* TABLE */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th { background: #f5f2ee; padding: 8px 12px; text-align: left; font-weight: 600; color: #444; border-bottom: 2px solid #e8e4de; }
+  .data-table td { padding: 8px 12px; border-bottom: 1px solid #f0ede8; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .season-badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .s-peak { background: #e8f0e6; color: #2a3f26; }
+  .s-shoulder { background: #edf5ec; color: #5d8156; }
+  .s-low { background: #f5f5f0; color: #888; }
+
+  /* COMPARISON */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .comp-table th { padding: 10px 14px; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #666; background: #f5f2ee; }
+  .comp-table th:last-child { background: #2a3f26; color: white; border-radius: 0 8px 0 0; }
+  .comp-table td { padding: 10px 14px; border-bottom: 1px solid #f0ede8; }
+  .comp-table tr:last-child td { border-bottom: none; background: #f8f5f0; font-weight: 700; }
+  .comp-table tr:last-child td:last-child { background: #5d8156; color: white; font-size: 16px; }
+  .win-banner { background: linear-gradient(135deg,#2a3f26,#5d8156); color: white; border-radius: 10px; padding: 16px 20px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .win-big { font-size: 24px; font-weight: 800; }
+  .win-sub { font-size: 13px; opacity: 0.85; }
+
+  /* BREAK-EVEN */
+  .breakeven-card { text-align: center; padding: 28px; }
+  .be-number { font-size: 56px; font-weight: 900; color: #5d8156; line-height: 1; }
+  .be-label { font-size: 16px; color: #444; margin: 8px 0; }
+  .be-sub { font-size: 13px; color: #888; }
+  .be-bar { background: #f0ede8; border-radius: 999px; height: 10px; margin: 16px 0; overflow: hidden; }
+  .be-fill { background: linear-gradient(90deg,#5d8156,#2a3f26); height: 100%; border-radius: 999px; }
+
+  /* DRIVERS */
+  .drivers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .driver-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; }
+  .driver-icon { font-size: 24px; margin-bottom: 8px; }
+  .driver-name { font-size: 13px; font-weight: 700; color: #2a3f26; margin-bottom: 4px; }
+  .driver-desc { font-size: 12px; color: #666; line-height: 1.4; }
+
+  /* CASE STUDIES */
+  .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; }
+  .cs-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; }
+  .cs-badge { font-size: 10px; font-weight: 700; background: #e8f0e6; color: #2a3f26; border-radius: 999px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; }
+  .cs-location { font-size: 13px; font-weight: 700; color: #2a3f26; margin-bottom: 2px; }
+  .cs-city { font-size: 12px; color: #888; margin-bottom: 10px; }
+  .cs-stat-row { display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0; border-bottom: 1px solid #f5f2ee; }
+  .cs-stat-row:last-of-type { border-bottom: none; }
+  .cs-stat-label { color: #888; }
+  .cs-stat-val { font-weight: 600; }
+  .cs-btn { display: block; text-align: center; background: #5d8156; color: white; border-radius: 8px; padding: 8px; font-size: 12px; font-weight: 600; text-decoration: none; margin-top: 10px; }
+  .cs-disclaimer { font-size: 11px; color: #aaa; margin-top: 12px; font-style: italic; }
+
+  /* SERVICES */
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; }
+  .service-item { display: flex; align-items: flex-start; gap: 10px; background: white; border: 1px solid #e8e4de; border-radius: 10px; padding: 12px; }
+  .service-icon { font-size: 20px; flex-shrink: 0; }
+  .service-text { font-size: 13px; }
+  .service-name { font-weight: 600; color: #2a3f26; margin-bottom: 2px; }
+  .service-desc { font-size: 11px; color: #888; }
+  .owner-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .owner-pill { background: #f5f2ee; border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #444; }
+  .platform-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .platform-pill { background: #2a3f26; color: white; border-radius: 8px; padding: 6px 14px; font-size: 12px; font-weight: 600; }
+
+  /* TRUST LINKS */
+  .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .trust-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 18px; text-align: center; text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+  .trust-card:hover { border-color: #5d8156; box-shadow: 0 2px 12px rgba(93,129,86,0.15); }
+  .trust-icon { font-size: 28px; margin-bottom: 8px; }
+  .trust-name { font-size: 14px; font-weight: 700; color: #2a3f26; margin-bottom: 4px; }
+  .trust-desc { font-size: 12px; color: #888; line-height: 1.4; }
+
+  /* AIRCOVER */
+  .aircover-card { background: linear-gradient(135deg,#1e2e1b,#2a3f26); color: white; border-radius: 14px; padding: 24px; }
+  .aircover-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .aircover-sub { font-size: 13px; opacity: 0.7; margin-bottom: 16px; }
+  .aircover-items { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 10px; }
+  .aircover-item { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 12px; font-size: 12px; }
+  .aircover-item-title { font-weight: 700; margin-bottom: 2px; }
+  .aircover-item-desc { opacity: 0.75; font-size: 11px; }
+
+  /* COMMS */
+  .comms-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 12px; }
+  .comms-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; text-align: center; }
+  .comms-icon { font-size: 28px; margin-bottom: 8px; }
+  .comms-name { font-size: 13px; font-weight: 700; color: #2a3f26; margin-bottom: 4px; }
+  .comms-desc { font-size: 12px; color: #888; }
+
+  /* FAQ */
+  .faq-item { background: white; border: 1px solid #e8e4de; border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+  .faq-q { padding: 14px 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #2a3f26; user-select: none; }
+  .faq-q:hover { background: #fafaf8; }
+  .faq-arrow { font-size: 12px; transition: transform 0.2s; color: #5d8156; }
+  .faq-a { padding: 0 18px 14px; font-size: 13px; color: #444; line-height: 1.6; display: none; }
+
+  /* TIMELINE */
+  .timeline { position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 2px; background: #e8e4de; }
+  .tl-step { display: flex; gap: 16px; margin-bottom: 20px; position: relative; }
+  .tl-dot { width: 36px; height: 36px; border-radius: 50%; background: #5d8156; color: white; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+  .tl-dot.muted { background: #d0d0c8; color: #999; }
+  .tl-content { padding-top: 6px; }
+  .tl-title { font-weight: 700; font-size: 14px; color: #2a3f26; margin-bottom: 2px; }
+  .tl-desc { font-size: 13px; color: #666; }
+
+  /* DOCS CARD */
+  .docs-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; }
+  .doc-card { background: white; border: 1px solid #e8e4de; border-radius: 12px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; }
+  .doc-icon { font-size: 24px; flex-shrink: 0; }
+  .doc-title { font-weight: 700; font-size: 13px; color: #2a3f26; margin-bottom: 2px; }
+  .doc-desc { font-size: 12px; color: #888; }
+
+  /* MANAGEMENT AGREEMENT */
+  .agreement-card { background: linear-gradient(135deg,#f8f5f0,#fff); border: 2px solid #5d8156; border-radius: 14px; padding: 24px; }
+  .agreement-title { font-size: 18px; font-weight: 700; color: #2a3f26; margin-bottom: 6px; }
+  .agreement-desc { font-size: 14px; color: #555; margin-bottom: 18px; line-height: 1.5; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: #2a3f26; color: white; border-radius: 10px; padding: 12px 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; }
+  .btn-secondary { background: white; color: #2a3f26; border: 2px solid #5d8156; border-radius: 10px; padding: 12px 20px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-block; }
+
+  /* QUESTION BLOCKS */
+  .question-block { background: white; border: 2px solid #5d8156; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+  .question-text { font-weight: 700; font-size: 15px; color: #2a3f26; margin-bottom: 14px; }
+  .q-options { display: flex; flex-direction: column; gap: 8px; }
+  .q-btn { background: #f5f2ee; border: 2px solid transparent; border-radius: 10px; padding: 12px 16px; font-size: 14px; cursor: pointer; text-align: left; transition: all 0.15s; font-family: inherit; color: #2a3f26; }
+  .q-btn:hover { border-color: #5d8156; background: #edf5ec; }
+  .q-btn.selected { background: #5d8156; color: white; border-color: #5d8156; }
+
+  /* LOCK OVERLAY */
+  .locked { display: none; position: relative; }
+  .lock-overlay { background: #f0ede8; border: 2px dashed #c8c4be; border-radius: 14px; padding: 40px; text-align: center; color: #999; margin: 16px 0; }
+  .lock-icon { font-size: 32px; margin-bottom: 8px; }
+  .lock-text { font-size: 14px; }
+
+  /* THANKYOU */
+  .thankyou { background: linear-gradient(135deg,#2a3f26,#5d8156); color: white; border-radius: 14px; padding: 28px; text-align: center; display: none; }
+  .ty-icon { font-size: 40px; margin-bottom: 8px; }
+  .ty-title { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .ty-text { font-size: 14px; opacity: 0.85; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 32px 16px; font-size: 12px; color: #999; }
+  .footer a { color: #5d8156; }
+
+  /* VOICEOVER */
+  #voice-btn { position: fixed; bottom: 24px; right: 24px; background: #2a3f26; color: white; border: none; border-radius: 999px; padding: 12px 18px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9998; display: flex; align-items: center; gap: 8px; font-family: inherit; }
+  #voice-progress { font-size: 12px; opacity: 0.7; }
+
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: repeat(3,1fr); }
+    .hero-headline { font-size: 22px; }
+  }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="page-wrapper">
+
+<!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-top">
     <div class="logo-pill"><img src="data:image/png;base64,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D/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYDoqKKK6hhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==" alt="Stayful"></div>
-    <span class="hero-tag">Prepared exclusively for Nathan Chadwick</span>
+    <div class="hero-exclusive">Prepared exclusively for Nathan</div>
   </div>
-  <div class="hero-body">
-    <div class="hero-prepared">Personalised income plan from your call on 28 May 2026</div>
-    <div class="hero-headline">375 Rossendale Road, Burnley BB11 5HP</div>
-    <div class="hero-subtitle">3-bed property — income analysis, demand drivers, and your next steps in one place</div>
-    <div class="pills">
-      <span class="pill">📍 Burnley, Lancashire</span>
-      <span class="pill">🛏 3 Bedrooms</span>
-      <span class="pill">🏠 Terraced House</span>
-      <span class="pill">🏗 New Acquisition</span>
-      <span class="pill">📅 28 May 2026</span>
-    </div>
+  <div class="hero-headline">375 Rossendale Road, Burnley</div>
+  <div class="hero-subtitle">Your personalised short-let income analysis — based on our call on 28 May 2026. What's achievable, how it compares to long-let, and what happens next.</div>
+  <div class="pills">
+    <span class="pill">📍 Burnley, BB11 5HP</span>
+    <span class="pill">🛏️ 3 Bedrooms</span>
+    <span class="pill">🏠 House</span>
+    <span class="pill">💼 Existing STL Portfolio</span>
+    <span class="pill">📅 28 May 2026</span>
   </div>
-  <div class="stat-grid">
-    <div class="stat">
-      <div class="stat-label">Year 1 Net (Conservative)</div>
-      <div class="stat-value">£6,662</div>
-      <div class="stat-note">£555/month average</div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-label">Year 1 Net</div>
+      <div class="hero-stat-value">£10,394</div>
+      <div class="hero-stat-sub">£866/month avg</div>
     </div>
-    <div class="stat">
-      <div class="stat-label">Year 2+ Net (Full Run Rate)</div>
-      <div class="stat-value">£8,327</div>
-      <div class="stat-note">£694/month average</div>
+    <div>
+      <div class="hero-stat-label">Year 2 Net</div>
+      <div class="hero-stat-value">£12,993</div>
+      <div class="hero-stat-sub">£1,082/month avg</div>
     </div>
-    <div class="stat">
-      <div class="stat-label">Gross Revenue Uplift vs LTL</div>
-      <div class="stat-value">+10%</div>
-      <div class="stat-note">STL gross vs £16,200 LTL est.</div>
+    <div>
+      <div class="hero-stat-label">vs Realistic LTL</div>
+      <div class="hero-stat-value">+56%</div>
+      <div class="hero-stat-sub">+£4,666/yr vs LTL</div>
     </div>
   </div>
 </div>
+
+<!-- PROGRESS STRIP -->
 <div class="progress-strip">
-  <div class="ps-step"><div class="ps-dot done">✓</div><span class="ps-label done">Enquiry</span></div>
-  <div class="ps-line"></div>
-  <div class="ps-step"><div class="ps-dot done">✓</div><span class="ps-label done">Web Meeting</span></div>
-  <div class="ps-line"></div>
-  <div class="ps-step"><div class="ps-dot current">→</div><span class="ps-label current">Documents Sent</span></div>
-  <div class="ps-line"></div>
-  <div class="ps-step"><div class="ps-dot future">·</div><span class="ps-label future">Agreement</span></div>
-  <div class="ps-line"></div>
-  <div class="ps-step"><div class="ps-dot future">·</div><span class="ps-label future">Setup</span></div>
-  <div class="ps-line"></div>
-  <div class="ps-step"><div class="ps-dot future">·</div><span class="ps-label future">Live</span></div>
+  <div class="prog-step">
+    <div class="prog-dot prog-done">✓</div>
+    <span class="prog-label done">Enquiry</span>
+  </div>
+  <span class="prog-arrow">›</span>
+  <div class="prog-step">
+    <div class="prog-dot prog-done">✓</div>
+    <span class="prog-label done">Web Meeting</span>
+  </div>
+  <span class="prog-arrow">›</span>
+  <div class="prog-step">
+    <div class="prog-dot prog-current">→</div>
+    <span class="prog-label current">Documents Sent</span>
+  </div>
+  <span class="prog-arrow">›</span>
+  <div class="prog-step">
+    <div class="prog-dot prog-future">4</div>
+    <span class="prog-label">Agreement</span>
+  </div>
+  <span class="prog-arrow">›</span>
+  <div class="prog-step">
+    <div class="prog-dot prog-future">5</div>
+    <span class="prog-label">Setup</span>
+  </div>
+  <span class="prog-arrow">›</span>
+  <div class="prog-step">
+    <div class="prog-dot prog-future">6</div>
+    <span class="prog-label">Live</span>
+  </div>
 </div>
-<div id="section1" class="section">
-  <div class="section-header">📊 Your Income Picture</div>
-  <div class="income-grid">
-    <div class="income-card y1">
-      <div class="income-year">Year 1 — Conservative (80% of projection)</div>
-      <div class="income-main">£6,662</div>
-      <div class="income-sub">Net to you after all fees and costs</div>
-      <div class="income-row"><span>Gross revenue</span><span>£14,234</span></div>
-      <div class="income-row"><span>Platform, management &amp; ops</span><span>-£7,572</span></div>
-      <div class="income-row"><span>Monthly average net</span><span>£555</span></div>
+
+<!-- ===== SECTION 1: INCOME PICTURE ===== -->
+<div class="section" id="section1">
+  <div class="section-header">📊 Section 1 — Your Income Picture</div>
+
+  <div class="two-col">
+    <!-- Y1 Card -->
+    <div class="card income-card">
+      <div class="card-title">Year 1 — Conservative Ramp</div>
+      <div style="font-size:11px;color:#5d8156;margin-bottom:12px;">New listing building reviews — 80% of full run rate</div>
+      <div class="income-row"><span class="label">Annual Gross Revenue</span><span class="value">£14,234</span></div>
+      <div class="income-row"><span class="label">Platform &amp; Management Fees</span><span class="value">~£3,840</span></div>
+      <div class="income-row"><span class="label">Software &amp; Operational</span><span class="value">~£504</span></div>
+      <div class="income-row"><span class="label">Cleaning &amp; Linen</span><span class="value">Collected from guests</span></div>
+      <div class="income-total"><span class="label">Net to Owner</span><span class="value">£10,394</span></div>
+      <div style="margin-top:10px;font-size:12px;color:#888;background:#f8f5f0;border-radius:8px;padding:10px;">
+        Monthly average: <strong>£866</strong> — covers most months above realistic LTL net (£694/month)
+      </div>
     </div>
-    <div class="income-card y2">
-      <div class="income-year">Year 2+ — Full Run Rate</div>
-      <div class="income-main">£8,327</div>
-      <div class="income-sub">Net to you after all fees and costs</div>
-      <div class="income-row"><span>Gross revenue</span><span>£17,793</span></div>
-      <div class="income-row"><span>Platform, management &amp; ops</span><span>-£9,466</span></div>
-      <div class="income-row"><span>Monthly average net</span><span>£694</span></div>
+    <!-- Y2 Card -->
+    <div class="card income-card y2">
+      <div class="card-title">Year 2+ — Full Run Rate</div>
+      <div style="font-size:11px;color:#2a3f26;margin-bottom:12px;">Established listing with reviews — full pricing power</div>
+      <div class="income-row"><span class="label">Annual Gross Revenue</span><span class="value">£17,793</span></div>
+      <div class="income-row"><span class="label">Platform &amp; Management Fees</span><span class="value">~£4,800</span></div>
+      <div class="income-row"><span class="label">Software &amp; Operational</span><span class="value">~£504</span></div>
+      <div class="income-row"><span class="label">Cleaning &amp; Linen</span><span class="value">Collected from guests</span></div>
+      <div class="income-total"><span class="label">Net to Owner</span><span class="value">£12,993</span></div>
+      <div style="margin-top:10px;font-size:12px;color:#888;background:#f8f5f0;border-radius:8px;padding:10px;">
+        Monthly average: <strong>£1,082</strong> — approaching your monthly cost threshold
+      </div>
     </div>
   </div>
+
+  <!-- Phase Ramp -->
   <div class="card">
     <div class="card-title">Year 1 Ramp Trajectory</div>
-    <div class="ramp-grid">
-      <div class="ramp-card"><div class="ramp-phase">Phase 1</div><div class="ramp-months">Months 1–3</div><div class="ramp-net">£336–£450/mo</div><div class="ramp-desc">Listing live, reviews building. Conservative pricing to secure first bookings and build algorithm ranking.</div></div>
-      <div class="ramp-card"><div class="ramp-phase">Phase 2</div><div class="ramp-months">Months 4–8</div><div class="ramp-net">£600–£752/mo</div><div class="ramp-desc">Reviews accumulating, pricing confidence growing through spring and peak summer.</div></div>
-      <div class="ramp-card"><div class="ramp-phase">Phase 3</div><div class="ramp-months">Months 9–12</div><div class="ramp-net">£562–£676/mo</div><div class="ramp-desc">Established listing, strong review history, full dynamic pricing applied year-round.</div></div>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-range">Months 1–3</div>
+        <div class="phase-net">£762–£784/mo net</div>
+        <div class="phase-desc">New listing, building initial reviews and ranking. Pricing set conservatively to attract first bookings.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-range">Months 4–8</div>
+        <div class="phase-net">£840–£1,120/mo net</div>
+        <div class="phase-desc">Spring–summer peak. Reviews accumulating, pricing unlocked. Strong occupancy begins.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase 3</div>
+        <div class="phase-range">Months 9–12</div>
+        <div class="phase-net">£751–£880/mo net</div>
+        <div class="phase-desc">Autumn/winter. Established listing with reviews handles shoulder season better than a new one.</div>
+      </div>
     </div>
-    <p style="font-size:12px;color:#999;font-style:italic">Year 1 ramp is normal — reviews and algorithm ranking build over time. This is already reflected in the conservative Year 1 figure above.</p>
   </div>
-  <div class="chart-wrap">
-    <div class="chart-title">Monthly Net Income — Year 2 Projection (£)</div>
-    <div class="chart-area">
-      <div class="bar-col"><div class="bar-amt">£420</div><div class="bar" style="height:89px;background:#9db89a;"></div><div class="bar-label">Jan</div></div><div class="bar-col"><div class="bar-amt">£445</div><div class="bar" style="height:95px;background:#9db89a;"></div><div class="bar-label">Feb</div></div><div class="bar-col"><div class="bar-amt">£562</div><div class="bar" style="height:120px;background:#5d8156;"></div><div class="bar-label">Mar</div></div><div class="bar-col"><div class="bar-amt">£750</div><div class="bar" style="height:160px;background:#5d8156;"></div><div class="bar-label">Apr</div></div><div class="bar-col"><div class="bar-amt">£845</div><div class="bar" style="height:180px;background:#2a3f26;"></div><div class="bar-label">May</div></div><div class="bar-col"><div class="bar-amt">£893</div><div class="bar" style="height:190px;background:#2a3f26;"></div><div class="bar-label">Jun</div></div><div class="bar-col"><div class="bar-amt">£940</div><div class="bar" style="height:200px;background:#2a3f26;"></div><div class="bar-label">Jul</div></div><div class="bar-col"><div class="bar-amt">£940</div><div class="bar" style="height:200px;background:#2a3f26;"></div><div class="bar-label">Aug</div></div><div class="bar-col"><div class="bar-amt">£845</div><div class="bar" style="height:180px;background:#5d8156;"></div><div class="bar-label">Sep</div></div><div class="bar-col"><div class="bar-amt">£703</div><div class="bar" style="height:150px;background:#5d8156;"></div><div class="bar-label">Oct</div></div><div class="bar-col"><div class="bar-amt">£420</div><div class="bar" style="height:89px;background:#9db89a;"></div><div class="bar-label">Nov</div></div><div class="bar-col"><div class="bar-amt">£564</div><div class="bar" style="height:120px;background:#9db89a;"></div><div class="bar-label">Dec</div></div>
-      <div class="ltl-line" style="bottom:277px"><span class="ltl-label">LTL £1,300/mo</span></div>
+
+  <!-- Bar Chart -->
+  <div class="card">
+    <div class="card-title">Monthly Net Income — Year 1 &amp; Year 2</div>
+    <div class="chart-wrap">
+      <div class="chart-container">
+        <div class="chart-bars" id="chart-bars" style="position:relative;">
+          <!-- Bars will be rendered inline with calculated px heights -->
+          <!-- Jan -->
+          <div class="bar-col"><div class="bar bar-low" style="height:136px;" title="Y2 Jan: £952 | Y1: £762"></div><div class="bar-label">Jan</div></div>
+          <div class="bar-col"><div class="bar bar-low" style="height:136px;" title="Y2 Feb: £952 | Y1: £762"></div><div class="bar-label">Feb</div></div>
+          <div class="bar-col"><div class="bar bar-low" style="height:140px;" title="Y2 Mar: £980 | Y1: £784"></div><div class="bar-label">Mar</div></div>
+          <div class="bar-col"><div class="bar bar-shoulder" style="height:150px;" title="Y2 Apr: £1,050 | Y1: £840"></div><div class="bar-label">Apr</div></div>
+          <div class="bar-col"><div class="bar bar-shoulder" style="height:157px;" title="Y2 May: £1,100 | Y1: £880"></div><div class="bar-label">May</div></div>
+          <div class="bar-col"><div class="bar bar-peak" style="height:171px;" title="Y2 Jun: £1,200 | Y1: £960"></div><div class="bar-label">Jun</div></div>
+          <div class="bar-col"><div class="bar bar-peak" style="height:193px;" title="Y2 Jul: £1,350 | Y1: £1,080"></div><div class="bar-label">Jul</div></div>
+          <div class="bar-col"><div class="bar bar-peak" style="height:200px;" title="Y2 Aug: £1,400 | Y1: £1,120"></div><div class="bar-label">Aug</div></div>
+          <div class="bar-col"><div class="bar bar-shoulder" style="height:157px;" title="Y2 Sep: £1,100 | Y1: £880"></div><div class="bar-label">Sep</div></div>
+          <div class="bar-col"><div class="bar bar-shoulder" style="height:143px;" title="Y2 Oct: £1,000 | Y1: £800"></div><div class="bar-label">Oct</div></div>
+          <div class="bar-col"><div class="bar bar-low" style="height:139px;" title="Y2 Nov: £970 | Y1: £776"></div><div class="bar-label">Nov</div></div>
+          <div class="bar-col"><div class="bar bar-low" style="height:134px;" title="Y2 Dec: £939 | Y1: £751"></div><div class="bar-label">Dec</div></div>
+        </div>
+        <div id="ltl-line-container" style="position:relative;height:0;"></div>
+      </div>
     </div>
     <div class="chart-legend">
-      <div class="legend-item"><div class="legend-dot" style="background:#2a3f26"></div>Peak</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#5d8156"></div>Shoulder</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#9db89a"></div>Low Season</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#e05a2b"></div>Long-let reference</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2a3f26"></div>Peak (Jun–Aug)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#5d8156"></div>Shoulder (Apr–May, Sep–Oct)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#a8c4a0"></div>Low (Jan–Mar, Nov–Dec)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e0a020;border:1px dashed #e0a020"></div>LTL Comparable (£694/mo)</div>
     </div>
-    <p class="disclaimer">Monthly projections based on property analysis. Income is not guaranteed.</p>
+    <div style="margin-top:4px;font-size:11px;color:#aaa;">Bars show Year 2 net. Hover for values. LTL line shows realistic comparable long-let net.</div>
   </div>
+
+  <!-- 12-month Table -->
   <div class="card">
-    <div class="card-title">Full 12-Month Breakdown</div>
-    <div style="overflow-x:auto">
+    <div class="card-title">12-Month Breakdown</div>
+    <div style="overflow-x:auto;">
       <table class="data-table">
-        <thead><tr><th>Month</th><th>Y1 Gross</th><th>Y1 Net</th><th>Y2 Gross</th><th>Y2 Net</th><th>Avg Rate</th><th>Season</th></tr></thead>
-        <tbody><tr><td>January</td><td>£720</td><td>£336</td><td>£900</td><td>£420</td><td>~£90</td><td><span style="background:#9db89a;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Low</span></td></tr><tr><td>February</td><td>£760</td><td>£356</td><td>£950</td><td>£445</td><td>~£90</td><td><span style="background:#9db89a;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Low</span></td></tr><tr><td>March</td><td>£960</td><td>£450</td><td>£1,200</td><td>£562</td><td>~£90</td><td><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Shoulder</span></td></tr><tr><td>April</td><td>£1,280</td><td>£600</td><td>£1,600</td><td>£750</td><td>~£90</td><td><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Shoulder</span></td></tr><tr><td>May</td><td>£1,440</td><td>£676</td><td>£1,800</td><td>£845</td><td>~£90</td><td><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Peak</span></td></tr><tr><td>June</td><td>£1,520</td><td>£714</td><td>£1,900</td><td>£893</td><td>~£90</td><td><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Peak</span></td></tr><tr><td>July</td><td>£1,600</td><td>£752</td><td>£2,000</td><td>£940</td><td>~£90</td><td><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Peak</span></td></tr><tr><td>August</td><td>£1,600</td><td>£752</td><td>£2,000</td><td>£940</td><td>~£90</td><td><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Peak</span></td></tr><tr><td>September</td><td>£1,440</td><td>£676</td><td>£1,800</td><td>£845</td><td>~£90</td><td><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Shoulder</span></td></tr><tr><td>October</td><td>£1,200</td><td>£562</td><td>£1,500</td><td>£703</td><td>~£90</td><td><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Shoulder</span></td></tr><tr><td>November</td><td>£720</td><td>£336</td><td>£900</td><td>£420</td><td>~£90</td><td><span style="background:#9db89a;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Low</span></td></tr><tr><td>December</td><td>£994</td><td>£451</td><td>£1,243</td><td>£564</td><td>~£90</td><td><span style="background:#9db89a;color:white;padding:2px 8px;border-radius:999px;font-size:11px;">Low</span></td></tr></tbody>
+        <thead>
+          <tr>
+            <th>Month</th><th>Y1 Gross</th><th>Y1 Net</th><th>Y2 Gross</th><th>Y2 Net</th><th>Season</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>January</td><td>£1,043</td><td>£762</td><td>£1,304</td><td>£952</td><td><span class="season-badge s-low">Low</span></td></tr>
+          <tr><td>February</td><td>£1,043</td><td>£762</td><td>£1,304</td><td>£952</td><td><span class="season-badge s-low">Low</span></td></tr>
+          <tr><td>March</td><td>£1,074</td><td>£784</td><td>£1,342</td><td>£980</td><td><span class="season-badge s-low">Low</span></td></tr>
+          <tr><td>April</td><td>£1,150</td><td>£840</td><td>£1,438</td><td>£1,050</td><td><span class="season-badge s-shoulder">Shoulder</span></td></tr>
+          <tr><td>May</td><td>£1,206</td><td>£880</td><td>£1,507</td><td>£1,100</td><td><span class="season-badge s-shoulder">Shoulder</span></td></tr>
+          <tr><td>June</td><td>£1,315</td><td>£960</td><td>£1,644</td><td>£1,200</td><td><span class="season-badge s-peak">Peak</span></td></tr>
+          <tr><td>July</td><td>£1,479</td><td>£1,080</td><td>£1,849</td><td>£1,350</td><td><span class="season-badge s-peak">Peak</span></td></tr>
+          <tr><td>August</td><td>£1,534</td><td>£1,120</td><td>£1,918</td><td>£1,400</td><td><span class="season-badge s-peak">Peak</span></td></tr>
+          <tr><td>September</td><td>£1,206</td><td>£880</td><td>£1,507</td><td>£1,100</td><td><span class="season-badge s-shoulder">Shoulder</span></td></tr>
+          <tr><td>October</td><td>£1,096</td><td>£800</td><td>£1,370</td><td>£1,000</td><td><span class="season-badge s-shoulder">Shoulder</span></td></tr>
+          <tr><td>November</td><td>£1,063</td><td>£776</td><td>£1,329</td><td>£970</td><td><span class="season-badge s-low">Low</span></td></tr>
+          <tr><td>December</td><td>£1,029</td><td>£751</td><td>£1,286</td><td>£939</td><td><span class="season-badge s-low">Low</span></td></tr>
+          <tr style="font-weight:700;background:#f8f5f0;">
+            <td><strong>Annual Total</strong></td><td><strong>£14,238</strong></td><td><strong>£10,394</strong></td><td><strong>£17,793</strong></td><td><strong>£12,993</strong></td><td></td>
+          </tr>
+        </tbody>
       </table>
     </div>
-    <p class="disclaimer" style="margin-top:8px">Projections only — not guaranteed.</p>
+    <div style="font-size:11px;color:#aaa;margin-top:8px;font-style:italic;">Projections based on Stayful property analysis. Past performance does not guarantee future results. Monthly figures are estimates based on seasonal demand patterns for the Burnley market.</div>
   </div>
-  <div class="q-block">
-    <div class="q-title">How do these income projections compare to what you were expecting?</div>
-    <div class="q-options" id="q1-options">
-      <button class="q-btn" onclick="answerQ(1,'A','Higher than I thought')">Higher than I thought</button>
-      <button class="q-btn" onclick="answerQ(1,'B','About what I expected')">About what I expected</button>
-      <button class="q-btn" onclick="answerQ(1,'C','I\'m not sure they\'re achievable')">I'm not sure they're achievable</button>
+
+  <!-- S1 Question -->
+  <div class="question-block" id="q1-block">
+    <div class="question-text">How do these income projections compare to what you were expecting?</div>
+    <div class="q-options">
+      <button class="q-btn" onclick="answerQ(1,'Higher than I thought')">A — Higher than I thought</button>
+      <button class="q-btn" onclick="answerQ(1,'About what I expected')">B — About what I expected</button>
+      <button class="q-btn" onclick="answerQ(1,'I'm not sure they're achievable')">C — I'm not sure they're achievable</button>
     </div>
   </div>
 </div>
-<div id="section2" style="display:none">
-  <div class="section">
-    <div class="section-header">⚖️ The Opportunity</div>
-    <div class="card">
-      <div class="card-title">Short-Let vs Long-Let — Side by Side</div>
-      <div style="overflow-x:auto">
-        <table class="comp-table">
-          <thead><tr><th></th><th class="ltl">Long-Let (Agent)</th><th class="stl">Short-Let (Stayful)</th></tr></thead>
-          <tbody>
-            <tr><td>Annual gross income</td><td>£16,200</td><td>£17,793</td></tr>
-            <tr><td>Management / agent fees</td><td>-£1,620 (10%)</td><td>Included in net figure</td></tr>
-            <tr><td>Cleaning &amp; linen</td><td>£0 (tenant pays)</td><td>Collected from guests</td></tr>
-            <tr><td>Void periods</td><td>-£1,620 est. (1 month)</td><td>Dynamic pricing reduces voids</td></tr>
-            <tr><td><strong>Net to owner (est.)</strong></td><td><strong>£14,580</strong></td><td><strong>£8,327</strong></td></tr>
-          </tbody>
-        </table>
+
+<!-- ===== SECTION 2: THE OPPORTUNITY ===== -->
+<div class="section locked" id="section2">
+  <div class="section-header">⚖️ Section 2 — The Opportunity</div>
+
+  <!-- STL vs LTL Comparison -->
+  <div class="card">
+    <div class="card-title">Short-Let vs Long-Let — The Honest Comparison</div>
+    <div style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr><th>Item</th><th>Long-Let (Agent)</th><th style="color:white;background:#2a3f26;">Short-Let (Stayful)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Annual Gross Revenue</td><td>£8,327</td><td style="background:#f8fff5;font-weight:600;">£17,793</td></tr>
+          <tr><td>Agent / Management Fee</td><td>£833 (10%)</td><td style="background:#f8fff5;">Included in net calc</td></tr>
+          <tr><td>Void Periods</td><td>~£700 est.</td><td style="background:#f8fff5;">Priced into occupancy</td></tr>
+          <tr><td>Cleaning &amp; Linen</td><td>Not applicable</td><td style="background:#f8fff5;">Collected from guests</td></tr>
+          <tr><td>Annual Net to Owner</td><td>£7,494</td><td style="background:#5d8156;color:white;font-weight:700;">£12,993</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="win-banner">
+      <div>
+        <div class="win-big">+£5,499/year</div>
+        <div class="win-sub">Short-let advantage over realistic long-let — based on actual Burnley rental market comparable</div>
       </div>
-      <p style="font-size:11px;color:#999;margin-top:8px;font-style:italic">Estimates only. LTL costs assume 1-month void and 10% letting agent fee. Not financial advice.</p>
-    </div>
-    <div class="warn-card">
-      <div class="warn-title">⚠️ Honest Assessment for This Property</div>
-      <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:10px">For Rossendale Road, STL net (£8,327/yr) and long-let net (~£14,580/yr) are relatively close. STL gross is higher, but after management costs the gap narrows.</p>
-      <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:8px">The real case for STL here:</p>
-      <ul style="font-size:14px;color:#555;line-height:1.8;padding-left:20px">
-        <li><strong>Flexibility</strong> — block personal use, adjust availability, 3-month exit after initial term</li>
-        <li><strong>Guest quality control</strong> — Stayful vetting vs Booking.com's weak protections</li>
-        <li><strong>Portfolio scalability</strong> — one managed property frees you to focus on acquisitions</li>
-        <li><strong>Peak season upside</strong> — Jul/Aug months can materially beat LTL returns</li>
-      </ul>
-    </div>
-    <div class="be-card">
-      <div class="card-title">Setup Cost Break-Even</div>
-      <div class="be-months">~9</div>
-      <div class="be-label">months to recover setup investment from incremental STL income</div>
-      <div class="be-bar-bg"><div class="be-bar-fill" id="be-fill" style="width:0%"></div></div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px">
-        <div style="text-align:center;padding:10px;background:#f8f6f2;border-radius:8px"><div style="font-size:16px;font-weight:700;color:#2a3f26">£694/mo</div><div style="font-size:11px;color:#888">Average net Y2</div></div>
-        <div style="text-align:center;padding:10px;background:#f8f6f2;border-radius:8px"><div style="font-size:16px;font-weight:700;color:#e05a2b">~£115/wk</div><div style="font-size:11px;color:#888">Cost of delay in June</div></div>
-        <div style="text-align:center;padding:10px;background:#f8f6f2;border-radius:8px"><div style="font-size:16px;font-weight:700;color:#2a3f26">£940+</div><div style="font-size:11px;color:#888">Peak month net</div></div>
+      <div style="text-align:right;">
+        <div style="font-size:18px;font-weight:700;">+£458/month</div>
+        <div style="font-size:12px;opacity:0.8;">Year 2 monthly advantage</div>
       </div>
     </div>
-    <div class="card-title" style="margin-bottom:12px">What Drives Demand in Burnley</div>
+    <div style="font-size:11px;color:#aaa;margin-top:10px;font-style:italic;">Note: LTL figures are estimates based on realistic achievable rents for BB11 postcode. Your estate agent quoted £1,300–1,400/month — this is aspirational for this area; the realistic comparable is closer to £650–750/month. Short-let figures are projections, not guarantees. Not financial advice.</div>
+  </div>
+
+  <!-- Scale Argument -->
+  <div class="card" style="border-left:4px solid #5d8156;">
+    <div class="card-title">🚀 The Real Case for Stayful — Scale Without Becoming a Cleaner</div>
+    <div style="font-size:14px;color:#444;line-height:1.6;margin-bottom:12px;">
+      You're already running a successful Airbnb. You know short-let works. The question for Rossendale Road isn't <em>whether</em> to short-let — it's whether you can scale to 3, 4, 5 properties while staying an entrepreneur rather than becoming a full-time property cleaner.
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:#fff8f0;border:1px solid #f0e0c8;border-radius:10px;padding:14px;">
+        <div style="font-weight:700;color:#c44;margin-bottom:4px;font-size:13px;">❌ Managing yourself at scale</div>
+        <ul style="font-size:12px;color:#666;padding-left:16px;line-height:1.7;">
+          <li>Simultaneous changeovers = paid cleaners needed</li>
+          <li>You coordinate every booking, every issue</li>
+          <li>Booking.com damage = your problem, your time</li>
+          <li>2 properties = manageable. 4+ = a second job</li>
+        </ul>
+      </div>
+      <div style="background:#f0fff5;border:1px solid #b0d8b0;border-radius:10px;padding:14px;">
+        <div style="font-weight:700;color:#2a3f26;margin-bottom:4px;font-size:13px;">✅ With Stayful at scale</div>
+        <ul style="font-size:12px;color:#666;padding-left:16px;line-height:1.7;">
+          <li>Cleaners, linen, keys — all handled</li>
+          <li>Guest damage claimed through AirCover (not you)</li>
+          <li>Only Airbnb (no Booking.com guest issues)</li>
+          <li>Add properties without adding your time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demand Drivers -->
+  <div class="card">
+    <div class="card-title">What Drives Demand in Burnley</div>
     <div class="drivers-grid">
-      <div class="driver-card"><div class="driver-emoji">🏭</div><div class="driver-name">Business &amp; Contractor Travel</div><div class="driver-desc">Burnley has a significant manufacturing and aerospace base. Contractors and visiting professionals create consistent year-round short-stay demand.</div></div>
-      <div class="driver-card"><div class="driver-emoji">⚽</div><div class="driver-name">Football Tourism</div><div class="driver-desc">Burnley FC at Turf Moor drives reliable away-fan demand on match weekends. Friend and family groups frequently book 3-bed properties for home games.</div></div>
-      <div class="driver-card"><div class="driver-emoji">🌿</div><div class="driver-name">Forest of Bowland</div><div class="driver-desc">Proximity to the Forest of Bowland AONB draws walkers and countryside visitors, particularly in spring and autumn shoulder seasons.</div></div>
-      <div class="driver-card"><div class="driver-emoji">🎓</div><div class="driver-name">University &amp; Healthcare</div><div class="driver-desc">UCLan campuses and Burnley General Hospital generate visiting family, short academic placements, and medical professional stays throughout the year.</div></div>
-    </div>
-    <div class="q-block">
-      <div class="q-title">What's your current thinking on the long-let alternative?</div>
-      <div class="q-options" id="q2-options">
-        <button class="q-btn" onclick="answerQ(2,'A','Short-let clearly makes more sense')">Short-let clearly makes more sense</button>
-        <button class="q-btn" onclick="answerQ(2,'B','Still weighing it up')">Still weighing it up</button>
-        <button class="q-btn" onclick="answerQ(2,'C','I\'d rather keep it as a long-let')">I'd rather keep it as a long-let</button>
+      <div class="driver-card">
+        <div class="driver-icon">🚂</div>
+        <div class="driver-name">East Lancashire Railway</div>
+        <div class="driver-desc">Heritage steam railway from Rawtenstall to Heywood brings consistent tourist traffic year-round. Burnley Central is a key station.</div>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">⚽</div>
+        <div class="driver-name">Burnley FC — Turf Moor</div>
+        <div class="driver-desc">Championship club with strong home attendance. Match day weekends reliably fill short-let accommodation, often with premium pricing.</div>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">💼</div>
+        <div class="driver-name">Business &amp; Contractor Travel</div>
+        <div class="driver-desc">Burnley has major commercial employers including PZ Cussons, UTC Aerospace, and East Lancashire NHS Trust. Contractors and site workers fill shoulder months.</div>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">🥾</div>
+        <div class="driver-name">Pendle Hill &amp; Forest of Bowland</div>
+        <div class="driver-desc">Burnley sits at the gateway to Pendle Hill and the Forest of Bowland AONB — popular with walkers, cyclists and outdoor activity groups, especially spring and autumn.</div>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">🏙️</div>
+        <div class="driver-name">Manchester/Leeds Commuter Base</div>
+        <div class="driver-desc">Direct rail links to Manchester Victoria make Burnley a base for remote workers and short-term contractors who prefer affordable Northern accommodation.</div>
+      </div>
+      <div class="driver-card">
+        <div class="driver-icon">🎓</div>
+        <div class="driver-name">University &amp; College Events</div>
+        <div class="driver-desc">Burnley College and local education events generate family stay demand during graduations, open days, and interview periods throughout the academic year.</div>
       </div>
     </div>
   </div>
+
+  <!-- Section 2 Question -->
+  <div class="question-block" id="q2-block">
+    <div class="question-text">What's your current thinking on the long-let alternative?</div>
+    <div class="q-options">
+      <button class="q-btn" onclick="answerQ(2,'Short-let clearly makes more sense')">A — Short-let clearly makes more sense</button>
+      <button class="q-btn" onclick="answerQ(2,'Still weighing it up')">B — Still weighing it up</button>
+      <button class="q-btn" onclick="answerQ(2,'I'd rather keep it as a long-let')">C — I'd rather keep it as a long-let</button>
+    </div>
+  </div>
 </div>
-<div id="section2-lock" class="lock-overlay">
-  <div class="lock-icon">🔒</div><div class="lock-msg">Answer the question above to continue</div>
-</div>
-<div id="section3" style="display:none">
-  <div class="section">
-    <div class="section-header">🏆 How It Works &amp; Proof</div>
-    <div class="card-title" style="margin-bottom:12px">Real Portfolio Results — Jan–Dec 2025</div>
+
+<!-- ===== SECTION 3: HOW IT WORKS & PROOF ===== -->
+<div class="section locked" id="section3">
+  <div class="section-header">🏆 Section 3 — How It Works &amp; Proof</div>
+
+  <!-- Case Studies -->
+  <div class="card">
+    <div class="card-title">Real Portfolio Results — January–December 2025</div>
     <div class="cs-grid">
-      <div class="cs-card"><span class="cs-badge">Jan–Dec 2025</span><div class="cs-prop">17 Park Crescent</div><div class="cs-loc">📍 York</div><div class="cs-stat"><span class="cs-stat-label">Gross revenue</span><span class="cs-stat-val">£54,688</span></div><div class="cs-stat"><span class="cs-stat-label">Owner net</span><span class="cs-stat-val">£34,727</span></div><div class="cs-stat"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">73.9%</span></div><div class="cs-stat"><span class="cs-stat-label">Avg daily rate</span><span class="cs-stat-val">£186.51</span></div><div class="cs-stat"><span class="cs-stat-label">Booked nights</span><span class="cs-stat-val">270</span></div><a href="https://drive.google.com/file/d/1wBDU2RxrOw0di244IlBxZOWWlfu_ORHn/view" target="_blank" class="cs-btn">View case study →</a></div>
-      <div class="cs-card"><span class="cs-badge">Jan–Dec 2025</span><div class="cs-prop">7 Beechwood Mount</div><div class="cs-loc">📍 Burley, Leeds</div><div class="cs-stat"><span class="cs-stat-label">Gross revenue</span><span class="cs-stat-val">£40,665</span></div><div class="cs-stat"><span class="cs-stat-label">Owner net</span><span class="cs-stat-val">£25,782</span></div><div class="cs-stat"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">50.4%</span></div><div class="cs-stat"><span class="cs-stat-label">Avg daily rate</span><span class="cs-stat-val">£201.37</span></div><div class="cs-stat"><span class="cs-stat-label">Booked nights</span><span class="cs-stat-val">184</span></div><a href="https://drive.google.com/file/d/1j7E50JvCz8r9G38p-pjnYJ8AIp_7bZX1/view" target="_blank" class="cs-btn">View case study →</a></div>
-      <div class="cs-card"><span class="cs-badge">Jan–Dec 2025</span><div class="cs-prop">803 Eastbank Tower</div><div class="cs-loc">📍 Manchester</div><div class="cs-stat"><span class="cs-stat-label">Gross revenue</span><span class="cs-stat-val">£56,921</span></div><div class="cs-stat"><span class="cs-stat-label">Owner net</span><span class="cs-stat-val">£35,917</span></div><div class="cs-stat"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">68.7%</span></div><div class="cs-stat"><span class="cs-stat-label">Avg daily rate</span><span class="cs-stat-val">£211.56</span></div><div class="cs-stat"><span class="cs-stat-label">Booked nights</span><span class="cs-stat-val">251</span></div><a href="https://drive.google.com/file/d/14J1Zb8c79YLywOXEWpbXLPrRsXsOPcm8/view" target="_blank" class="cs-btn">View case study →</a></div>
-      <div class="cs-card"><span class="cs-badge">Jan–Dec 2025</span><div class="cs-prop">Museum Court</div><div class="cs-loc">📍 Lincoln</div><div class="cs-stat"><span class="cs-stat-label">Gross revenue</span><span class="cs-stat-val">£57,328</span></div><div class="cs-stat"><span class="cs-stat-label">Owner net</span><span class="cs-stat-val">£36,288</span></div><div class="cs-stat"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">64.2%</span></div><div class="cs-stat"><span class="cs-stat-label">Avg daily rate</span><span class="cs-stat-val">£225.15</span></div><div class="cs-stat"><span class="cs-stat-label">Booked nights</span><span class="cs-stat-val">234</span></div></div>
+      <div class="cs-card">
+        <div class="cs-badge">Jan–Dec 2025</div>
+        <div class="cs-location">17 Park Crescent</div>
+        <div class="cs-city">York</div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Gross Revenue</span><span class="cs-stat-val">£54,688</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Owner Net</span><span class="cs-stat-val">£34,727</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">73.9%</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Avg Daily Rate</span><span class="cs-stat-val">£186.51</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Booked Nights</span><span class="cs-stat-val">270</span></div>
+        <a href="https://drive.google.com/file/d/1wBDU2RxrOw0di244IlBxZOWWlfu_ORHn/view" target="_blank" class="cs-btn">View case study →</a>
+      </div>
+      <div class="cs-card">
+        <div class="cs-badge">Jan–Dec 2025</div>
+        <div class="cs-location">7 Beechwood Mount</div>
+        <div class="cs-city">Burley, Leeds</div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Gross Revenue</span><span class="cs-stat-val">£40,665</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Owner Net</span><span class="cs-stat-val">£25,782</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">50.4%</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Avg Daily Rate</span><span class="cs-stat-val">£201.37</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Booked Nights</span><span class="cs-stat-val">184</span></div>
+        <a href="https://drive.google.com/file/d/1j7E50JvCz8r9G38p-pjnYJ8AIp_7bZX1/view" target="_blank" class="cs-btn">View case study →</a>
+      </div>
+      <div class="cs-card">
+        <div class="cs-badge">Jan–Dec 2025</div>
+        <div class="cs-location">803 Eastbank Tower</div>
+        <div class="cs-city">Manchester</div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Gross Revenue</span><span class="cs-stat-val">£56,921</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Owner Net</span><span class="cs-stat-val">£35,917</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">68.7%</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Avg Daily Rate</span><span class="cs-stat-val">£211.56</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Booked Nights</span><span class="cs-stat-val">251</span></div>
+        <a href="https://drive.google.com/file/d/14J1Zb8c79YLywOXEWpbXLPrRsXsOPcm8/view" target="_blank" class="cs-btn">View case study →</a>
+      </div>
+      <div class="cs-card">
+        <div class="cs-badge">Jan–Dec 2025</div>
+        <div class="cs-location">Museum Court</div>
+        <div class="cs-city">Lincoln</div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Gross Revenue</span><span class="cs-stat-val">£57,328</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Owner Net</span><span class="cs-stat-val">£36,288</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Occupancy</span><span class="cs-stat-val">64.2%</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Avg Daily Rate</span><span class="cs-stat-val">£225.15</span></div>
+        <div class="cs-stat-row"><span class="cs-stat-label">Booked Nights</span><span class="cs-stat-val">234</span></div>
+        <div style="font-size:11px;color:#aaa;margin-top:8px;">Case study link coming soon</div>
+      </div>
     </div>
-    <p class="disclaimer" style="margin:8px 0 20px">Actual Airbnb platform data Jan–Dec 2025. Past performance of other properties does not guarantee future results for your property.</p>
-    <div class="card">
-      <div class="card-title">What Stayful Handles</div>
-      <div class="services-grid">
-        <div class="service-item"><span class="service-icon">💬</span>Guest communication</div>
-        <div class="service-item"><span class="service-icon">🧹</span>Cleaning &amp; linen</div>
-        <div class="service-item"><span class="service-icon">📈</span>Dynamic pricing</div>
-        <div class="service-item"><span class="service-icon">🔧</span>Maintenance coordination</div>
-        <div class="service-item"><span class="service-icon">🔑</span>Key &amp; access management</div>
-        <div class="service-item"><span class="service-icon">📣</span>Remarketing campaigns</div>
-        <div class="service-item"><span class="service-icon">📊</span>Monthly reporting</div>
-        <div class="service-item"><span class="service-icon">📸</span>Professional photography</div>
+    <div class="cs-disclaimer">Actual Airbnb platform data Jan–Dec 2025. Past performance of other properties does not guarantee future results for your property.</div>
+  </div>
+
+  <!-- What Stayful Handles -->
+  <div class="card">
+    <div class="card-title">What Stayful Handles — Everything</div>
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">💬</div><div class="service-text"><div class="service-name">Guest Communication</div><div class="service-desc">24/7 messaging, vetting, check-in/out</div></div></div>
+      <div class="service-item"><div class="service-icon">🧹</div><div class="service-text"><div class="service-name">Cleaning &amp; Linen</div><div class="service-desc">Professional turnovers, laundry coordinated</div></div></div>
+      <div class="service-item"><div class="service-icon">💰</div><div class="service-text"><div class="service-name">Dynamic Pricing</div><div class="service-desc">Revenue-optimised rates adjusted daily</div></div></div>
+      <div class="service-item"><div class="service-icon">🔧</div><div class="service-text"><div class="service-name">Maintenance</div><div class="service-desc">Issues flagged and resolved up to £300</div></div></div>
+      <div class="service-item"><div class="service-icon">🔑</div><div class="service-text"><div class="service-name">Key &amp; Access</div><div class="service-desc">Smart lock / key safe managed</div></div></div>
+      <div class="service-item"><div class="service-icon">📈</div><div class="service-text"><div class="service-name">Remarketing</div><div class="service-desc">SEO, repeat guest outreach, promotions</div></div></div>
+      <div class="service-item"><div class="service-icon">📊</div><div class="service-text"><div class="service-name">Monthly Reporting</div><div class="service-desc">Statement by 1st–5th of every month</div></div></div>
+      <div class="service-item"><div class="service-icon">📸</div><div class="service-text"><div class="service-name">Photography</div><div class="service-desc">Professional shoot for listing launch</div></div></div>
+    </div>
+    <div style="margin-top:16px;">
+      <div style="font-size:13px;font-weight:600;color:#888;margin-bottom:8px;">Your only responsibilities:</div>
+      <div class="owner-pills">
+        <span class="owner-pill">⚡ Utilities &amp; WiFi</span>
+        <span class="owner-pill">🏛️ Council Tax</span>
+        <span class="owner-pill">🌡️ Smart thermostat (~£200 one-time)</span>
+        <span class="owner-pill">🔑 Key safe (~£60 one-time)</span>
       </div>
-      <div style="margin-top:16px"><strong style="font-size:13px;color:#666">Your only responsibilities:</strong>
-        <div class="owner-pills">
-          <span class="owner-pill">💡 Utilities &amp; WiFi</span>
-          <span class="owner-pill">🏛 Council tax</span>
-          <span class="owner-pill">🌡 Smart thermostat (~£200 one-time)</span>
-          <span class="owner-pill">🔐 Key safe (~£60 one-time)</span>
-        </div>
-      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div style="font-size:13px;font-weight:600;color:#888;margin-bottom:8px;">Listed across:</div>
       <div class="platform-pills">
-        <span class="platform-pill">🏠 Airbnb</span>
-        <span class="platform-pill">🌐 Booking.com</span>
-        <span class="platform-pill">🏨 Google Hotels</span>
-        <span class="platform-pill">🔗 Direct Bookings</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">🛡️ AirCover Protection</div>
-      <p style="font-size:14px;color:#555;line-height:1.6;margin-bottom:10px">Every Airbnb booking includes AirCover — £2.5M damage protection, theft cover, and pre/post photography. <strong>Stayful manages all claims on your behalf — you never deal with Airbnb directly.</strong></p>
-      <p style="font-size:14px;color:#555;line-height:1.6">Booking.com doesn't offer equivalent protection — this is why we weight listings toward Airbnb and can limit Booking.com exposure for properties with premium finishes like yours.</p>
-    </div>
-    <div class="card">
-      <div class="card-title">Owner Communication Touchpoints</div>
-      <div class="touch-grid">
-        <div class="touch-card"><div class="touch-icon">💬</div><div class="touch-title">Dedicated Slack Channel</div><div class="touch-desc">Your direct line. Response within 24hrs during office hours.</div></div>
-        <div class="touch-card"><div class="touch-icon">📅</div><div class="touch-title">Live Booking Calendar</div><div class="touch-desc">Real-time visibility of all bookings and availability.</div></div>
-        <div class="touch-card"><div class="touch-icon">📄</div><div class="touch-title">Monthly Statement</div><div class="touch-desc">Detailed income breakdown sent 1st–5th of each month.</div></div>
-        <div class="touch-card"><div class="touch-icon">🔄</div><div class="touch-title">Quarterly Review</div><div class="touch-desc">Video call to discuss performance, pricing and strategy.</div></div>
-      </div>
-    </div>
-    <div class="card-title" style="margin-bottom:12px">See for Yourself</div>
-    <div class="trust-grid">
-      <a href="https://www.airbnb.co.uk/users/profile/1465927855339112491?previous_page_name=PdpHomeMarketplace" target="_blank" class="trust-card"><div class="trust-icon">⭐</div><div class="trust-title">Airbnb Reviews</div><div class="trust-desc">Read what guests and owners say about Stayful on Airbnb</div></a>
-      <a href="https://share.google/yZ1HexwdVAmlM8TOo" target="_blank" class="trust-card"><div class="trust-icon">🌟</div><div class="trust-title">Google Reviews</div><div class="trust-desc">Stayful's verified Google reviews from owners and guests</div></a>
-      <a href="https://drive.google.com/file/d/1Ja1yEDno_nS-te7y9qh-UcaaHLt0enPR/view" target="_blank" class="trust-card"><div class="trust-icon">📄</div><div class="trust-title">Monthly Statement Example</div><div class="trust-desc">See the exact format owners receive on the 1st of every month</div></a>
-    </div>
-    <div class="q-block">
-      <div class="q-title">What feels like your biggest open question right now?</div>
-      <div class="q-options" id="q3-options">
-        <button class="q-btn" onclick="answerQ(3,'A','Whether the income is really achievable')">Whether the income is really achievable</button>
-        <button class="q-btn" onclick="answerQ(3,'B','How guest damage and problems are handled')">How guest damage and problems are handled</button>
-        <button class="q-btn" onclick="answerQ(3,'C','The setup cost and process')">The setup cost and process</button>
-        <button class="q-btn" onclick="answerQ(3,'D','The commitment and contract terms')">The commitment and contract terms</button>
+        <span class="platform-pill">Airbnb</span>
+        <span class="platform-pill">Booking.com</span>
+        <span class="platform-pill">Google Hotels</span>
+        <span class="platform-pill">Direct Bookings</span>
       </div>
     </div>
   </div>
+
+  <!-- AirCover -->
+  <div class="aircover-card">
+    <div class="aircover-title">🛡️ AirCover — £2.5 Million Protection</div>
+    <div class="aircover-sub">Why Stayful uses Airbnb as the primary platform — and why your Booking.com damage experience won't happen here</div>
+    <div class="aircover-items">
+      <div class="aircover-item"><div class="aircover-item-title">£2.5M Damage Cover</div><div class="aircover-item-desc">Property damage and theft covered per stay</div></div>
+      <div class="aircover-item"><div class="aircover-item-title">Stayful Claims It</div><div class="aircover-item-desc">You never deal with Airbnb directly. We manage the claim end-to-end.</div></div>
+      <div class="aircover-item"><div class="aircover-item-title">Pre &amp; Post Photos</div><div class="aircover-item-desc">Property documented before and after every stay as evidence</div></div>
+      <div class="aircover-item"><div class="aircover-item-title">£200 Guest Deposit</div><div class="aircover-item-desc">Collected via Stayful screening — an additional deterrent to damage</div></div>
+    </div>
+  </div>
+
+  <!-- Owner Comms -->
+  <div class="card">
+    <div class="card-title">Owner Communication Touchpoints</div>
+    <div class="comms-grid">
+      <div class="comms-card"><div class="comms-icon">💬</div><div class="comms-name">Slack Channel</div><div class="comms-desc">Dedicated channel for daily operational updates</div></div>
+      <div class="comms-card"><div class="comms-icon">📅</div><div class="comms-name">Booking Calendar</div><div class="comms-desc">Live visibility of all bookings and availability</div></div>
+      <div class="comms-card"><div class="comms-icon">📄</div><div class="comms-name">Monthly Statement</div><div class="comms-desc">Detailed payout summary by 1st–5th of the month</div></div>
+      <div class="comms-card"><div class="comms-icon">🔍</div><div class="comms-name">Quarterly Review</div><div class="comms-desc">Performance review, pricing strategy, improvements</div></div>
+    </div>
+  </div>
+
+  <!-- Trust Links -->
+  <div class="card">
+    <div class="card-title">See For Yourself</div>
+    <div class="trust-grid">
+      <a href="https://www.airbnb.co.uk/users/profile/1465927855339112491?previous_page_name=PdpHomeMarketplace" target="_blank" class="trust-card">
+        <div class="trust-icon">⭐</div>
+        <div class="trust-name">Airbnb Reviews</div>
+        <div class="trust-desc">Read what guests and owners say about Stayful on Airbnb</div>
+      </a>
+      <a href="https://share.google/yZ1HexwdVAmlM8TOo" target="_blank" class="trust-card">
+        <div class="trust-icon">🔍</div>
+        <div class="trust-name">Google Reviews</div>
+        <div class="trust-desc">Stayful's verified Google reviews from owners and guests</div>
+      </a>
+      <a href="https://drive.google.com/file/d/1Ja1yEDno_nS-te7y9qh-UcaaHLt0enPR/view" target="_blank" class="trust-card">
+        <div class="trust-icon">📊</div>
+        <div class="trust-name">Monthly Statement</div>
+        <div class="trust-desc">See the exact statement format owners receive on the 1st of every month</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 3 Question -->
+  <div class="question-block" id="q3-block">
+    <div class="question-text">What feels like your biggest open question right now?</div>
+    <div class="q-options">
+      <button class="q-btn" onclick="answerQ(3,'Whether the income is really achievable')">A — Whether the income is really achievable</button>
+      <button class="q-btn" onclick="answerQ(3,'How guest damage and problems are handled')">B — How guest damage and problems are handled</button>
+      <button class="q-btn" onclick="answerQ(3,'The setup cost and process')">C — The setup cost and process</button>
+      <button class="q-btn" onclick="answerQ(3,'The commitment and contract terms')">D — The commitment and contract terms</button>
+    </div>
+  </div>
 </div>
-<div id="section3-lock" class="lock-overlay" style="display:none">
-  <div class="lock-icon">🔒</div><div class="lock-msg">Answer the question above to continue</div>
-</div>
-<div id="section4" style="display:none">
-  <div class="section">
-    <div class="section-header">🗂 Your Plan &amp; Next Steps</div>
-    <div class="agreement-card">
-      <div class="agreement-title">The Management Agreement</div>
-      <div class="agreement-desc">6-month initial fixed term, rolling 3-month notice after that. No long tie-in. Read through the agreement and watch the walkthrough video for a guided explanation of each clause.</div>
-      <div class="agreement-btns">
-        <a href="https://drive.google.com/file/d/1ct_Br_7XR69s6beyFfqHSnSPoRouKkG6/view?usp=sharing" target="_blank" class="btn-primary">📄 Read Agreement</a>
-        <a href="https://www.loom.com/share/50756d81baf4426987cb5300ecbee951" target="_blank" class="btn-secondary">▶️ Watch Walkthrough Video</a>
+
+<!-- ===== SECTION 4: YOUR PLAN & NEXT STEPS ===== -->
+<div class="section locked" id="section4">
+  <div class="section-header">📋 Section 4 — Your Plan &amp; Next Steps</div>
+
+  <!-- Management Agreement -->
+  <div class="agreement-card">
+    <div class="agreement-title">📄 The Management Agreement</div>
+    <div class="agreement-desc">
+      The agreement runs for an initial fixed 6-month term, then rolling 3-month notice periods. 
+      Early termination fee: £1,000 in the fixed term only. After that — 3 months' written notice from either party. 
+      Stayful manages all platform activity; you retain calendar visibility. 
+      Full agreement always available at stayful.co.uk/terms-of-service.
+    </div>
+    <div class="btn-row">
+      <a href="https://drive.google.com/file/d/1ct_Br_7XR69s6beyFfqHSnSPoRouKkG6/view?usp=sharing" target="_blank" class="btn-primary">📄 Read Agreement</a>
+      <a href="https://www.loom.com/share/50756d81baf4426987cb5300ecbee951" target="_blank" class="btn-secondary">▶ Watch Walkthrough Video</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="card" style="margin-top:16px;">
+    <div class="card-title">Your Questions — Answered Honestly</div>
+    <div id="faq-container">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What's the honest worst case if projections aren't hit? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">The honest worst case for Rossendale Road is that Year 1 low-season months (Jan–Mar) generate around £750–£780 net — below your £1,100 monthly costs. You'd need to cover a shortfall of roughly £300–£350 in those months. Year 2, the worst projected month is £939 — still a small shortfall. The long-let comparison (realistic £694/month net) also doesn't cover your costs. So neither route is cash-flow positive in the first year against your specific mortgage. The STL route with Stayful gets you closer to breakeven sooner, and builds an asset (reviews, platform ranking) that compound over time. Short version: go in knowing year 1 may need some cash top-up in the low months.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">My estate agent quoted £1,300–1,400/month for long-let — why is your LTL comparable lower? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">The BB11 postcode in Burnley has average 3-bed long-let achieved rents of £650–£750/month based on current listings. £1,300–1,400 is closer to the asking rent in premium areas, or may have been quoted aspirationally. The £8,327 annual LTL figure in our analysis reflects a more conservative achievable rent. If you were to achieve £1,350/month LTL, that would be approximately £14,580/year net after a 10% agent fee — which would exceed our Year 2 STL projection. We're being transparent: if you can genuinely let at £1,300+ to a reliable tenant, that's worth considering. The STL advantage is flexibility, no void risk, and the scale argument.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I test long-let for a month first, then switch to Stayful? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Technically yes, but there are practical considerations. If you take on a tenant (even one month), you'll need a proper tenancy agreement — and a tenant isn't obligated to leave at the end of month one. Assured shorthold tenancy gives them protection. A "licencee" arrangement can work for very short periods but needs careful drafting. Stayful can typically onboard and get a listing live within 10–14 working days of signing. The delay risk: peak summer season is approaching, and the highest-earning months (June–August) would be gone if you spend May–July trialling LTL. Practically, the opportunity cost of delaying peak season launch is significant.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if a Booking.com-style guest damages the property via Stayful? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Stayful primarily lists on Airbnb, not Booking.com — and the reason is exactly what you experienced. Airbnb's AirCover programme provides up to £2.5 million in damage protection per stay. We collect a £200 deposit, verify guest ID, and photograph the property before and after every stay. If damage occurs, Stayful manages the AirCover claim for you — you don't deal with Airbnb directly. The contrast with Booking.com is significant: Booking.com offers minimal protection and recovery is your problem. By using Stayful (primarily Airbnb-based), you get the platform that actually pays out.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does this work when I'm building a portfolio of 3–4 properties? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">This is exactly the scenario Stayful is built for. Each property gets its own Slack channel, calendar, and monthly statement. You get a single point of contact (Zac) rather than managing separate cleaners, separate key safes, separate guest issues per property. Many of our owners have 2–5 properties with us. The economics also improve: at 3+ properties, you may qualify for a discussion about portfolio fee rates. The pipeline you described — Rossendale Road, then a third house, then two more from the land — is a realistic 5-property portfolio over 18–24 months. That's the conversation worth having.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What are the contract termination terms? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Initial 6-month fixed term — early exit fee of £1,000 within this period. After the 6-month mark, either party can terminate on 3 months' written notice via the Slack channel. Stayful can also terminate immediately if the property is deemed unsuitable (repeated complaints, safety issues etc.). The 6-month initial term is there because onboarding, photography, and listing setup represent real cost and effort — the £1,000 early exit is a fair pre-estimate of those costs, not a penalty.</div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-title">Your Questions Answered</div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What happens if guests damage the high-end finishes? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Airbnb AirCover provides up to £2.5M in damage protection including theft. We photograph before and after every stay. Stayful manages all claims — you never deal with Airbnb. We also collect a £200 security deposit from Booking.com guests. For properties with granite worktops and premium finishes like yours, we set guest expectations clearly in the listing and can weight heavily toward Airbnb where protections are strongest.</div>
+  </div>
+
+  <!-- Setup Timeline -->
+  <div class="card">
+    <div class="card-title">Setup Timeline — From Agreement to Live</div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <div class="tl-title">Sign the Management Agreement</div>
+          <div class="tl-desc">The agreement is above. Property is ready when you are — you decide the start date.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">The STL net is close to long-let net — is it really worth it? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">That's a fair challenge, and we'd rather be honest than spin it. For this specific property the income margin over LTL isn't dramatic. The genuine case is: flexibility to sell or switch anytime, better guest control vs your Booking.com experiences, portfolio scalability (one managed property frees you to focus on acquisitions), and meaningful peak season upside in Jul/Aug. If income certainty matters more than upside, testing long-let first is a reasonable choice — the STL option doesn't disappear.</div>
+      <div class="tl-step">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-title">Onboarding &amp; Listing Setup (7–14 working days)</div>
+          <div class="tl-desc">Stayful creates listings across Airbnb and other platforms, sets up Slack channel, registers your property in our systems.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What is the honest worst case if projections aren't hit? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">A January or February at 30–40% occupancy could yield £350–£420 net. Against your £1,100 monthly costs, that's a shortfall in the quietest months. You should hold a small cash buffer for the first winter. Peak months (Jul/Aug at £940 net) largely offset this over the year. If monthly cash flow stability is the priority, long-let at £1,300–1,400/month is more predictable — we're not going to pretend otherwise.</div>
+      <div class="tl-step">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-title">Smart Thermostat &amp; Key Safe (~1 day, during setup)</div>
+          <div class="tl-desc">Smart thermostat (~£200, Hive or Nest recommended) and key safe (~£60) installed. Stayful can advise on suppliers.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How does Stayful handle Booking.com compared to Airbnb? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">Airbnb is our primary platform — their AirCover protection, ID verification, and two-sided review system create much stronger guest accountability. Booking.com guests have weaker vetting, which matches your experience. We use Booking.com selectively for longer stays and corporate guests, and collect our own security deposit. For properties with premium finishes we can weight heavily toward Airbnb only — you set the preference.</div>
+      <div class="tl-step">
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <div class="tl-title">Professional Photography (half day + editing)</div>
+          <div class="tl-desc">Stayful photographer visits the property. Edited photos back within 48 hours. This significantly impacts initial booking rate.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">As you scale to multiple properties, how does Stayful fit in? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">This is one of the strongest reasons to start now. Managing the first property professionally frees your time for acquisitions and development — you stop being a cleaner and start being a developer. As your portfolio grows you'll have documented performance data and a replicable model. We can discuss multi-property rates when you're ready to add more.</div>
+      <div class="tl-step">
+        <div class="tl-dot">5</div>
+        <div class="tl-content">
+          <div class="tl-title">Listing Goes Live</div>
+          <div class="tl-desc">Property live on Airbnb and booking platforms. Dynamic pricing activated. First bookings typically within days of launch.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What are the exit terms? <span class="faq-arrow">▼</span></div>
-        <div class="faq-a">6-month initial fixed term with a £1,000 early exit fee. After that, rolling 3-month written notice — no long tie-in. If the property consistently underperforms and you want to switch to long-let, we'll have that honest conversation with you rather than holding you in a service that isn't working.</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Setup Timeline</div>
-      <div class="timeline">
-        <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><div class="tl-title">Sign Management Agreement</div><div class="tl-desc">Review above, sign, and return. Zac countersigns and onboarding begins immediately.</div></div></div>
-        <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><div class="tl-title">Smart Thermostat &amp; Key Safe (1 day)</div><div class="tl-desc">Nest or Hive thermostat (~£200), key safe (~£60). Can be installed during the setup window while the property is being readied.</div></div></div>
-        <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><div class="tl-title">Final Staging &amp; Readiness (1–2 weeks)</div><div class="tl-desc">You mentioned the property is ready in ~2 weeks. Coordinate any remaining items. Stayful advises on quick wins for photos.</div></div></div>
-        <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><div class="tl-title">Professional Photography (half day + editing)</div><div class="tl-desc">Stayful coordinates a photographer. Strong photos are the single biggest driver of Airbnb click-through rates.</div></div></div>
-        <div class="tl-item"><div class="tl-dot">5</div><div class="tl-content"><div class="tl-title">Listing Goes Live</div><div class="tl-desc">Across Airbnb, Booking.com, and Google Hotels. Dynamic pricing activated from day one.</div></div></div>
-        <div class="tl-item"><div class="tl-dot">6</div><div class="tl-content"><div class="tl-title" style="color:#aaa">First Bookings &amp; Reviews Building</div><div class="tl-desc" style="color:#aaa">Competitive early pricing to build reviews and algorithm ranking over months 2–4.</div></div></div>
-      </div>
-    </div>
-    <div class="urgency-card">
-      <div class="urgency-title">☀️ Why June Matters</div>
-      <div class="urgency-grid">
-        <div class="urgency-stat"><div class="urgency-stat-val">£1,880</div><div class="urgency-stat-label">Jul+Aug Y2 net combined</div></div>
-        <div class="urgency-stat"><div class="urgency-stat-val">~£115/wk</div><div class="urgency-stat-label">Cost of delay in June</div></div>
-        <div class="urgency-stat"><div class="urgency-stat-val">~4 wks</div><div class="urgency-stat-label">Onboarding to listing live</div></div>
-        <div class="urgency-stat"><div class="urgency-stat-val">August</div><div class="urgency-stat-label">Best month to be live for</div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Documents Being Sent</div>
-      <div class="docs-grid">
-        <div class="doc-card"><span class="doc-icon">📋</span><div><div class="doc-title">This Action Plan</div><div class="doc-desc">Full income breakdown, demand analysis, and next steps — the link you're reading now.</div></div></div>
-        <div class="doc-card"><span class="doc-icon">📝</span><div><div class="doc-title">Management Agreement</div><div class="doc-desc">Full terms linked above with walkthrough video explanation.</div></div></div>
-        <div class="doc-card"><span class="doc-icon">🧮</span><div><div class="doc-title">Property Calculator</div><div class="doc-desc">For your future acquisitions — model STL returns on properties before you buy.</div></div></div>
+      <div class="tl-step">
+        <div class="tl-dot muted">6</div>
+        <div class="tl-content">
+          <div class="tl-title" style="color:#aaa;">First Booking &amp; Payout</div>
+          <div class="tl-desc" style="color:#ccc;">First payout issued within 1st–5th of the month following your first completed booking.</div>
+        </div>
       </div>
     </div>
-    <div class="q-block">
-      <div class="q-title">Where are you in your thinking?</div>
-      <div class="q-options" id="q4-options">
-        <button class="q-btn" onclick="answerQ(4,'A','Ready to sign the agreement')">Ready to sign the agreement</button>
-        <button class="q-btn" onclick="answerQ(4,'B','Nearly there — just a couple of questions')">Nearly there — just a couple of questions</button>
-        <button class="q-btn" onclick="answerQ(4,'C','Need more time to think this over')">Need more time to think this over</button>
-      </div>
-      <div id="thankyou-msg" style="display:none">
-        <div class="thankyou">
-          <h3>Thanks Nathan 🙌</h3>
-          <p>Zac will be in touch shortly. The management agreement is above whenever you're ready — or just reply to his email with any questions.</p>
+    <div style="font-size:12px;color:#aaa;margin-top:8px;">Note: Rossendale Road is ready in ~2 weeks. If agreement is signed soon, you could be live before peak summer season (June/July) — your best earning months.</div>
+  </div>
+
+  <!-- Documents Being Sent -->
+  <div class="card">
+    <div class="card-title">Documents Being Sent</div>
+    <div class="docs-grid">
+      <div class="doc-card">
+        <div class="doc-icon">📋</div>
+        <div>
+          <div class="doc-title">This Action Plan</div>
+          <div class="doc-desc">Everything from today's call in one place — income projections, opportunity analysis, FAQs, and next steps.</div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Section 4 Question -->
+  <div class="question-block" id="q4-block">
+    <div class="question-text">Where are you in your thinking?</div>
+    <div class="q-options">
+      <button class="q-btn" onclick="answerQ(4,'Ready to sign the agreement')">A — Ready to sign the agreement</button>
+      <button class="q-btn" onclick="answerQ(4,'Nearly there — just a couple of questions')">B — Nearly there — just a couple of questions</button>
+      <button class="q-btn" onclick="answerQ(4,'Need more time to think this over')">C — Need more time to think this over</button>
+    </div>
+  </div>
+
+  <!-- Thank You (shown after S4 answer) -->
+  <div class="thankyou" id="thankyou">
+    <div class="ty-icon">🙌</div>
+    <div class="ty-title">Thanks Nathan — Zac will be in touch shortly.</div>
+    <div class="ty-text">The agreement is above whenever you're ready. Any questions in the meantime, reply to Zac's email or reach out via the button below.</div>
+  </div>
 </div>
-<div id="section4-lock" class="lock-overlay" style="display:none">
-  <div class="lock-icon">🔒</div><div class="lock-msg">Answer the question above to continue</div>
-</div>
+
+<!-- FOOTER -->
 <div class="footer">
-  <p>Prepared for <strong style="color:white">Nathan Chadwick</strong> | 28 May 2026 | stayful.co.uk | zac@stayful.co.uk</p>
-  <p style="margin-top:4px">Figures are projections — not guaranteed. Past performance of other properties does not indicate future results for your property.</p>
+  <div style="margin-bottom:8px;font-weight:600;color:#5d8156;font-size:14px;">Stayful</div>
+  <div>Prepared for Nathan Chadwick — 375 Rossendale Road, Burnley | 28 May 2026</div>
+  <div><a href="https://stayful.co.uk">stayful.co.uk</a> &nbsp;|&nbsp; <a href="mailto:zac@stayful.co.uk">zac@stayful.co.uk</a></div>
+  <div style="margin-top:8px;font-style:italic;">Figures are projections — not guaranteed. Income figures based on Stayful property analysis; monthly distribution estimated based on seasonal demand patterns for the Burnley market. Not financial advice.</div>
 </div>
-</div>
+
+</div><!-- end page-wrapper -->
+
+<!-- VOICEOVER BUTTON -->
+<button id="voice-btn" onclick="toggleVoice()">
+  🔊 <span id="voice-label">Listen</span> <span id="voice-progress"></span>
+</button>
+
+<!-- LUCY BUTTON -->
 <a href="https://lucy.stayful.co.uk/" target="_blank" style="position:fixed;bottom:24px;left:24px;background:#5d8156;color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px;">💬 Speak to Lucy</a>
-<button id="vo-btn" onclick="toggleVoice()">🔊 <span id="vo-label">Listen</span></button>
+
 <script>
-const ITEM_ID="11959023274";
-const WEBHOOK="https://stayful.app.n8n.cloud/webhook/action-plan-session-end";
-let responses=[];
-function answerQ(section,letter,text){
-  const optDiv=document.getElementById('q'+section+'-options');
-  optDiv.querySelectorAll('.q-btn').forEach(b=>{b.disabled=true;});
-  event.target.classList.add('selected');
-  responses.push('S'+section+': '+text);
-  fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({item_id:ITEM_ID,responses:responses,timestamp:new Date().toISOString()})}).catch(()=>{});
-  if(section===4){document.getElementById('thankyou-msg').style.display='block';}
-  else{unlockSection(section+1);}
+const MONDAY_ITEM_ID = "11959023274";
+const WEBHOOK_URL = "https://stayful.app.n8n.cloud/webhook/action-plan-session-end";
+
+let responses = [];
+
+function answerQ(section, answer) {
+  const blockId = 'q' + section + '-block';
+  const block = document.getElementById(blockId);
+  const btns = block.querySelectorAll('.q-btn');
+  
+  // Disable all buttons and mark selected
+  btns.forEach(b => {
+    b.style.pointerEvents = 'none';
+    if (b.textContent.trim().replace(/^[A-D] — /, '') === answer || b.textContent.includes(answer)) {
+      b.classList.add('selected');
+    } else {
+      b.style.opacity = '0.4';
+    }
+  });
+
+  const responseKey = 'S' + section + ': ' + answer;
+  responses.push(responseKey);
+
+  // Fire webhook (non-blocking)
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      item_id: MONDAY_ITEM_ID,
+      responses: [...responses],
+      timestamp: new Date().toISOString()
+    })
+  }).catch(() => {});
+
+  // Unlock next section
+  if (section < 4) {
+    unlockSection(section + 1);
+  } else {
+    document.getElementById('thankyou').style.display = 'block';
+    document.getElementById('thankyou').scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
-function unlockSection(n){
-  const sec=document.getElementById('section'+n);
-  const lock=document.getElementById('section'+n+'-lock');
-  if(sec){sec.style.display='block';}
-  if(lock){lock.style.display='none';}
-  setTimeout(()=>{if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});},100);
+
+function unlockSection(n) {
+  const sec = document.getElementById('section' + n);
+  sec.style.display = 'block';
+  setTimeout(() => {
+    sec.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 300);
 }
-function toggleFaq(el){
-  const a=el.nextElementSibling;
-  const arrow=el.querySelector('.faq-arrow');
-  document.querySelectorAll('.faq-a').forEach(x=>{if(x!==a)x.classList.remove('open');});
-  a.classList.toggle('open');
-  arrow.textContent=a.classList.contains('open')?'▲':'▼';
+
+// FAQ
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const arrow = el.querySelector('.faq-arrow');
+  const isOpen = answer.style.display === 'block';
+  
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
+  document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = '');
+  
+  if (!isOpen) {
+    answer.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)';
+  }
 }
-const voiceSections=[
-  "Welcome to Nathan Chadwick's Stayful property action plan for 375 Rossendale Road, Burnley. This covers the income projections, demand analysis, and your next steps.",
-  "Income projections. Year one conservative net: six thousand, six hundred and sixty-two pounds. Year two full run rate: eight thousand, three hundred and twenty-seven pounds. Monthly average in year two is around six hundred and ninety-four pounds.",
-  "Long-let versus short-let. The long-let option would yield around fourteen thousand five hundred net per year at one thousand three hundred per month. Short-let gross is ten percent higher, though after management costs the net figures are relatively close. The case for STL here is flexibility, guest quality control, and portfolio scalability as you add properties.",
-  "Break-even. At roughly nine months, the setup investment is recovered from the incremental income versus a long-let income on the same property.",
-  "Demand drivers in Burnley. Business and contractor travel from manufacturing and aerospace. Football tourism from Burnley FC. Forest of Bowland visitors in spring and autumn. University and healthcare related stays.",
-  "Real portfolio results from Stayful properties in 2025. Seventeen Park Crescent York: fifty-four thousand gross, thirty-four thousand net. Seven Beechwood Mount Leeds: forty thousand gross, twenty-five thousand net. Eight-oh-three Eastbank Tower Manchester: fifty-six thousand gross, thirty-five thousand net.",
-  "What Stayful handles. Guest communication, cleaning and linen, multi-platform listing, dynamic pricing, maintenance, key and access, remarketing, monthly reporting, and professional photography.",
-  "AirCover protection. Two point five million pounds damage cover on every Airbnb booking. Stayful manages all claims. For Booking.com guests we collect a two hundred pound security deposit and can limit exposure for premium properties.",
-  "The management agreement. Six-month initial fixed term, rolling three-month notice after that. Read the agreement or watch the walkthrough video in section four.",
-  "June urgency. July and August combined net is around one thousand eight hundred and eighty pounds. Every week of delay in June costs around one hundred and fifteen pounds in missed peak revenue.",
-  "Documents being sent. This action plan, the management agreement, and a property calculator for future acquisitions."
+
+// LTL Reference Line on chart
+window.addEventListener('load', () => {
+  const chartBars = document.getElementById('chart-bars');
+  const barHeight = 200;
+  const maxNet = 1400;
+  const ltlMonthly = 694;
+  const ltlPx = Math.round((ltlMonthly / maxNet) * barHeight);
+  
+  const line = document.createElement('div');
+  line.style.cssText = `position:absolute;left:8px;right:8px;bottom:${ltlPx + 18}px;height:2px;background:rgba(224,160,32,0.8);border-top:2px dashed #e0a020;z-index:10;`;
+  const label = document.createElement('div');
+  label.style.cssText = `position:absolute;right:0;bottom:${ltlPx + 20}px;font-size:10px;color:#b8820a;background:rgba(255,248,240,0.9);padding:2px 4px;border-radius:3px;z-index:11;`;
+  label.textContent = 'LTL £694/mo';
+  
+  chartBars.style.position = 'relative';
+  chartBars.appendChild(line);
+  chartBars.appendChild(label);
+});
+
+// VOICEOVER
+const voiceScript = [
+  "This action plan was prepared exclusively for Nathan Chadwick, for the property at 375 Rossendale Road, Burnley — a 3-bedroom house ready to go live in approximately two weeks.",
+  "Income projections. Year 1 net is £10,394 — that's £866 per month on average. Year 2 net is £12,993, which is £1,082 per month. These are after all Airbnb platform fees, Stayful management fees, software costs, and with cleaning collected from guests.",
+  "How does short-let compare to long-let? The realistic comparable long-let net for BB11 Burnley is approximately £694 per month — just £8,327 per year. Short-let Year 2 generates £12,993 — a £4,666 annual advantage. Your estate agent quoted £1,300 to £1,400 — this is aspirational for BB11; we're being transparent about what's actually achievable.",
+  "Break-even on setup. There's no formal setup cost through Stayful beyond your one-time smart thermostat and key safe. The setup service is quoted separately if needed.",
+  "What drives demand in Burnley? The East Lancashire Railway brings heritage tourism all year. Burnley FC home matches generate match-day premium bookings. Business and contractor travel from employers like P-Z Cussons and the NHS Trust fills shoulder months. Pendle Hill and the Forest of Bowland attract outdoor visitors in spring and autumn.",
+  "Real portfolio results. Stayful managed four properties in 2025: 17 Park Crescent York — £54,000 gross, £34,700 net, 73.9% occupancy. 7 Beechwood Mount Leeds — £40,600 gross, £25,700 net. 803 Eastbank Tower Manchester — £56,900 gross, £35,900 net. Museum Court Lincoln — £57,300 gross, £36,200 net.",
+  "What Stayful handles: all guest communication, professional cleaning and linen, dynamic pricing, maintenance up to £300, key and access management, monthly reporting and statements by the 1st to 5th of each month, and professional photography at launch. Your only responsibilities are utilities, council tax, a smart thermostat, and a key safe.",
+  "AirCover. Stayful lists primarily on Airbnb — and the reason is AirCover protection, which provides up to 2.5 million pounds in damage and theft cover per stay. Unlike Booking.com, where you experienced a £200 dining table going unpaid, Stayful manages all AirCover claims for you. You also collect a £200 guest deposit and do ID verification at the point of booking.",
+  "Contract terms. 6-month initial fixed term — early exit is £1,000. After that, 3 months' written notice from either party. No hidden fees. Management fee is 16% plus VAT of gross, plus a £42 monthly software fee.",
+  "Next steps. Rossendale Road is ready in 2 weeks. Peak season starts in June. If you sign the agreement within the next 10 days, onboarding and photography can be completed before your best earning months. The agreement is available to read and there is also a walkthrough video in Section 4.",
+  "That's everything from today's call — income picture, the opportunity analysis, how Stayful works, and your questions answered. Any questions, reach out to Zac directly at zac at stayful dot co dot uk, or use the Lucy button in the bottom left."
 ];
-let voiceIdx=0,voicePlaying=false;
-function toggleVoice(){
-  if(voicePlaying){window.speechSynthesis.pause();voicePlaying=false;document.getElementById('vo-label').textContent='Listen';}
-  else{if(window.speechSynthesis.paused){window.speechSynthesis.resume();voicePlaying=true;document.getElementById('vo-label').textContent=(voiceIdx+1)+' / '+voiceSections.length;}else{speakSection(voiceIdx);}}
+
+let voiceActive = false;
+let voiceIdx = 0;
+let voiceUtterance = null;
+
+function toggleVoice() {
+  if (!voiceActive) {
+    startVoice();
+  } else {
+    pauseVoice();
+  }
 }
-function speakSection(idx){
-  if(idx>=voiceSections.length){voicePlaying=false;voiceIdx=0;document.getElementById('vo-label').textContent='Listen';return;}
-  const u=new SpeechSynthesisUtterance(voiceSections[idx]);
-  u.rate=0.95;
-  u.onend=()=>{voiceIdx++;speakSection(voiceIdx);};
-  voicePlaying=true;
-  document.getElementById('vo-label').textContent=(idx+1)+' / '+voiceSections.length;
+
+function startVoice() {
+  if (!window.speechSynthesis) return;
+  voiceActive = true;
+  document.getElementById('voice-label').textContent = '⏸ Pause';
+  speakSection(voiceIdx);
+}
+
+function pauseVoice() {
+  window.speechSynthesis.cancel();
+  voiceActive = false;
+  document.getElementById('voice-label').textContent = '▶ Resume';
+}
+
+function speakSection(idx) {
+  if (idx >= voiceScript.length || !voiceActive) {
+    document.getElementById('voice-label').textContent = '🔊 Listen';
+    document.getElementById('voice-progress').textContent = '';
+    voiceIdx = 0;
+    voiceActive = false;
+    return;
+  }
+  document.getElementById('voice-progress').textContent = (idx+1) + ' / ' + voiceScript.length;
+  const u = new SpeechSynthesisUtterance(voiceScript[idx]);
+  u.rate = 0.95;
+  u.pitch = 1;
+  u.onend = () => {
+    voiceIdx = idx + 1;
+    speakSection(voiceIdx);
+  };
   window.speechSynthesis.speak(u);
 }
-window.addEventListener('scroll',()=>{
-  const be=document.getElementById('be-fill');
-  if(be&&be.style.width==='0%'){
-    const r=be.getBoundingClientRect();
-    if(r.top<window.innerHeight){be.style.width='55%';}
-  }
-});
 </script>
 </body>
 </html>
