@@ -38,6 +38,23 @@ export default async function handler(req, res) {
         out.voiceCheckStatus = v.status;
         if (!v.ok) out.voiceCheckBody = (await v.text()).slice(0, 200);
       } catch (e) { out.voiceCheckError = String(e).slice(0, 200); }
+      try {
+        const s = await fetch(
+          `https://api.elevenlabs.io/v1/text-to-speech/${vid}?output_format=mp3_44100_128`,
+          {
+            method: 'POST',
+            headers: { 'xi-api-key': key, 'Content-Type': 'application/json', Accept: 'audio/mpeg' },
+            body: JSON.stringify({ text: 'Hello.', model_id: ELEVENLABS_MODEL }),
+          }
+        );
+        out.ttsCheckStatus = s.status;
+        out.ttsContentType = s.headers.get('content-type');
+        if (s.ok) {
+          out.ttsBytes = (await s.arrayBuffer()).byteLength;
+        } else {
+          out.ttsCheckBody = (await s.text()).slice(0, 300);
+        }
+      } catch (e) { out.ttsCheckError = String(e).slice(0, 200); }
     }
     res.status(200).json(out);
     return;
