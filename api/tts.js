@@ -6,6 +6,43 @@ const ELEVENLABS_MODEL = 'eleven_turbo_v2_5';
 const MAX_CHARS = 1500;
 
 export default async function handler(req, res) {
+  // Secrets-safe diagnostic: GET /api/tts?diag=1
+  // Reports whether env vars are visible at runtime and whether ElevenLabs
+  // accepts the key and voice ID. Never returns the key itself.
+  if (req.method === 'GET' && req.query && req.query.diag) {
+    const key = process.env.ELEVENLABS_API || process.env.ELEVENLABS_API_KEY;
+    const vid = process.env.ELEVENLABS_VOICE_ID;
+    const out = {
+      hasKey: !!key,
+      keyLen: key ? key.length : 0,
+      keyPrefix: key ? key.slice(0, 3) : null,
+      usedFallbackName: !process.env.ELEVENLABS_API && !!process.env.ELEVENLABS_API_KEY,
+      hasVoiceId: !!vid,
+      voiceId: vid || null,
+      model: ELEVENLABS_MODEL,
+    };
+    if (key) {
+      try {
+        const u = await fetch('https://api.elevenlabs.io/v1/user/subscription', {
+          headers: { 'xi-api-key': key },
+        });
+        out.keyCheckStatus = u.status;
+        if (!u.ok) out.keyCheckBody = (await u.text()).slice(0, 200);
+      } catch (e) { out.keyCheckError = String(e).slice(0, 200); }
+    }
+    if (key && vid) {
+      try {
+        const v = await fetch(`https://api.elevenlabs.io/v1/voices/${vid}`, {
+          headers: { 'xi-api-key': key },
+        });
+        out.voiceCheckStatus = v.status;
+        if (!v.ok) out.voiceCheckBody = (await v.text()).slice(0, 200);
+      } catch (e) { out.voiceCheckError = String(e).slice(0, 200); }
+    }
+    res.status(200).json(out);
+    return;
+  }
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ error: 'Method not allowed' });
