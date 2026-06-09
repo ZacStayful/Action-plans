@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>17 Murray Street, Bedminster — Action Plan</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0ede8;color:#1a1a1a;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:0 0 80px}
+.card{background:white;border:1px solid #e8e4de;border-radius:14px;padding:28px;margin:0 16px 20px}
+.hero{background:linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%);padding:32px 28px 0;margin-bottom:0;border-radius:0}
+.logo-pill{background:white;border-radius:10px;padding:6px 12px;display:inline-block}
+.logo-text{font-size:22px;font-weight:800;color:#5d8156;letter-spacing:-0.5px;font-family:'Segoe UI',system-ui,Arial}
+.hero-label{color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin:20px 0 8px}
+.hero-address{font-size:32px;font-weight:700;color:white;line-height:1.2;margin-bottom:12px}
+.hero-sub{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:20px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.pill{background:rgba(255,255,255,0.15);color:white;padding:4px 12px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,0.2)}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(0,0,0,0.2);border-radius:10px 10px 0 0;overflow:hidden}
+.stat-box{padding:16px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.stat-box:last-child{border-right:none}
+.stat-val{font-size:26px;font-weight:700;color:white}
+.stat-lbl{font-size:11px;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
+.prog{background:#1a2e18;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+.step{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,0.45)}
+.step.done{color:white}
+.step.cur{color:#9cb898}
+.step-dot{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.step.done .step-dot{background:#5d8156}
+.step.cur .step-dot{background:rgba(255,255,255,0.3)}
+.sep{color:rgba(255,255,255,0.2)}
+.sec-h{font-size:20px;font-weight:700;margin-bottom:6px}
+.sec-s{font-size:14px;color:#666;margin-bottom:20px}
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.inc-card{border:2px solid #e8e4de;border-radius:12px;padding:20px}
+.inc-card.y2{border-color:#5d8156;background:#f8fdf7}
+.inc-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:12px}
+.t1{background:#e8e4de;color:#444}
+.t2{background:#5d8156;color:white}
+.inc-main{font-size:36px;font-weight:800;line-height:1}
+.inc-mo{font-size:14px;color:#5d8156;font-weight:600;margin:4px 0 12px}
+.inc-rows div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0ede8;font-size:13px}
+.inc-rows div:last-child{border-bottom:none;font-weight:700;padding-top:8px}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.phase-card{border:1px solid #e8e4de;border-radius:12px;padding:16px;text-align:center}
+.ph-num{font-size:11px;font-weight:700;color:#5d8156;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.ph-range{font-size:12px;color:#888;margin-bottom:8px}
+.ph-net{font-size:19px;font-weight:700;color:#2a3f26}
+.ph-desc{font-size:12px;color:#666;margin-top:6px}
+.chart-outer{position:relative;margin-bottom:20px}
+.chart-inner{display:flex;gap:3px;align-items:flex-end;height:200px;position:relative}
+.legend{display:flex;gap:14px;margin-top:10px;font-size:12px;color:#666;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:5px}
+.leg-dot{width:12px;height:12px;border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:#2a3f26;color:white}
+th{padding:10px 12px;text-align:right;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+th:first-child{text-align:left}
+tbody tr:nth-child(even){background:#fafaf9}
+tbody tr:hover{background:#f0ede8}
+.q-block{border:2px solid #5d8156;border-radius:14px;padding:24px;margin-top:20px;background:#f8fdf7}
+.q-title{font-size:16px;font-weight:700;margin-bottom:16px}
+.q-opts{display:flex;flex-direction:column;gap:10px}
+.q-btn{background:white;border:2px solid #e8e4de;border-radius:10px;padding:14px 18px;text-align:left;cursor:pointer;font-size:14px;font-family:inherit;transition:all 0.2s;color:#1a1a1a}
+.q-btn:hover{border-color:#5d8156;background:#f8fdf7}
+.q-btn.sel{background:#5d8156;border-color:#5d8156;color:white;cursor:default}
+.locked{display:none}
+.win-bar{background:linear-gradient(135deg,#2a3f26,#5d8156);color:white;border-radius:12px;padding:20px 24px;text-align:center;margin:16px 0}
+.win-bar h3{font-size:26px;font-weight:800;margin-bottom:4px}
+.win-bar p{font-size:14px;opacity:0.85}
+.drv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.drv-card{border:1px solid #e8e4de;border-radius:12px;padding:16px}
+.drv-icon{font-size:24px;margin-bottom:8px}
+.drv-name{font-weight:700;font-size:14px;color:#2a3f26;margin-bottom:4px}
+.drv-desc{font-size:13px;color:#555;line-height:1.5}
+.drv-badge{display:inline-block;background:#e8f5e9;color:#2a7d3b;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;margin-top:6px}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.cs-card{border:1px solid #e8e4de;border-radius:12px;padding:20px}
+.cs-tag{display:inline-block;background:#2a3f26;color:white;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;margin-bottom:10px}
+.cs-name{font-size:15px;font-weight:700;margin-bottom:3px}
+.cs-loc{font-size:12px;color:#888;margin-bottom:12px}
+.cs-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.cs-sv{font-size:18px;font-weight:700;color:#2a3f26}
+.cs-sl{font-size:11px;color:#888}
+.cs-btn{display:block;text-align:center;background:#5d8156;color:white;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;margin-top:8px}
+.hdl-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.hdl{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1px solid #e8e4de;border-radius:10px}
+.hdl-ic{font-size:20px;min-width:28px}
+.hdl-tx{font-size:13px}
+.hdl-tx strong{display:block;margin-bottom:2px}
+.resp-pills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.resp-pill{background:#fef3c7;color:#92400e;padding:4px 12px;border-radius:999px;font-size:12px;border:1px solid #fde68a}
+.plat{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.plat-b{background:#f0f0f0;border:1px solid #e0e0e0;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600}
+.aircover{background:linear-gradient(135deg,#1e3a5f,#2b5797);color:white;border-radius:14px;padding:24px;margin:20px 0}
+.aircover h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ac-item{background:rgba(255,255,255,0.1);border-radius:10px;padding:12px}
+.ac-item strong{display:block;font-size:13px;margin-bottom:4px}
+.ac-item span{font-size:12px;opacity:0.8}
+.touch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.touch-card{border:1px solid #e8e4de;border-radius:12px;padding:16px;text-align:center}
+.touch-icon{font-size:24px;margin-bottom:8px}
+.touch-title{font-weight:700;font-size:14px;margin-bottom:4px}
+.touch-desc{font-size:12px;color:#666}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.trust-card{border:2px solid #e8e4de;border-radius:12px;padding:18px;text-align:center;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s}
+.trust-card:hover{border-color:#5d8156}
+.trust-icon{font-size:28px;margin-bottom:8px}
+.trust-title{font-weight:700;font-size:14px;margin-bottom:6px;color:#1a1a1a}
+.trust-desc{font-size:12px;color:#666}
+.mgmt-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.mgmt-btn{display:block;text-align:center;padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity 0.2s}
+.mgmt-btn.pri{background:#2a3f26;color:white}
+.mgmt-btn.sec{background:white;border:2px solid #2a3f26;color:#2a3f26}
+.faq-item{border:1px solid #e8e4de;border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 18px;cursor:pointer;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center;background:white;user-select:none}
+.faq-q:hover{background:#fafaf9}
+.faq-a{display:none;padding:16px 18px;font-size:14px;color:#444;border-top:1px solid #f0ede8;line-height:1.7;background:#fafaf9}
+.faq-a.open{display:block}
+.urg-box{background:linear-gradient(135deg,#1a2e18,#2a3f26);color:white;border-radius:14px;padding:28px;margin-bottom:20px}
+.urg-box h3{font-size:20px;font-weight:700;margin-bottom:20px}
+.urg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.urg-stat{background:rgba(255,255,255,0.1);border-radius:10px;padding:14px}
+.urg-val{font-size:24px;font-weight:800}
+.urg-lbl{font-size:11px;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
+.tl{position:relative;padding-left:36px;margin-bottom:24px}
+.tl::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:#e8e4de}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-dot{position:absolute;left:-36px;width:22px;height:22px;border-radius:50%;background:#5d8156;color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;top:2px}
+.tl-item.mt .tl-dot{background:#ddd;color:#999}
+.tl-title{font-weight:700;font-size:14px;margin-bottom:2px}
+.tl-desc{font-size:13px;color:#666}
+.tl-item.mt .tl-title{color:#999}
+.tl-item.mt .tl-desc{color:#bbb}
+.docs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.doc-card{border:1px solid #e8e4de;border-radius:12px;padding:16px;display:flex;align-items:flex-start;gap:12px}
+.doc-ic{font-size:22px;min-width:32px}
+.doc-title{font-weight:700;font-size:14px;margin-bottom:3px}
+.doc-desc{font-size:12px;color:#666}
+.ty{background:linear-gradient(135deg,#2a3f26,#5d8156);color:white;border-radius:14px;padding:28px;text-align:center;display:none;margin-top:16px}
+.ty h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.disc{font-size:11px;color:#999;margin-top:16px;padding:14px;background:#f9f9f9;border-radius:8px;border:1px solid #eee;line-height:1.6}
+.footer{text-align:center;padding:28px;font-size:12px;color:#999;border-top:1px solid #e8e4de;margin-top:20px}
+@media(max-width:600px){
+  .inc-grid,.phase-grid,.cs-grid,.drv-grid,.hdl-grid,.touch-grid,.trust-grid,.urg-grid,.docs-grid,.mgmt-btns,.stat-grid,.ac-grid{grid-template-columns:1fr}
+  .hero-address{font-size:24px}
+  .prog{gap:6px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="logo-pill"><span class="logo-text">Stayful</span></div>
+  <div class="hero-label">Prepared exclusively for Martyn</div>
+  <div class="hero-address">17 Murray Street, Bedminster, Bristol</div>
+  <div class="hero-sub">Your personalised short-let income analysis · Based on your call with Zac, 9 June 2026</div>
+  <div class="pills">
+    <span class="pill">📍 Bristol BS3</span>
+    <span class="pill">🛏 2 Bedrooms · Sleeps 4</span>
+    <span class="pill">🏠 Terraced House</span>
+    <span class="pill">📋 Previous STL Experience</span>
+    <span class="pill">📅 Prepared 9 June 2026</span>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="stat-val">£19,965</div><div class="stat-lbl">Year 1 Net (Conservative)</div></div>
+    <div class="stat-box"><div class="stat-val">£24,956</div><div class="stat-lbl">Year 2+ Net (Full Rate)</div></div>
+    <div class="stat-box"><div class="stat-val">+75%</div><div class="stat-lbl">vs Long-Term Let</div></div>
+  </div>
+</div>
+
+<!-- PROGRESS STRIP -->
+<div class="prog">
+  <div class="step done"><div class="step-dot">✓</div> Enquiry</div>
+  <div class="sep">›</div>
+  <div class="step done"><div class="step-dot">✓</div> Web Meeting</div>
+  <div class="sep">›</div>
+  <div class="step cur"><div class="step-dot">●</div> Documents Sent</div>
+  <div class="sep">›</div>
+  <div class="step"><div class="step-dot">◦</div> Agreement</div>
+  <div class="sep">›</div>
+  <div class="step"><div class="step-dot">◦</div> Setup</div>
+  <div class="sep">›</div>
+  <div class="step"><div class="step-dot">◦</div> Live</div>
+</div>
+
+<!-- SECTION 1 -->
+<div id="section1" class="card">
+  <div class="sec-h">Your income picture</div>
+  <div class="sec-s">Based on 12 comparable active listings within 1.32km of Murray Street, Bedminster</div>
+
+  <div class="inc-grid">
+    <div class="inc-card">
+      <span class="inc-tag t1">Year 1 — Conservative</span>
+      <div class="inc-main">£19,965</div>
+      <div class="inc-mo">£1,664/month average</div>
+      <div class="inc-rows">
+        <div><span>Annual gross</span><span>£38,394</span></div>
+        <div><span>Platform fees (~3%)</span><span>−£6,143</span></div>
+        <div><span>Management fee (15%+VAT)</span><span>−£6,911</span></div>
+        <div><span>Cleaning &amp; linen (collected from guests)</span><span>−£5,375</span></div>
+        <div><span><strong>Net to you</strong></span><span><strong>£19,965</strong></span></div>
+      </div>
+      <p style="font-size:12px;color:#666;margin-top:10px;">⚠️ Y1 applies an 80% conservative ramp — new listings build occupancy and reviews in Year 1.</p>
+    </div>
+    <div class="inc-card y2">
+      <span class="inc-tag t2">Year 2+ — Full Run Rate</span>
+      <div class="inc-main">£24,956</div>
+      <div class="inc-mo">£2,080/month average</div>
+      <div class="inc-rows">
+        <div><span>Annual gross</span><span>£47,992</span></div>
+        <div><span>Platform fees (~3%)</span><span>−£7,679</span></div>
+        <div><span>Management fee (15%+VAT)</span><span>−£8,638</span></div>
+        <div><span>Cleaning &amp; linen (collected from guests)</span><span>−£6,719</span></div>
+        <div><span><strong>Net to you</strong></span><span><strong>£24,956</strong></span></div>
+      </div>
+      <p style="font-size:12px;color:#5d8156;margin-top:10px;">✓ ADR: £194/night · Occupancy: 67% · Based on live Airbnb comp data</p>
+    </div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:14px;">Year 1 ramp trajectory</div>
+  <div class="phase-grid">
+    <div class="phase-card"><div class="ph-num">Phase 1</div><div class="ph-range">Months 1–3</div><div class="ph-net">£1,144–1,378<span style="font-size:13px;font-weight:400;">/mo</span></div><div class="ph-desc">Listing setup, early bookings, first reviews accumulating across all platforms.</div></div>
+    <div class="phase-card"><div class="ph-num">Phase 2</div><div class="ph-range">Months 4–8</div><div class="ph-net">£1,530–2,207<span style="font-size:13px;font-weight:400;">/mo</span></div><div class="ph-desc">Review score growing, occupancy climbing. Summer peak delivers the strongest months.</div></div>
+    <div class="phase-card"><div class="ph-num">Phase 3</div><div class="ph-range">Months 9–12</div><div class="ph-net">£1,519–1,936<span style="font-size:13px;font-weight:400;">/mo</span></div><div class="ph-desc">Consistent demand driven by university, hospital, and direct repeat bookings.</div></div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:8px;">Monthly income forecast</div>
+  <div class="chart-outer">
+    <div class="chart-inner" id="chartInner">
+      <div style="display:flex;flex:1;gap:3px;align-items:flex-end;height:200px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#9cb898;border-radius:3px 3px 0 0;height:83px;"></div><div style="width:100%;background:#9cb898;opacity:0.35;border-radius:3px 3px 0 0;height:104px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Jan</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#9cb898;border-radius:3px 3px 0 0;height:100px;"></div><div style="width:100%;background:#9cb898;opacity:0.35;border-radius:3px 3px 0 0;height:125px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Feb</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#9cb898;border-radius:3px 3px 0 0;height:100px;"></div><div style="width:100%;background:#9cb898;opacity:0.35;border-radius:3px 3px 0 0;height:125px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Mar</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#5d8156;border-radius:3px 3px 0 0;height:111px;"></div><div style="width:100%;background:#5d8156;opacity:0.35;border-radius:3px 3px 0 0;height:139px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Apr</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#5d8156;border-radius:3px 3px 0 0;height:120px;"></div><div style="width:100%;background:#5d8156;opacity:0.35;border-radius:3px 3px 0 0;height:150px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">May</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#2a3f26;border-radius:3px 3px 0 0;height:128px;"></div><div style="width:100%;background:#2a3f26;opacity:0.35;border-radius:3px 3px 0 0;height:160px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Jun</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#2a3f26;border-radius:3px 3px 0 0;height:160px;"></div><div style="width:100%;background:#2a3f26;opacity:0.35;border-radius:3px 3px 0 0;height:200px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Jul</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#2a3f26;border-radius:3px 3px 0 0;height:142px;"></div><div style="width:100%;background:#2a3f26;opacity:0.35;border-radius:3px 3px 0 0;height:178px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Aug</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#2a3f26;border-radius:3px 3px 0 0;height:140px;"></div><div style="width:100%;background:#2a3f26;opacity:0.35;border-radius:3px 3px 0 0;height:176px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Sep</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#5d8156;border-radius:3px 3px 0 0;height:133px;"></div><div style="width:100%;background:#5d8156;opacity:0.35;border-radius:3px 3px 0 0;height:166px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Oct</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#5d8156;border-radius:3px 3px 0 0;height:120px;"></div><div style="width:100%;background:#5d8156;opacity:0.35;border-radius:3px 3px 0 0;height:150px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Nov</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;"><div style="display:flex;flex-direction:column-reverse;align-items:center;gap:2px;height:200px;justify-content:flex-start;width:100%;"><div style="width:100%;background:#5d8156;border-radius:3px 3px 0 0;height:110px;"></div><div style="width:100%;background:#5d8156;opacity:0.35;border-radius:3px 3px 0 0;height:138px;"></div></div><div style="font-size:10px;color:#666;font-weight:500;">Dec</div></div>
+      </div>
+    </div>
+    <div id="ltlRef" style="position:relative;margin-top:4px;border-top:2px dashed #e07b54;"><span style="font-size:10px;color:#e07b54;font-weight:600;float:right;">LTL £1,190/mo baseline</span></div>
+    <div class="legend" style="margin-top:24px;">
+      <div class="leg-item"><div class="leg-dot" style="background:#2a3f26;"></div> Solid = Y1 · Faded = Y2</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#2a3f26;"></div> Peak (Jun–Sep)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#5d8156;"></div> Shoulder</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#9cb898;"></div> Low (Jan–Mar)</div>
+      <div class="leg-item"><div style="width:20px;border-top:2px dashed #e07b54;margin-top:5px;"></div> Long-let baseline</div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;margin-bottom:16px;">
+    <table>
+      <thead><tr><th style="text-align:left;">Month</th><th>Y1 Gross</th><th>Y1 Net</th><th>Y2 Gross</th><th>Y2 Net</th><th>Avg Rate</th><th>Season</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Jan</td><td style="padding:8px 12px;text-align:right;">£2,200</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,144</td><td style="padding:8px 12px;text-align:right;">£2,750</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£1,430</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#9cb898;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Low</span></td></tr>
+        <tr style="background:#fafaf9;border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Feb</td><td style="padding:8px 12px;text-align:right;">£2,650</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,378</td><td style="padding:8px 12px;text-align:right;">£3,313</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£1,723</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#9cb898;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Low</span></td></tr>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Mar</td><td style="padding:8px 12px;text-align:right;">£2,650</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,378</td><td style="padding:8px 12px;text-align:right;">£3,312</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£1,722</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#9cb898;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Low</span></td></tr>
+        <tr style="background:#fafaf9;border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Apr</td><td style="padding:8px 12px;text-align:right;">£2,942</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,530</td><td style="padding:8px 12px;text-align:right;">£3,677</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£1,912</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Shoulder</span></td></tr>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">May</td><td style="padding:8px 12px;text-align:right;">£3,175</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,651</td><td style="padding:8px 12px;text-align:right;">£3,969</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,064</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Shoulder</span></td></tr>
+        <tr style="background:#fafaf9;border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Jun</td><td style="padding:8px 12px;text-align:right;">£3,398</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,767</td><td style="padding:8px 12px;text-align:right;">£4,248</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,209</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">🌞 Peak</span></td></tr>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Jul</td><td style="padding:8px 12px;text-align:right;">£4,245</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£2,207</td><td style="padding:8px 12px;text-align:right;">£5,306</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,759</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">🌞 Peak</span></td></tr>
+        <tr style="background:#fafaf9;border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Aug</td><td style="padding:8px 12px;text-align:right;">£3,778</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,965</td><td style="padding:8px 12px;text-align:right;">£4,723</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,456</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">🌞 Peak</span></td></tr>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Sep</td><td style="padding:8px 12px;text-align:right;">£3,723</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,936</td><td style="padding:8px 12px;text-align:right;">£4,654</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,420</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#2a3f26;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">🌞 Peak</span></td></tr>
+        <tr style="background:#fafaf9;border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Oct</td><td style="padding:8px 12px;text-align:right;">£3,520</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,830</td><td style="padding:8px 12px;text-align:right;">£4,400</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,288</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Shoulder</span></td></tr>
+        <tr style="border-bottom:1px solid #f0ede8;"><td style="padding:8px 12px;font-weight:500;">Nov</td><td style="padding:8px 12px;text-align:right;">£3,190</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,659</td><td style="padding:8px 12px;text-align:right;">£3,988</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£2,074</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Shoulder</span></td></tr>
+        <tr style="background:#fafaf9;"><td style="padding:8px 12px;font-weight:500;">Dec</td><td style="padding:8px 12px;text-align:right;">£2,922</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#2a3f26;">£1,519</td><td style="padding:8px 12px;text-align:right;">£3,652</td><td style="padding:8px 12px;text-align:right;font-weight:600;color:#5d8156;">£1,899</td><td style="padding:8px 12px;text-align:right;color:#888;">£194</td><td style="padding:8px 12px;text-align:center;"><span style="background:#5d8156;color:white;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;">Shoulder</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disc">Projections based on Stayful Deal Analyser using live Airbnb data for 12 comparable active properties within 1.32km of 17 Murray Street, Bristol BS3. Year 1 applies an 80% conservative ramp factor reflecting typical new listing occupancy build. These figures are illustrative projections and do not constitute a financial guarantee. Past performance of comparable properties does not guarantee future results for your property.</div>
+
+  <div class="q-block">
+    <div class="q-title">How do these income projections compare to what you were expecting?</div>
+    <div class="q-opts" id="s1opts">
+      <button class="q-btn" onclick="answer(1,'A','Higher than I thought')">A &mdash; Higher than I thought</button>
+      <button class="q-btn" onclick="answer(1,'B','About what I expected')">B &mdash; About what I expected</button>
+      <button class="q-btn" onclick="answer(1,'C','I\'m not sure they\'re achievable')">C &mdash; I'm not sure they're achievable</button>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div id="section2" class="card locked">
+  <div class="sec-h">The opportunity — short-let vs long-let</div>
+  <div class="sec-s">A direct comparison for 17 Murray Street, Bedminster</div>
+
+  <div style="overflow-x:auto;margin-bottom:20px;">
+    <table>
+      <thead><tr><th style="text-align:left;">Item</th><th>Long-Let (Agent)</th><th>Short-Let (Stayful)</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 12px;font-weight:500;">Annual gross</td><td style="padding:10px 12px;text-align:right;color:#888;">£15,864</td><td style="padding:10px 12px;text-align:right;font-weight:600;">£47,992</td></tr>
+        <tr style="background:#fafaf9;"><td style="padding:10px 12px;">Agent / management fees</td><td style="padding:10px 12px;text-align:right;color:#e07b54;">−£1,586 (10%)</td><td style="padding:10px 12px;text-align:right;color:#e07b54;">−£7,199 (15%+VAT)</td></tr>
+        <tr><td style="padding:10px 12px;">Cleaning &amp; linen</td><td style="padding:10px 12px;text-align:right;color:#888;">Your cost</td><td style="padding:10px 12px;text-align:right;color:#5d8156;">Collected from guests</td></tr>
+        <tr style="background:#fafaf9;"><td style="padding:10px 12px;">Void periods</td><td style="padding:10px 12px;text-align:right;color:#e07b54;">Possible</td><td style="padding:10px 12px;text-align:right;color:#5d8156;">Dynamic pricing mitigates</td></tr>
+        <tr style="background:#e8f5e9;border-top:2px solid #5d8156;"><td style="padding:12px;font-weight:700;">Net to owner</td><td style="padding:12px;text-align:right;font-weight:700;color:#888;">£14,278/year</td><td style="padding:12px;text-align:right;font-weight:700;color:#2a3f26;">£24,956/year</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="win-bar">
+    <h3>+£10,678 / year more with Stayful</h3>
+    <p>That's +£890 every month, and a 75% uplift over long-term letting</p>
+  </div>
+  <p style="font-size:12px;color:#888;margin-bottom:24px;">Estimates only. Long-let figures based on current BS3 market rate. Cleaning costs assumed recovered from guests via Airbnb cleaning fee.</p>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:12px;">Break-even on setup</div>
+  <div style="text-align:center;padding:24px;border:1px solid #e8e4de;border-radius:12px;margin-bottom:24px;">
+    <div style="font-size:52px;font-weight:800;color:#2a3f26;line-height:1;">~2</div>
+    <div style="font-size:14px;color:#666;margin:8px 0 20px;">months to recover a furnished property setup<br><span style="font-size:12px;">(estimated ~£1,500: photography, key safes &amp; consumables top-up)</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;">
+      <div style="background:#f0ede8;border-radius:8px;padding:12px;"><div style="font-weight:700;font-size:15px;color:#2a3f26;">Month 1</div><div style="font-size:12px;color:#666;">+£1,017 uplift</div><div style="font-size:11px;color:#888;">Cumulative: £1,017</div></div>
+      <div style="background:#e8f5e9;border-radius:8px;padding:12px;border:1px solid #b7e0b2;"><div style="font-weight:700;font-size:15px;color:#2a3f26;">Month 2</div><div style="font-size:12px;color:#666;">+£1,275 uplift</div><div style="font-size:11px;color:#5d8156;font-weight:600;">✓ Break-even: £2,292</div></div>
+      <div style="background:#e8f5e9;border-radius:8px;padding:12px;"><div style="font-weight:700;font-size:15px;color:#2a3f26;">Month 3</div><div style="font-size:12px;color:#666;">+£1,275 uplift</div><div style="font-size:11px;color:#5d8156;">Ahead: £3,567</div></div>
+    </div>
+    <p style="font-size:12px;color:#888;">Going live in July captures peak season immediately. Each week of delay in July costs ~£510 in net income.</p>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:14px;">What drives bookings in BS3 Bedminster</div>
+  <div class="drv-grid">
+    <div class="drv-card"><div class="drv-icon">🏥</div><div class="drv-name">Healthcare — Bristol Royal Infirmary</div><div class="drv-desc">BRI is 1.78km away. Medical staff relocations, visiting consultants, and patient families create consistent demand that doesn't drop in winter.</div><span class="drv-badge">HIGH impact · 3 facilities</span></div>
+    <div class="drv-card"><div class="drv-icon">🎓</div><div class="drv-name">University of Bristol</div><div class="drv-desc">Just 1.74km away. Academic visitors, overseas students' families, conference delegates, and graduation periods drive reliable bookings year-round.</div><span class="drv-badge">HIGH impact · 2 institutions</span></div>
+    <div class="drv-card"><div class="drv-icon">🚂</div><div class="drv-name">Bristol Temple Meads</div><div class="drv-desc">One of the best-connected stations in the South West, 1.44km away. Business travellers, weekend city-breakers from London and Cardiff.</div><span class="drv-badge">HIGH impact · 9 transport links</span></div>
+    <div class="drv-card"><div class="drv-icon">🎵</div><div class="drv-name">Live Events — Thekla &amp; Beyond</div><div class="drv-desc">Thekla, Bristol's iconic floating music venue, is just 430m away. 539+ tracked events in the area make event-driven stays a reliable, recurring revenue source.</div><span class="drv-badge">HIGH impact · 539 events</span></div>
+    <div class="drv-card"><div class="drv-icon">🎨</div><div class="drv-name">Street Art &amp; Banksy Culture</div><div class="drv-desc">Bedminster and Southville sit at the heart of Bristol's street art scene. Visitors come specifically to explore this area — it's a genuine, year-round tourism draw.</div><span class="drv-badge">Strong cultural demand</span></div>
+    <div class="drv-card"><div class="drv-icon">☕</div><div class="drv-name">Southville Lifestyle Appeal</div><div class="drv-desc">Award-winning independent restaurants, boutique shops on North Street, and a distinct community character attract lifestyle travellers looking for a neighbourhood experience.</div><span class="drv-badge">Lifestyle destination</span></div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-title">What's your current thinking on the long-let alternative?</div>
+    <div class="q-opts" id="s2opts">
+      <button class="q-btn" onclick="answer(2,'A','Short-let clearly makes more sense')">A &mdash; Short-let clearly makes more sense</button>
+      <button class="q-btn" onclick="answer(2,'B','Still weighing it up')">B &mdash; Still weighing it up</button>
+      <button class="q-btn" onclick="answer(2,'C','I\'d rather keep it as a long-let')">C &mdash; I'd rather keep it as a long-let</button>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div id="section3" class="card locked">
+  <div class="sec-h">How it works &amp; proof</div>
+  <div class="sec-s">Real results from Stayful-managed properties — January to December 2025</div>
+
+  <div class="cs-grid">
+    <div class="cs-card"><span class="cs-tag">Jan–Dec 2025</span><div class="cs-name">17 Park Crescent</div><div class="cs-loc">📍 York</div><div class="cs-stats"><div><div class="cs-sv">£54,688</div><div class="cs-sl">Gross Revenue</div></div><div><div class="cs-sv">£34,727</div><div class="cs-sl">Owner Net</div></div><div><div class="cs-sv">73.9%</div><div class="cs-sl">Occupancy</div></div><div><div class="cs-sv">£186</div><div class="cs-sl">Avg Nightly Rate</div></div></div><a href="https://drive.google.com/file/d/1wBDU2RxrOw0di244IlBxZOWWlfu_ORHn/view" target="_blank" class="cs-btn">View case study →</a></div>
+    <div class="cs-card"><span class="cs-tag">Jan–Dec 2025</span><div class="cs-name">7 Beechwood Mount</div><div class="cs-loc">📍 Burley, Leeds</div><div class="cs-stats"><div><div class="cs-sv">£40,665</div><div class="cs-sl">Gross Revenue</div></div><div><div class="cs-sv">£25,782</div><div class="cs-sl">Owner Net</div></div><div><div class="cs-sv">50.4%</div><div class="cs-sl">Occupancy</div></div><div><div class="cs-sv">£201</div><div class="cs-sl">Avg Nightly Rate</div></div></div><a href="https://drive.google.com/file/d/1j7E50JvCz8r9G38p-pjnYJ8AIp_7bZX1/view" target="_blank" class="cs-btn">View case study →</a></div>
+    <div class="cs-card"><span class="cs-tag">Jan–Dec 2025</span><div class="cs-name">803 Eastbank Tower</div><div class="cs-loc">📍 Manchester City Centre</div><div class="cs-stats"><div><div class="cs-sv">£56,921</div><div class="cs-sl">Gross Revenue</div></div><div><div class="cs-sv">£35,917</div><div class="cs-sl">Owner Net</div></div><div><div class="cs-sv">68.7%</div><div class="cs-sl">Occupancy</div></div><div><div class="cs-sv">£212</div><div class="cs-sl">Avg Nightly Rate</div></div></div><a href="https://drive.google.com/file/d/14J1Zb8c79YLywOXEWpbXLPrRsXsOPcm8/view" target="_blank" class="cs-btn">View case study →</a></div>
+    <div class="cs-card"><span class="cs-tag">Jan–Dec 2025</span><div class="cs-name">Museum Court</div><div class="cs-loc">📍 Lincoln City Centre</div><div class="cs-stats"><div><div class="cs-sv">£57,328</div><div class="cs-sl">Gross Revenue</div></div><div><div class="cs-sv">£36,288</div><div class="cs-sl">Owner Net</div></div><div><div class="cs-sv">64.2%</div><div class="cs-sl">Occupancy</div></div><div><div class="cs-sv">£225</div><div class="cs-sl">Avg Nightly Rate</div></div></div><p style="font-size:12px;color:#888;margin-top:8px;">Case study link coming soon</p></div>
+  </div>
+  <div class="disc">Actual Airbnb platform data Jan–Dec 2025. Past performance of other properties does not guarantee future results for your property.</div>
+
+  <div style="font-size:16px;font-weight:700;margin:24px 0 14px;">What Stayful handles — everything</div>
+  <div class="hdl-grid">
+    <div class="hdl"><div class="hdl-ic">💬</div><div class="hdl-tx"><strong>Guest communication</strong>All enquiries, bookings, check-in instructions, and in-stay queries handled 24/7.</div></div>
+    <div class="hdl"><div class="hdl-ic">🧹</div><div class="hdl-tx"><strong>Cleaning &amp; linen</strong>Professional changeover cleans after every stay. Cost collected from guests.</div></div>
+    <div class="hdl"><div class="hdl-ic">💰</div><div class="hdl-tx"><strong>Dynamic pricing</strong>Rates adjusted daily based on local demand, events, and competitor data.</div></div>
+    <div class="hdl"><div class="hdl-ic">🔧</div><div class="hdl-tx"><strong>Maintenance coordination</strong>Minor issues authorised up to £300. You're notified for anything above this.</div></div>
+    <div class="hdl"><div class="hdl-ic">🔑</div><div class="hdl-tx"><strong>Key &amp; access management</strong>Smart key safe. Guests self-check-in. No waiting around on your end.</div></div>
+    <div class="hdl"><div class="hdl-ic">📣</div><div class="hdl-tx"><strong>Remarketing &amp; direct bookings</strong>Repeat guest outreach and direct booking development from Year 1.</div></div>
+    <div class="hdl"><div class="hdl-ic">📊</div><div class="hdl-tx"><strong>Monthly income statement</strong>Sent between the 1st–5th of every month. Fully itemised.</div></div>
+    <div class="hdl"><div class="hdl-ic">📸</div><div class="hdl-tx"><strong>Professional photography</strong>High-quality listing photos taken before going live. Included in setup.</div></div>
+  </div>
+  <p style="font-size:13px;font-weight:600;margin-bottom:8px;color:#444;">Your only responsibilities:</p>
+  <div class="resp-pills">
+    <span class="resp-pill">💡 Utilities &amp; WiFi (your account)</span>
+    <span class="resp-pill">🏛 Council tax</span>
+    <span class="resp-pill">🌡 Smart thermostat (~£200 one-time)</span>
+    <span class="resp-pill">🔒 Key safe (~£60 one-time)</span>
+  </div>
+  <p style="font-size:13px;font-weight:600;margin:12px 0 8px;color:#444;">Listed on:</p>
+  <div class="plat"><span class="plat-b">Airbnb</span><span class="plat-b">Booking.com</span><span class="plat-b">Google Hotels</span><span class="plat-b">Direct Bookings</span></div>
+
+  <div class="aircover">
+    <h3>🛡 AirCover — Guest damage protection</h3>
+    <p style="font-size:13px;opacity:0.85;margin-bottom:16px;">You raised a critical concern on the call: you found out about damage too late to claim last time. Here's how Stayful and AirCover ensure that never happens.</p>
+    <div class="ac-grid">
+      <div class="ac-item"><strong>£2.5M damage protection</strong><span>Included at no cost on every Airbnb booking. Covers accidental and malicious damage.</span></div>
+      <div class="ac-item"><strong>Notification within 24 hours</strong><span>Stayful photographs before and after every stay. Damage is documented and you're told immediately — never weeks later.</span></div>
+      <div class="ac-item"><strong>We manage every claim</strong><span>Stayful handles the entire AirCover process. You never deal with Airbnb directly about damage.</span></div>
+      <div class="ac-item"><strong>Guest screening first</strong><span>ID verification, booking history, £200 security deposit standard. Party groups and unsuitable guests are declined at the enquiry stage.</span></div>
+    </div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin:24px 0 14px;">How we keep you informed</div>
+  <div class="touch-grid">
+    <div class="touch-card"><div class="touch-icon">💬</div><div class="touch-title">Dedicated Slack channel</div><div class="touch-desc">Direct line to your Stayful manager. All updates in one place, nothing lost in email.</div></div>
+    <div class="touch-card"><div class="touch-icon">📅</div><div class="touch-title">Live booking calendar</div><div class="touch-desc">Real-time visibility of all bookings and availability at any time.</div></div>
+    <div class="touch-card"><div class="touch-icon">📊</div><div class="touch-title">Monthly income statement</div><div class="touch-desc">Sent between the 1st and 5th of every month. Gross, deductions, net — fully itemised.</div></div>
+    <div class="touch-card"><div class="touch-icon">📞</div><div class="touch-title">Quarterly review call</div><div class="touch-desc">Video call to review performance, pricing, and any property improvements worth considering.</div></div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:14px;">See for yourself</div>
+  <div class="trust-grid">
+    <a href="https://www.airbnb.co.uk/users/profile/1465927855339112491?previous_page_name=PdpHomeMarketplace" target="_blank" class="trust-card"><div class="trust-icon">🌟</div><div class="trust-title">Airbnb Reviews</div><div class="trust-desc">Read what guests and owners say about Stayful on Airbnb</div></a>
+    <a href="https://share.google/yZ1HexwdVAmlM8TOo" target="_blank" class="trust-card"><div class="trust-icon">⭐</div><div class="trust-title">Google Reviews</div><div class="trust-desc">Stayful's verified Google reviews from owners and guests</div></a>
+    <a href="https://drive.google.com/file/d/1Ja1yEDno_nS-te7y9qh-UcaaHLt0enPR/view" target="_blank" class="trust-card"><div class="trust-icon">📄</div><div class="trust-title">Monthly Statement Example</div><div class="trust-desc">See the exact statement format owners receive every month</div></a>
+  </div>
+
+  <div class="q-block">
+    <div class="q-title">What feels like your biggest open question right now?</div>
+    <div class="q-opts" id="s3opts">
+      <button class="q-btn" onclick="answer(3,'A','Whether the income is really achievable')">A &mdash; Whether the income is really achievable</button>
+      <button class="q-btn" onclick="answer(3,'B','How guest damage and problems are handled')">B &mdash; How guest damage and problems are handled</button>
+      <button class="q-btn" onclick="answer(3,'C','The setup cost and process')">C &mdash; The setup cost and process</button>
+      <button class="q-btn" onclick="answer(3,'D','The commitment and contract terms')">D &mdash; The commitment and contract terms</button>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div id="section4" class="card locked">
+  <div class="sec-h">Your plan &amp; next steps</div>
+
+  <div style="border:2px solid #2a3f26;border-radius:14px;padding:24px;margin-bottom:24px;">
+    <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">📋 Management Agreement</h3>
+    <p style="font-size:14px;color:#555;margin-bottom:16px;">The agreement covers every term discussed on the call — management fee, notice periods, your responsibilities, property access, and damage. The Loom walkthrough covers it in under 10 minutes.</p>
+    <div class="mgmt-btns">
+      <a href="https://drive.google.com/file/d/1ct_Br_7XR69s6beyFfqHSnSPoRouKkG6/view?usp=sharing" target="_blank" class="mgmt-btn pri">📄 Read Agreement</a>
+      <a href="https://www.loom.com/share/50756d81baf4426987cb5300ecbee951" target="_blank" class="mgmt-btn sec">▶ Watch Walkthrough Video</a>
+    </div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:14px;">Your questions, answered honestly</div>
+  <div id="faq">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How quickly will you tell me about damage — and how is it recovered? <span>▼</span></div><div class="faq-a">Stayful photographs the property before and after every stay. If a guest causes damage, you'll know within 24 hours of check-out — not weeks later. We then manage the AirCover claim on your behalf. For amounts under £300, we may authorise a repair immediately to protect your next booking. For larger claims, you're notified and we coordinate. The previous experience you described — finding out too late — is exactly what pre- and post-stay documentation prevents.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do you screen out party groups and unsuitable guests? <span>▼</span></div><div class="faq-a">Every booking goes through Airbnb's ID verification and booking history check. We set a £200 security deposit as standard. Properties near universities do attract younger guests on occasion, but the profile in BS3 Bedminster is predominantly short-stay professionals, medical workers, visiting families, and city-breakers. We can apply minimum-stay rules and minimum age thresholds at your request. 30% of our bookings are from repeat guests — the lowest-risk category.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Stayful has been trading since 2023 — is that enough experience? <span>▼</span></div><div class="faq-a">Fair question. Stayful was established for STL management in 2023 and now manages approximately 70 properties across England. The team comes from hospitality and property management backgrounds. The case studies above are real Airbnb platform data from 2025. We'd rather be a growing company where your property genuinely matters than a large agency where you're one of 3,000 clients. The Airbnb and Google reviews are the most honest reflection of how we operate day to day.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if I decide to sell while you're managing the property? <span>▼</span></div><div class="faq-a">After the initial 6-month fixed term, either party can exit on 3 months' written notice. If the property sells during the initial term, the £1,000 early exit fee applies — but that's typically recovered in less than 2 months of STL income above long-let. During a sale process, actively listed STL properties often present well due to professional photography and high presentation standards. We're transparent about the practicalities if a sale becomes the most likely outcome.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What's the honest worst case if projections aren't hit? <span>▼</span></div><div class="faq-a">The honest worst case: a first year that underperforms the 80% conservative estimate. If occupancy tracked 10–15 points below projection — say 50–55% instead of 67% — you'd see net income around £14,000–16,000. That still matches or slightly exceeds the long-let net. The projection is based on median-aggregated data from 12 active comparables within 1.32km, so it reflects the real market, not an outlier. We don't show figures we don't believe are achievable.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What does the 6-month initial term mean in practice? <span>▼</span></div><div class="faq-a">The 6-month fixed term gives the listing time to build reviews, occupancy, and direct bookings — the ramp-up phase that produces the Year 2 run rate. Early exit within this term incurs a £1,000 fee. After 6 months, the agreement rolls to 3-month rolling notice — either party can exit with 3 months' written notice at any time. No lock-in beyond that. The terms are designed to be mutual, not punitive.</div></div>
+  </div>
+
+  <div class="urg-box" style="margin-top:24px;">
+    <h3>⚡ Why June Matters</h3>
+    <div class="urg-grid">
+      <div class="urg-stat"><div class="urg-val">£2,207</div><div class="urg-lbl">July Y1 net income</div></div>
+      <div class="urg-stat"><div class="urg-val">~£510</div><div class="urg-lbl">Cost of each week's delay in July</div></div>
+      <div class="urg-stat"><div class="urg-val">30 Jun</div><div class="urg-lbl">Agreement deadline (21 days away)</div></div>
+      <div class="urg-stat"><div class="urg-val">Jul–Sep</div><div class="urg-lbl">Peak season window ahead</div></div>
+    </div>
+    <p style="font-size:13px;opacity:0.75;margin-top:16px;">Murray Street sits in one of Bristol's strongest short-let micro-markets. Signing this month means capturing July, August, and September — the three highest-earning months of the year.</p>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin:24px 0 14px;">Setup timeline — from today to live</div>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-dot">1</div><div class="tl-title">Sign agreement <span style="background:#e07b54;color:white;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;margin-left:6px;">by 30 Jun</span></div><div class="tl-desc">Agreement sent today. Countersigned by Stayful within 24 hours. Onboarding begins immediately.</div></div>
+    <div class="tl-item"><div class="tl-dot">2</div><div class="tl-title">Property check &amp; essentials</div><div class="tl-desc">Smart thermostat (~£200) and key safe (~£60) fitted. Property confirmed guest-ready. ~1 day.</div></div>
+    <div class="tl-item"><div class="tl-dot">3</div><div class="tl-title">Professional photography</div><div class="tl-desc">Half-day shoot + editing. Listing copy written. ~3–5 days total.</div></div>
+    <div class="tl-item"><div class="tl-dot">4</div><div class="tl-title">Listing goes live — target mid-July</div><div class="tl-desc">Live on Airbnb, Booking.com, and Google Hotels. Dynamic pricing activated from day one.</div></div>
+    <div class="tl-item"><div class="tl-dot">5</div><div class="tl-title">First booking</div><div class="tl-desc">First confirmed stay expected within days of listing going live in July — high-demand period.</div></div>
+    <div class="tl-item mt"><div class="tl-dot">6</div><div class="tl-title">First income statement</div><div class="tl-desc">Delivered 1st–5th August covering first full month of bookings.</div></div>
+  </div>
+
+  <div style="font-size:16px;font-weight:700;margin-bottom:14px;">Documents being sent today</div>
+  <div class="docs-grid">
+    <div class="doc-card"><div class="doc-ic">📋</div><div><div class="doc-title">Management Agreement</div><div class="doc-desc">Full legal agreement covering fee, notice periods, property access, responsibilities, and damage.</div></div></div>
+    <div class="doc-card"><div class="doc-ic">📊</div><div><div class="doc-title">This action plan</div><div class="doc-desc">Everything from today's call in one place — income projections, demand drivers, proof, and next steps.</div></div></div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-title">Where are you in your thinking?</div>
+    <div class="q-opts" id="s4opts">
+      <button class="q-btn" onclick="answer(4,'A','Ready to sign the agreement')">A &mdash; Ready to sign the agreement</button>
+      <button class="q-btn" onclick="answer(4,'B','Nearly there — just a couple of questions')">B &mdash; Nearly there — just a couple of questions</button>
+      <button class="q-btn" onclick="answer(4,'C','Need more time to think this over')">C &mdash; Need more time to think this over</button>
+    </div>
+    <div id="thankyou" class="ty">
+      <h3>Thanks Martyn 👋</h3>
+      <p>Zac will be in touch shortly. The agreement is above whenever you're ready — and Lucy is here if you have any questions in the meantime.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p style="font-weight:700;margin-bottom:4px;">Stayful — MWB Stays Ltd · 20 Wenlock Road, London, N1 7GU</p>
+    <p>Prepared for Martyn De Vere · 17 Murray Street, Bedminster, Bristol BS3 1AE · 9 June 2026</p>
+    <p style="margin-top:4px;"><a href="mailto:zac@stayful.co.uk" style="color:#5d8156;">zac@stayful.co.uk</a> · <a href="https://stayful.co.uk" target="_blank" style="color:#5d8156;">stayful.co.uk</a></p>
+    <p style="margin-top:10px;font-size:11px;color:#bbb;">Figures are projections based on comparable market data — not guaranteed. Past performance of other properties does not guarantee future results for this property.</p>
+  </div>
+</div>
+
+</div>
+
+<!-- LUCY BUTTON -->
+<a href="https://lucy.stayful.co.uk/" target="_blank" style="position:fixed;bottom:24px;left:24px;background:#5d8156;color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px;">💬 Speak to Lucy</a>
+
+<!-- VOICEOVER BUTTON -->
+<button id="vBtn" onclick="tVoice()" style="position:fixed;bottom:24px;right:24px;background:#2a3f26;color:white;padding:12px 20px;border-radius:999px;border:none;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:9999;">🔊 <span id="vLbl">Listen</span> <span id="vProg" style="font-size:11px;opacity:0.7;"></span></button>
+
+<script>
+const IID="11554710025",WH="https://stayful.app.n8n.cloud/webhook/action-plan-session-end";
+let resp=[],vPlay=false,vSec=0;
+const vScript=[
+  "Hello Martyn. This is your personalised Stayful income plan for 17 Murray Street, Bedminster, Bristol. Prepared after your call with Zac on the 9th of June 2026.",
+  "On the income projections. In Year 1, with a conservative 80 percent ramp, you'd net £19,965 — that's £1,664 per month on average. By Year 2, fully established, the net projection is £24,956, or £2,080 per month.",
+  "Compared to a long-term let, which nets around £14,278 a year, short-let with Stayful delivers over £10,000 more every year — a 75 percent uplift, or £890 extra every single month.",
+  "On the break-even. The property is already furnished, so setup costs are minimal — estimated around £1,500 for photography, key safes, and consumables. At £890 per month more than long-let, that's recovered in under 2 months.",
+  "On what drives bookings in Bedminster. There are 5 strong demand drivers: Bristol Royal Infirmary under 2 kilometres away, the University of Bristol, Temple Meads station, Thekla and over 500 live events nearby, and the Banksy street art and Southville lifestyle draw.",
+  "On real portfolio results. Stayful's properties across England delivered between £25,000 and £57,000 net to owners in 2025. 17 Park Crescent in York netted £34,727. Museum Court in Lincoln netted £36,288. These are verified Airbnb platform figures.",
+  "On what Stayful handles. Guest communications, cleaning, dynamic pricing, maintenance, key management, monthly statements, photography — everything. Your only costs are utilities, council tax, and two small one-off purchases: a smart thermostat around £200, and a key safe around £60.",
+  "On damage and guest screening. AirCover provides £2.5 million in protection on every booking. Stayful photographs before and after every stay — you'll know about any damage within 24 hours, not weeks later as happened before. Party groups are screened out at the enquiry stage.",
+  "On the timeline. Sign by the 30th of June and the property can go live mid-July — capturing the three peak months of July, August, and September at full rates.",
+  "There's no follow-up call confirmed yet, but Zac will be in touch before the end of June. The agreement is in this plan whenever you're ready."
+];
+function tVoice(){if(vPlay){window.speechSynthesis.cancel();vPlay=false;document.getElementById('vLbl').textContent='Listen';document.getElementById('vProg').textContent='';return;}vPlay=true;document.getElementById('vLbl').textContent='Pause';playV(vSec);}
+function playV(i){if(i>=vScript.length||!vPlay){vPlay=false;vSec=0;document.getElementById('vLbl').textContent='Listen';document.getElementById('vProg').textContent='';return;}const u=new SpeechSynthesisUtterance(vScript[i]);u.rate=0.93;document.getElementById('vProg').textContent=(i+1)+'/'+vScript.length;u.onend=()=>{vSec=i+1;playV(vSec);};window.speechSynthesis.speak(u);}
+function answer(s,k,t){const el=document.getElementById('s'+s+'opts');el.querySelectorAll('.q-btn').forEach(b=>b.disabled=true);const c=[...el.querySelectorAll('.q-btn')].find(b=>b.textContent.trim().startsWith(k));if(c)c.classList.add('sel');resp.push('S'+s+': '+t);fetch(WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({item_id:IID,responses:resp,timestamp:new Date().toISOString()})}).catch(()=>{});if(s<4){setTimeout(()=>unlock(s+1),300);}else{document.getElementById('thankyou').style.display='block';}}
+function unlock(n){const el=document.getElementById('section'+n);if(el){el.classList.remove('locked');el.style.display='block';setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),100);}}
+function toggleFaq(el){const a=el.nextElementSibling;document.querySelectorAll('.faq-a').forEach(x=>{if(x!==a)x.classList.remove('open');});a.classList.toggle('open');document.querySelectorAll('.faq-q span').forEach(s=>s.textContent='▼');if(a.classList.contains('open'))el.querySelector('span').textContent='▲';}
+</script>
+</body>
+</html>
