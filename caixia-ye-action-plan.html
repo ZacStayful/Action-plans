@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caixia Ye &mdash; Stayful Action Plan</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f0ede8;font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#23291f;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 90px}
+.hero{background:linear-gradient(140deg,#2a3f26 0%,#3d5c38 45%,#5d8156 100%);color:#fff;border-radius:0 0 16px 16px;padding:22px 26px 26px}
+.logopill{background:white;border-radius:10px;padding:6px 12px;display:inline-block}
+.logopill img{height:38px;display:block}
+.prep{margin:18px 0 4px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+h1{font-size:32px;margin:0 0 8px;line-height:1.2}
+.sub{opacity:.9;font-size:15px;margin:0 0 16px;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px}
+.stat span{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.85;margin-bottom:5px}
+.stat strong{font-size:23px;display:block;line-height:1.15}
+.stat em{font-style:normal;font-size:12px;opacity:.8;display:block;margin-top:3px}
+.prog{background:#23291f;color:#fff;display:flex;flex-wrap:wrap;gap:6px;padding:12px 26px;font-size:13px;justify-content:center}
+.pstep{display:flex;align-items:center;gap:6px;padding:2px 10px;opacity:.4}
+.pstep.done{opacity:1} .pstep.now{opacity:.85}
+.dot{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.3);display:grid;place-items:center;font-size:10px}
+.pstep.done .dot{background:#fff;color:#2a3f26}
+h2{font-size:24px;margin:34px 0 6px}
+.lede{color:#5a6152;margin:0 0 16px}
+.card{background:#fff;border:1px solid #e8e4de;border-radius:13px;padding:20px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:18px} .card h4{margin:0 0 2px;font-size:16px}
+.alert{background:#fff8ed;border:1px solid #e8c78a;border-left:4px solid #d99a2b}
+.alert h3{color:#8a5d10}
+.good{background:#f2f7f0;border:1px solid #cfe0c8;border-left:4px solid #5d8156}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eceae5}
+th{background:#f6f4f0;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#5a6152}
+.chart{display:flex;gap:26px;align-items:flex-end;height:180px;margin:18px 0 4px;padding-left:4px}
+.barcol{flex:1;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.barwrap{display:flex;gap:6px;align-items:flex-end;justify-content:center;height:180px}
+.bar{width:34px;border-radius:5px 5px 0 0}
+.bar.booked{background:#3d5c38} .bar.gap{background:#b8cdb0}
+.barlab{font-weight:600;margin-top:8px;font-size:14px}
+.barsub{font-size:12px;color:#6b7264}
+.legend{display:flex;gap:16px;font-size:13px;color:#5a6152;margin-top:10px}
+.key{width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.cs .badge{display:inline-block;background:#eef3ec;color:#3d5c38;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;margin-bottom:8px}
+.loc{color:#6b7264;font-size:13px;margin-bottom:10px}
+.csgrid div{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f2f0ec;font-size:14px}
+.csgrid span{color:#6b7264}
+.btn{display:inline-block;background:#5d8156;color:#fff!important;padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:600;font-size:15px;margin:6px 8px 0 0}
+.btn.alt{background:#fff;color:#3d5c38!important;border:1.5px solid #5d8156}
+.btn-sm{display:inline-block;margin-top:12px;background:#eef3ec;color:#3d5c38!important;padding:8px 14px;border-radius:7px;text-decoration:none;font-weight:600;font-size:13px}
+.muted-sm{display:block;margin-top:12px;font-size:13px;color:#8b9184}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.trust a{display:block;background:#fff;border:1px solid #e8e4de;border-radius:11px;padding:16px;text-decoration:none;color:inherit}
+.trust a:hover{border-color:#5d8156}
+.trust strong{display:block;color:#3d5c38;margin-bottom:5px}
+.trust span{font-size:13px;color:#6b7264}
+.faq{border-bottom:1px solid #eceae5}
+.faqq{width:100%;text-align:left;background:none;border:0;padding:15px 0;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:12px;color:#23291f;font-family:inherit}
+.faqq span{color:#5d8156;font-size:20px;flex-shrink:0}
+.faqa{display:none;padding:0 0 15px;color:#4a5144;font-size:14.5px}
+.tl{counter-reset:s;list-style:none;padding:0;margin:0}
+.tl li{counter-increment:s;position:relative;padding:0 0 18px 46px;border-left:2px solid #dfe6db;margin-left:14px}
+.tl li:last-child{border-left-color:transparent}
+.tl li::before{content:counter(s);position:absolute;left:-15px;top:-2px;width:28px;height:28px;background:#5d8156;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
+.tl strong{display:block;margin-bottom:2px}
+.tl span{font-size:14px;color:#5a6152}
+.gate{background:#fff;border:1px solid #e8e4de;border-radius:13px;padding:22px;margin:22px 0}
+.gate p{margin:0 0 14px;font-weight:600;font-size:16px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{text-align:left;background:#f6f4f0;border:1.5px solid #e2ded7;border-radius:9px;padding:13px 16px;font-size:15px;cursor:pointer;font-family:inherit;color:#23291f}
+.opt:hover{border-color:#5d8156;background:#fff}
+.opt.sel{background:#5d8156;color:#fff;border-color:#5d8156}
+.locked{display:none}
+.thanks{display:none;background:#f2f7f0;border:1px solid #cfe0c8;border-radius:13px;padding:22px;margin-top:16px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ddd8d0;font-size:13px;color:#6b7264;text-align:center}
+.disc{font-size:12px;color:#8b9184;margin-top:10px;font-style:italic}
+.lucy{position:fixed;bottom:24px;left:24px;background:#5d8156;color:white;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px}
+.vo{position:fixed;bottom:24px;right:24px;background:#2a3f26;color:#fff;border:0;padding:12px 18px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:9999;font-family:inherit}
+@media(max-width:600px){h1{font-size:25px}.hero{padding:18px}.chart{gap:12px}.bar{width:24px}}
+</style></head><body>
+
+<div class="hero">
+  <div class="logopill"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/wAARCAGkAqADACIAAREBAhEB/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMAAAERAhEAPwD1GiiiuMQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUjEKpZiAAMkk4AFcbrnipnZ7bT22qDhpR1P09B70N2E2krs6S+1mx07InmG8D7i8t+Xb8a5+48bHJFtaDHYyN/QVyLMzsWZizE5JJyTSUrmLqvodA3jHUichYVHoFz/M1JH4zv1I3wwuO/BB/nXN0UXZPPI7mz8ZWkzBbmJoSf4gcr/jXQwzxXMQlhkWRD0KnIryWrdhqV1p0wktpSvPKnkH2IoTLjU7nqdFZOi67Bq0e3AjuFGWjJ6+49RWtTNU01dBRRRQMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooqC9uVs7Ka5bBEalsep7CgHocv4t1kgnToGwMZlI/l/jXIU+aV553lkJLuxJJ9TTKlu5zSk5MKuWGlXmovttoSwBwWPAH1NS6LpjarqCwjIjHzSEdh/ia9It7eK1hWGFAkajAAFNIcYcxx8fgm5KgvdRqT1ABOPxqC68HX8KloXjmx2BIP613lFOyNPZI8lmglt5THNGyOOoYYNR16dqukQarblJFAkA+SQDkH/AArza5t5LS5kglGHRiCKTRlODQlvPLbTrNC5WRTkEV6Xo+ppqtgk6gBxw6+hFeYV0HhG9aDVfs5b93OCMe45B/nQmOnKzO+ooopnQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRVe6v7WyXdczpGMcAnk/QdaAbSLFFc1P4zsUYiKGWTHfgD9aiTxtblsPaSAeoYGi6J513Oqoqjp+r2WpLm3lBbGSjcMPwq9QVdPVBRRRQAUUUUAFFFFABRRTZJEiUtI6oo6ljgUAOoqtFqFnPJ5cV1C7+gcE1ZoC6CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKwfF0xi0MqDgySBfw5P9K3q5bxsxFlbL6yE/kKHsKT91nFUUUVJync+DLYR6dJcEDdK5APsP/r5rpaxvCwA0CDHctn8zWzVLY6YL3QooooKCuE8ZQCPVI5QMGWME/UHFd3XAeLrxLnVhHGwYQrtJB4yTk0PYipblMCrelOY9WtGBwRKv6nFVKvaNEZ9ZtEH/AD0BP0HNSc63R6hRSMQqlmIAAySTgAVyWreLykrQ6eqkKcGRxkH6D+tVc6m0ldnXUVx+jeK55r1IL0IySEBXUYIJ6Z9RXYUXuEZKWqCiiigYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFIzKilmIVQMkk4AFJJIkUbO7BVUZJJwAK4HX/EL6jI0FuxS1BxxwX9z7e1DdhSkktTS1jxbtLQadgkcGYjj8B/WuSmnluJTLM7O5PLMck0yipbuc8puTCinpDLKf3cbv/uqT/KkeN422urKfQjBoJFimkglWWJyjqcgg4INejaBqw1WxDNgTRna4Hc+o+tebVveErloNZEWfllUqR7jkH9DTTLpyaZ6BRRRTOgKKKKACiioLy7isrSS4mICoM+5PYD3oC9irq2rwaTbb5PmkbhIweSf8K8+1DVLrUpS9xKSM/KgOFH0FJqN/LqV49xKTknCjso7AVUpNnPObb0FUlWDKSCDkEHkV6F4Z1KTUdNImbdLE20sepHYmvPK7rwbbPFpsszAgSvlc9wBjNCCm3zHSUUUUzoCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArl/GyE2Ns2OkhH5iuorB8XReZobMBzHIrfhyP60PYUleLPP6KKKk5T0DwhKH0NVzykjA/nn+tb1cl4InzHdQE9CHA+vB/kK62qWx0QfugSACSQAOpNYd/4qsLNzGhadwcEJ0B+v+FVfGN/Jb2sVrExUykliOCQO1cPSbFOdtEdHqHjC6uYzHbRC3BGCc5b8D2rnSSSSSSSckmkopXMXJvcK6fwbYmW9kvGHyxDavuT/APW/nXMVt6d4ln0y0W2ht4iASSTnJJ7mmgha92bHi7VzEo0+FsFhmUg8gdh+NcZUt1cyXdzJPKcvIxJqKhsc5czLFhG0uoW6ICWMi4x9RXqwryvTr1tOvFuVjV3UHAbOATxmtz/hNbz/AJ94f1oVkVTkle53FFcP/wAJpef8+8P6/wCNH/CaXn/PvD+v+NO6NPaRO4orh/8AhNb3/n3h/X/Gj/hNbz/n3h/Wi6D2kTuKK4f/AITS8/594f1/xo/4TS8/594f1/xoug9pE7iiuH/4TW9/594f1/xo/wCE1vP+feH9aLoPaRO4orh/+E0vP+feH9f8aP8AhNLz/n3h/X/Gi6D2kTuKK4f/AITW9/594f1/xo/4TW8/594f1oug9pE7iiuH/wCE0vP+feH9f8aP+E0vP+feH9f8aLoPaRO4orh/+E1vf+feH9f8aP8AhNbz/n3h/Wi6D2kTuKK4f/hNLz/n3h/X/Gj/AITS8/594f1/xoug9pE7iiuJj8bXIcebaxsncAkGuq07UYNTtRPATjOGU9VPoaE7jU09EXKCQBknAormvFWs/ZYDZQMBNIPnIPKr6fU0Mpu2rMnxNrpvJTZ2zEW6HDEH75H9BXOUUVN7nLKTbAAkjAJJ6AV1ei+FDKq3GoAqhGViHBPufT6VN4Y0AKqX92gLHmJCOg9T/SuqllSCJpJWVEUZJJwAKaRpCHViQ28NvGI4YkRAMAKABXJ+NZ7cm3hVVM4JJI6gdgaNU8YElotPXHYyuP5D/GuTlleeVpJXZ3Y5JJySaGxzlG1kNrV8NqW1+2AHRiT9ADWVXVeDLAvcSXrD5UGxc9yev5D+dC3Mo/EjtKKKKZ1BRRRQAVw3i7VTcXYsYm/dxHLY7t/9aur1e+XTtNmnJG4DCj1Y9K8wd2kkZ2JLMSST1JNJszqSsrISiitTQtJbVb8I3EKfNIR6en1NIwV3oWdA8PvqcgnnBW1U89i59B7e9d/HGsUaxooVFAAAHAAojiSGNY41CqoAAAwAKdVJHTGPKgooooKCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqlq1ubrSbmEDJZCR9QMirtHXg0B0seQkEHB6iirmrWxtNVuISOFckfQ8iqdScjVnY2/Cl19n1uNCfllUofr1H8q9Drya2mNvdRTLnMbBhj2NerRSLLEkinKsoIPsRTRtSe6Ob8Z2TzWkN1GpIiJDY7A9/z/AJ1xFeusiupVlDKRggjIIrmb3wZbTSF7WYwZOShG4D6c5oaCcG3dHEUV1g8ES45vkB9oz/jR/wAIPL/z/J/37P8AjRZmfJLscnRXWHwRIASb9MDk/uz/AI1ysqLHM6KwcKxAYDGcHrSE4tbjaKKuaXp76nfJbIwUkEliMgAd8UC1vZFOius/4QeT/n+T/v0f8aP+EHk/5/k/79H/ABp2K5Jdjk6K6z/hB5f+f5P+/Z/xo/4QeX/n+T/v2f8AGizDkl2OTorrP+EHk/5/k/79H/Gj/hB5P+f5P+/R/wAaLByS7HJ0V1n/AAg8v/P8n/fs/wCNH/CDy/8AP8n/AH7P+NFmHJLscnRXWf8ACDyf8/yf9+j/AI0f8IPJ/wA/yf8Afo/40WDkl2OTorrP+EHl/wCf5P8Av2f8aP8AhB5f+f5P+/Z/xosw5Jdjk6K6z/hB5P8An+T/AL9H/Gj/AIQeT/n+T/v0f8aLByS7HJ0V1n/CDy/8/wAn/fs/40f8IPL/AM/yf9+z/jRZhyS7HJ0V1n/CDyf8/wAn/fo/40f8IPJ/z/J/36P+NFg5Jdjk6K6z/hB5f+f5P+/Z/wAaB4HkzzfLj2jP+NFmHJLscnXfeEbKW10xpJQVMzblB6gY4P406w8KWNnIJZN07jkbxwD9O/41vYAGAMDtihKxpCDTuypqV+mnWMlw5HyjCg9z2FeY3FxJd3Ek8rFnckk1teKtU+23/wBmjOYYCRweC3c/0rAobJqSu7IK3vDOjf2jd+fMp+zxEE5HDHsP8ax7W2ku7qOCIZeRgB/jXp+n2Uen2UdtEOFHJ7k9yaEhU43fkWcAAADAHAFcp41uXSK3tlJCMSzYPXHQV1dZ2r6RDq9uIpGKMpJRwMkH/CmzeSumkeZUV0j+C78SEJNAy54JJB/LB/nWjZeC4I2DXc7Skc7EG0H8etKxz8kr7HN6To9xqtwFQFYQRvkI4A9vU16NaWsVlapbwrtRBge/ufenwQRW0QihjVEAwAowKkppG0IJLzCiiigsKKKgvblbOymuHPEak/U9h+dAN2OP8Y6j514lkh+WIZbHdj/gP51zFSTzPc3Ek0hyzsWJ9zUdS9Tmk7sACSABkk4Ar0rQNOGm6XGjACV/mkPue34Vx3hnThfaqrOuYoRvb0J7D8/5V6LTSLpx6hRRRTNgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDi/GtpsuoLtRgSLtY+46fp/KuVr0rxDZ/bdGmUDLoN6/Uf/WzXmtJnPUVpXCvRfC92LnRY1Jy0RMZ/Dp+ledV0/gu78u9mtWOBIu5R7j/AOsaEEHaR29FFFM6AooooAyfEd6bLRpWU4eT92vrz1P5Zrzeul8ZXvnaglqpysK5I9z/APWxXNUnuYVHdhXaeDLIpbzXjLgyHYpPoOv6/wAq4xEaSRUUEsxAAHcnpXqmn2q2Wnw26gDYoB9z3P50IVNXZZooqOeeO2gaaZgsajJJ7CmdBJWdda9ploxWW6QsDghMsR+VcfrPiW41B2igZorYEgAHBYep/wAKwjycmk2ZyqW0R6RD4l0mdtq3QUngb1Kj8yK1VdXUMrBlIyCDkEV5FWvouuz6XOqszPbE4ZCc4HqPQ0JijV11PR6zdR12x0xtk8hMmM7EGTj39KkvtTitdJa+VgylQUx3J6V5lNM9xM8srFnYkkk9Sabdipz5T0C18U6ZdSBN7xMTgeYoAP4gn9a2wcjI5BryGvS/D87z6HbO5JYLgk9Tg4oTuKE+Z2Zp02SRIo2kkYKijJJOABTq43xjqZMq2ETYVQGlwep7D+tD0Lk0lc1JfF+mRyFR50gH8SIMH8yDWlY6naakha1lD7eoIwR9RXlta3hmd4ddtwhIEhKsPUYJ/pSTMlVd7M9IooopmxXvL+2sIhJcyrGp4GepPsO9UYfEulTyBFuQpJwC6kD8zXGeIb5r7V5m3ExxkogzwAO/41lUrmTqWdkevAggEEEHkEUVy/g7UXnt5bSVixiwUJPOD2/Cuopo0i7q4Vl6/qI03S5HVsSyfLGO+T1P4CtSvPPFGo/btUMaHMUGVGO57n/PpQ3YU5WRikkkknJPJJpKKnsbV729itk6yMBn0Hc/lUnNudX4O0zZG9/KvLfLHkdu5/pXWVFbwJbW8cEYwkahQPYVneItTOm6YzIcTSfKnse5/AVWyOmKUYiX/iTTrCUxO7PIpwyxgHB9ySBS2HiPTtQkEUcjJITgJIME/TkivOCSxJJJJOST3oRijBlJBBBBHYilcz9q7nrtFQ2chlsoZGBy0YJz6kVNTNiK5uYbSBpp3CRr1J/l9axD4x0wSbcTkZxu2DH165x+Fc/4p1Q3uoGBGPkwHaADwW7n+lYNJsylUs7I9WtL23v4BNbSh0zgkdQfQjtViuG8FzuupywgnY8ZJHbIIwf1ruaady4y5kFcn4zv9kUNkjcsd7geg6CurJCqWYgADJJ7CvL9XvTf6nPPklSxCg9gOBQ2Ko7L1KVFFXtIsjf6pDABlS2WPoByak50tbHbeGLD7FpKMy4km+dvUA9B+VbVIoCqFAwAMAUtUdUUkrBRRRQMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKa7pGpZ2VVHUk4A/GgB1FUn1fTo2KvewAjtvFSQ6hZz4EV1C5JwAHGSaAuizRRRQAEAgggEEYIPevLtXtDZapcQYICsSvuDyK9Rrj/ABrZ4e3vFXqDGxH5j+tDM6iuvQ5GrWm3Js9RgnBxscE/Tof0qrRUmCetz11SGUMDkEZBpayvDl39r0S3YnLINjfUcfyxWrVHUndXCmTSrDC8rEBUUsT7AZp9Yfiu7NtorIpw0zBB9OpoBu2pwd3O11dzTsSTIxY/iahooqTlZteFrM3esxsRlIRvPHGe36/yr0Suc8HWfk6a9yww0zcHHYcfzzXR1S2OimrIK4PxTrJvLo2kLEQRHBIPDN6/QV03iHURp2lSMrYlk+RPUE9T+ArzfJJJJyT1NJsVSVtEFFFdf4Z8Po8a312gYNzFGRxj1P8ASklcxSbZyht51iErQyCM9HKkA/jUdetyRJLE0TqGRhggjjFeV30H2W+ng7RuVH0BptFThyksmpTSaXFYMSY43LA5656D8OfzqnRRSIbb3AAkgAEknAAr1LS7Y2ml20BGCqDP16muD8N2X23WYQwykZ8xuOOOn64r0imkbUluxk0qwQvK5wiKWJ9gK8qu7hru7lnflpGJNd34svPs2jtEpw05Cj6dTXn1DFVfQK3/AAjaGfVxMR8kCls+54H9awK9A8J2QttIExHzzncT7dB/j+NCWpEFeRvVV1K5FpptxOTjahx9TwP1q1XM+M7oR6fFbA8yvkj2H/1zTZ0Sdlc4ckliSSSTk0UUVJynXeCbds3NyR8uAg9z1P8ASuwrL8O2f2LRYEIw7je31PP8sVqVS2OmCtEz9bv/AOztKmmB+cjan1PT/GvMiSSSTkk5JPc10vjK/wDOvY7RGykQywHTcf8AAVzNJ7mVSV3YK6/wXYZMt86/7CEj8yP5VyUaNLIqICWYgADuTXqWnWi2Onw2ygfIoBI7nufzoQqcbstVwHi69Nzq3kA5SAbce55Nd1cTLbW0kzdI1LH8BXlU8zXFxJM5JZ2LEn1JoZpVdkR1LawNc3UUKAlpGCgfU1FXSeDrLztRe5ZcpCuASP4jx/LNIxSu0juI0EUSIOiqAPwGKq6pdix0ye4OMqp2+5PA/Wrlcp41vNsEFop5Yl2HsOB+uapnTJ2RxjMXYsxySck+pooo74qTlOt8E2hMlxdEcABFPv1P9K7Gs/RLIWOkwRYw5Xc31PJrQqkdMFZGP4mvRZaNIAcPL+7X8ep/LNec10vjK8EuoR2qnIiXJ+p/+tiuapPcyqO8grsfBdiQk16w6ny0z7ck/wAq44AkgAZJOAK9R0m0Fjpdvb4wwUFvcnk0IVNXZdooopnQFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFMlmjgiaWV1RFGSxOAKSeeO2geaVgqKCSTXnet65Nq05AJS2U/Inr7n3obsTKSSNfVPGLEtFpyhR081xkn6Dt+Nczc3tzdyF7iZ5Cf7xJx+HaoKKm5g5thQCQcgkEdxRRQSaun+IL/T2ULMZIh1jc5GPQdxXcaTrNtq0OYjtlA+aMnke49RXmVTWl3NZXKTwMVkU5B7H2PtTTLjNrfY9YrP1u0F7pFxEACwXcvsRzUmmX8epWMdxGQMjDD+6e4q5TN9GjyE8HBoq9rNp9i1a4hAwoYlfoeRVGpOVqzsdb4JuiJLi1J4IEij36H+ldjXmnh65NprduxOFZtjfQ8fzxXpdUtjek9LBXD+NLoyahDbg/LEuSPc//WxXcV5frFybvV7mYnIMhA+g4H8qGOo7KxRp0aNJIqKMsxAA9STim1reG7YXOuQAjKx5kP4dP1xUnOtT0Gytxa2UMCjAjQD9OanopGYIhZjgKCSfYVR17HB+L737Rqgt1PyQLg89WPJ/pXPVNeTm5vZpmOS7k/mahqWc0ndmhomnnUdUihIzGDuk+g/x6V6aqhFCqAABgAdhXL+C7TZazXbDmRtq/Qdf1/lXU1SRrTWlwry3VpBLq9246NKxH516Vf3C2ljPOxwEQn8ccfrXlTsXdmJySST9TSYqr6CUUUAEkAdScUjE7fwZaCOymuiOZG2g+w/+vXT1U0y2FpptvABgqgz9Tyf1q07BELMcBQST6AVSOmKsjhPGN2JtTS3U5WFcH6nk/piudqe9nN1ezTscmRyfwzxUFSzCTuyW0gN1dxQLnMjBfzNerRRLDCkSABUUKAPQCuE8IWgn1czMMrApYfU8D+td9TRpSWlwrz3xZdG41p0BysShAPQ9T+prvriVYLeSZiAEUsfwFeUzytPPJKxyzsWJPuaGOq7KxHVrTbU3uowW4GQzjP0HJ/SqtdP4MszJezXRHES7VPuf/rfzpGMVd2O2VQqhQOAAAPao7idba3kmc4SNSx/AVLXOeML0Qaalspw87c/7o6/riqOluyOJuZ2ubqSdyS0jFj+JqKiipOU3fClj9r1dZWGUgG4+56D/AB/CvQawPCVkbbSfOYfNOd30A4H9T+Nb9UtjopqyMDxdeG30jyVOGnYL+A5P9K4Cui8Y3Zm1RIAflhQDHueT/SudpPcyqO7CvRfC9p9l0WNmGGlJc/Q9P0rgLWA3N3DCoyZHC/ma9WjQRRIijAUAAewFCKpLW46vNvEd59s1qdgcqh8tfoOD+ua9A1C5Fpp885ONiEj644/WvK2YuxYnJJJJ9zQx1XpYStHQrQXusW8RGUDbm+g5rOrrfBNoC1xdkcgCNT+p/pQtzKKu0jsQMDAHFIzBFLMcAAkn0ApazdfuPs2iXLg4JXaPqeKZ1bI87v7k3d/PcE53uSPpnj9Kr0UVJyN3NHQrQ3ms28RGVDbm+g5r02uM8E22bi5uSOFUKD7nk/yFdnVLY3pLS4UVWvL62sIDNcyhF6DPJJ9AO9UrHxJpt/MIo5WRycKJBjP0PSg0ul1NaiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKqaldix06e5JAKKdue5PA/WgPM5PxdqxnuPsETHy4zmTB6t6fhXMU53aSRncksxJJPcmm1L1OaTbYVqaXoF5qo3oBHDnHmP0P0HepfDuj/2reFpQRbxYLkdz2FehoixoERQqKMAAYAFNIcIX9DmY/BNoIwJbqdn7lAAD9AQcfnWPq3ha50+Jp4XE8K8nAwyj1I7/WvQKCAQQQCCMEHvTsjV042PIaK0dcshYavPCowmdyj0B5xWdUnO1Z2Ol8HXxivntGPySjKj0Yf4j+VdzXlmmTm21O2mB+7IM/TODXqeQQCO9Ujek9LHF+NrYLc29yBjepVj6kcj9DXK16B4vt/N0UyAZMThs+gPB/mK8/pPczqK0h0bmOVHGcqwI/A16xbyie3jlUgh1DA/UV5LXpXh2UzaFaknJVdv5HFCKpPWxdvJRBZTyn+BGP5A15QxLMSTkk5NeleI5DFoN0c4JUAfiRXmtDCq+gV1vgmAF7q4IyQAgPpnJP8ASuSruPBQH9mzkdTLz+QoREF7yOmrL8QXy2GkTMSN8gMaD1JH9BWoSACScAV534l1UajqBWM5giyq4PU9zTbsbzlZGLRRRUnMemaDCINDtFxglAx+p5/rWlVfTyDp1sV6eWuPyp9zcRWlu88zBUQEkmqOqOiOc8Z34jtY7JW+eQ7mA7AdPzP8q4mrep376jfyXL8bjhR6AdBVSk9Wc85XYVe0e3+1avaxEZBcE/Qc/wBKo1u+EkDa6hP8KMR+WP60hLVpHoPQYrO12c2+i3bg4PllQfc8f1rRrmvGF/HFp4sgcyykEgHoAep/GqOmWiOGoooqTlO48F2+zT5pyOZHwD7Af4k101ZPhpAmgW2B94En6kmtVmVFLMQFAJJPQCqWx0wXumF4tu/s2jmJThp2C++Bya8/rU1/VDqmosyEmGP5Yx7dz+NZdJu7MakrsK39G8SJpFkYBZGRixZn8zGT9MGsCikQnZ3Ow/4Tlf8AoHH/AL/f/Y1gazqraveCcxmNVUKqbs49ecDvWdRTuU5tqwUDrz0oopEnWQ+M0ggjhTTsKihR++7Af7tSf8Jyv/QOP/f7/wCxrj6Kd2X7Rlm/uzfX01yVKmRiduc4HYZqtRRSIbuzb8J24n1yNjyIlLfjjA/nXodcX4IQG6u37qij8yf8K7SqWxvSVkYPi6YxaIUBwZJAv4df6V5/XWeM7+OSSGyQ5aMlnIPAJHA+tcnSe5nUd2Fei+GLbyNChJGDIS5/E8fpXnQ5OK9V09BHp1so6CJR+goQ6S1uWa5XxpdqtrDaA5dm3kegHA/WuluLiO0t3nlYKiAkn+leYalfPqN9JcuSNx+UegHQU2zScrL1KtFFFSc56D4SgEWho+OZHLE+vYfyrdrM8OgDQbTHTZ+uTVnUb1LCxluXIAVTgdyew/OqWx0xsonCeJ71rvWJE3ExwnYozxkdT+dY4JBBBIIOQR2pZHaWVnY5ZiST7mm1Jzyd2z03Q7xr7R7eZz85G1j6kHBP6Vo1j+F4mi0C3DDBbLD6EkitiqR0xd0rhRRRQMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5bxrclLS3tgceYxYj2A4/U11NcJ4zl36tHHniOIcfUk0PYmbtFnOUYycAZJoq5pUH2nVbaHGQ0gyPYcn9BUnMtXY9A0KxFhpMMRADsNz/AFNaVAGBgUVR1pJKwUUU13VELswVVBJJOABQBw3jMAavGQBkxDP5mucrR1y/Go6rLMh/djCp9B3/AB61nUmc07X0DJBBHUcivWoCTBGT1Kg/pXkyIXdUHViAPxr1qIbYUU9lA/ShF0inrieZol2pGf3ZP5c/0rzCvVNSAOmXIPeJv5V5XQwqhXf+D336GF7rIw/lXAV3Xgz/AJBUv/XU/wAhQiafxFzxT/yAJ/qP515zXp+tWxutHuolGWMZI+o5/pXmB4PNDKqrVBXS+FNXgsGmt7pwiSEMrnoCOCDXNUUk7GUXZ3R13iDxPHLC1pYMWDDEkgBHHoP8a5EAkgAEkngCiuj8K6Mbu5F7Mv7mI/KCOGb/AAFPcptzZzpBBIIII4INJW14n05rHVHdRiKcl1PYHuPzrFpCas7HW6R4sgtNOjt7mKQvGNqlACCB06nrWRrWvz6uwTHl26nKoDnJ9Se5rJop3Hzu1goqzY2U1/dpbwqSzHk44A7k1f8AEWkrpV1EsQPlMgwT3I4P+NIlJ7mPWhol+unapFO4JjGVbHXB71n0UBfW56DfeKtPt7ctbyieUj5UAIGfckcVwl3dTXty88zFnY5J7D2HtUNTWlpNe3CwQIWkbOBTuW5uWhDRQylGKsCCDgg9jRSIOy8N6/aQacLW7mETRk7SQSCDz2qn4h8Si8Q2lkWEJ4d+hb2HtXM0U7le0drBRRRSJL2n6Rd6oZPsqKwjxuLNgc1e/wCES1b/AJ5Rf99ium8KWn2bRkcjDTEufp0H6VuU0jaNNNXZ5bqOl3OmOiXIRWcEgKwPAqnWv4lvBea1MVOUjxGv4df1zWRSMpJJ2QVrWvhvUry2SeKJDG4ypLgEj6Vm28DXNzHCgy8jBR+Jr1a3hW3t44VGAihR+AppFQjzbnA/8Ilq3/PKL/vsUf8ACJatj/VR/wDfwV6FRTsjT2SPImUoxUjBBII96StLXrQ2es3CYIVmLL7g81m1Ji1Z2NvwzqkWmX7mdisMq4LYzgg8H+ddBq3iu1ggKWLiWZhgEA7V9+eprhKKdxqbSsh0kjSyM7sWdiSSTySabU9tZT3YlMMZYRIXY+gFQUiQrvNJ8SWA0uNbmYRyxKFZSCSccAjFcHRTTKjLlehua/r7arJ5MIKWynIB4LH1P+FYdFak+izW+ix37ggyPjbjopHBP1NLcTvJmXRRRQI6nQfE0NhYm1ukchCTGUGcg84NZmta7Nq8oGDHApyqZzk+p9TWTRTuVzu1gqzYWj397FbRgkuwBPoO5/Kq2CSAMknoBXe+F9FNhAbqdcXEo4B/hX0+poSFBXdjehiWGFIkGFRQoHsBin0UUzqCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArzzxYSdflz2VR+leh15/wCLkKa4zdmjUj8sUPYzqfCYNbXhVA+vwkj7qsR9cf8A16xa2vCjhNfhz/ErAfXFStzGO6PRKKKa7bI2b0BP5CqOoy9W8Q2mlMYmDST4yI07emT2/WuO1XxFeaopjJEUOfuIev1Pes26ne5upZnJLOxJJ+tRUmznlUb0CiiikQaOg2pu9Zt0wSqtub2A5/wr02uc8JaUbS0N3MuJZgNoI5C//X610dUkb042WpT1Vgmk3bHoIm/lXltejeJ5xBoU4JwZMIPxP+ANec0mTVeqQV3ng1CNIdj0aU4/ACuDr0bwvEYtBgyMFiW/M0ImmveNggEEEZBrgfEOgS2U73Nuhe2Y5OBkoT1B9veu+oIBBBAIPBBptXNpRUlY8hor0i78N6ZdsXa3COerRkr+OOn6U218M6XasGEBkcdDISf06fpSsY+ydzk9E8PT6nIssqtHag5LkYLew/xr0GCCO3hWGJQqKAAB2FOUBVAUAADAAGAKWmlY2jBRKep6dDqdo0Ewx3VwOVPqK881HR7zTJCJoiY84WRRlT+PY+1en0jKGBDAEHqCMg0NClDmPIqvafpF7qUgEELbc4MjDCj8e/0FekfYLTP/AB6w5/65j/CpwAoAUAAdABgUrEKlrqzO0fRoNItyqfPK335COT7D0FO1nS01WxaFiFkHKNjof8DWhRTNbK1jyi8sp7Gcw3EbI4PGRwR6g9xUFes3FrBdJsnhSRfRwDWafDGkGTf9kAOc4DsB+WcUrGTpO+h59a2s95OIYImkc9gOnufQV6BoOiJpMBZ8NcuBvbHA9h7Vo21nbWi7beFIweoVQM1PTSsVGnbVnGeJvD8gme+tELK3MiKMkH1A9K5TkHHQ169VC60XTrskzWkZY9WA2k/iMGk0KVO+qPMKUgggEEZ55Fekw6BpNmDItonyjcS5LYx9Sa8+1C5+1380+AAzEgDsOw/KhozlBpalaprSBrq7hgUEmRgvHueahrovB1oJ9UedhlYVyCR3PA/TNISV2kdzFGsUSRqMKqgAewFRX9ytnp887HARCR7nt+tWK5nxndiLT47VThpWyR7D/wCv/KqOluyOIdi7szHJYkk+pNJRRUnKb/hGzNxqwmIysClsn1PA/rXf1geEbM22k+cww07bvwHArfqlsdFNWQUUUUFmL4h0X+1bYPFgXEYO3P8AEPQmvPpoJbeVopkZHU4KsMEV63Ve5sLW8AFzbxyY6FlBI/GhoicObVHlNWrDTrnUZxFbRljnlj0UepNd8nhnSEk3i0BPoXYj8icVpQwRW6BIYljQdAoAFKxCpO+pU0rSodLshAgDM3MjEcsf8PauO8QaBLYTtPAhe1Y5yBnYT2Pt716BQQCCCAQeoNNo0cE1Y8ho+lemXGgaXckmS0QEnJKEqT+RFPtdE02zIaG0QMOjNliPxOaVjL2Tuct4f8NSXMi3V6hSEYKoRgue2R2H867G7tIru0ktpAPLdduAOnoR9KnoppWNYxUVY8t1LTZ9MumhmU4z8r44YeoqnXq93Z297EYrmJZFPYjke4PasCbwVaO5MVxLGD2IBx+NJoylTd9Dh6fDDLPKsUKM7scBVGSa7SHwVZo2ZbiaQegAFbtnp1pYJttoFTjBIGSfqTyaEhKm2Yeg+GBaFbq+AaYcrH1C+59T/Kumoop2sbKKS0CiiigoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACuN8bwYmtZwOCpQn6HI/ma7KsXxTZ/a9FkZRloSJB9Bwf0P6UPYmSvFnndWtLuPsuqW02cBXGT7Hg/oaq0VJzLRnrwIIBHIPIoIBBB5BGDWR4d1EX+kx7mBliARx346H8RWvVHUmmjzPWtKm0y+dWUmFmJjfHBHp9RWbXrUsEU8ZjmjV0PUMMisyTwxpErbja4PorsB+QNKxlKk76HnIBZgqgkk4AAySa6rQPC7vIt1foVQEFYiOT7n0HtXT2ulWFkQbe1jRh0bGT+Z5q5QkONPuGAAAAABwBRRUV1cx2ltJPKcIgJJ/pTNdjk/Gt4DJBZqclcuwHYngVyVWL+7e/vZbl+DI2QPQdh+VV6TZzTd2OjQyyoijJYgAe5NerWsAtrSGBRgRoFH4CuC8LWH2vV1kYZjgG8/XsPz5/CvQ6EaUluwooopmoUUUUAFFZ2p63Z6UpEz7pSMiNeSfr6D61x+oeK7+7JWFhbx+idT9T/hihuxMpKJ3lxdQWq7p5o4xjI3sBn6etZk3ifSYsj7SXI7IpOfx6V528jysWkdmYnJLEkmm0rmbq9kd2/jPTgpKQ3DHsCoAP45NQf8JvBnAspMeu8f4VxdFFxe0kd1H40sCvzwXCn0ABH55FWYvFmkyAFpXjJ7Ohz+mRXnlFFw9rI9Qh1jTpziO8hJ9CwB/Wr3BGQcg15DVi3v7u1OYLmSPnOFYgflRcpVe56tRXB2njC/gAWdUnX1Iw35jj8xW/Y+LNOusLKzW7+jjIP4j+uKaaLU4vqbtFNR0lQOjK6kZBU5B/GnUFGP4lvRZ6NKAfnl/dr+PU/lmvOa6Xxleia+jtVOViXLf7x/+tiuapPc56jvIK9C8K2f2bRkcjDTEufp0H6Vwlnbtd3kNuoJMjAcemef0r1WKNYokjUAKoAA9gKEVSWtx1ed+KbsXWtSKpysQCD0yOv613l7craWU07EARqSM9zjgfnXlbuZZHkY5ZiST7k0Mqq9LDaltoGubqOBBlpGCj8TUVdF4PsjPqZuWGUgXIP+0eB+maRildpHcW8SwW8cKjCooUfgKkooqjqCiiigAooooAKKKKACmyyLFE0jkBFBJJ7ACnVh+K7k2+iMgOGlYIPp1P8AKgG7anL6n4kvb2dvKlaGAHCohwSPUkdTS6Z4mvbKZRNK08BOGRzkgeoPrWJRU3Obmd7nrUMyXECTRncjgEH1BqSsPwlK0mhorEnYzKM+mc/1rcqkdCd0mFFFFAwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKa6LIjIwBVgQR6g06igDy3VbBtO1GW3IO0HKk9wehqnXoHifSDqNmJ4VzcQgkADlh3H9a8/IIJB4IpNHNOPKzR0XVX0q+EoBaJuJF9R6/UV6TBPFcwLNC4eNhkEHrXktamka5c6TJhDvhJy0ZPH1HoaLlQnbRnpVFZen6/Yago2TCOQ9Y5Dgj6dj+Fag5HFM3uugUUEgAknAHUmsu/8AEOn2CkNMJJOyRnJ/E9BQF+5pO6xoXdgqKMkk4AFcF4j106lL9ngJFtGev98+v09Krat4gutVJQny7fPEanr9T3rJpNmM530QUoBJAAJJOAB3pK6rwtoRlkW/uUIjU5iUj7x9foKSVzNJt2RveHdM/s3TFDqBNJ80nqPQfhWtRRVHSkkrBRRRQMK5/wAR+IBpyG2tiDcsOT1CD1+ta2o3i2FhNctyEUkD1PYfnXl888lzO80rFndiST3JobInKy0GySPLIzyMWdjkknJJptFT2lnPeziG2iaRz2HQD1J7CpOfcgpVVmYKoJJOAAMkmuz0/wAGxIA99KZG6+WhwB9T1P6V0VtYWlmMW9vHHkYJVRk/U9TTSLVNs82i0fUZgCllMQe5UgfrU/8Awjmr9fsT/wDfS/416VRRYv2S7nl76LqUed1lMMdSFz/KqkkUsRAljdCegZSD+tet02SJJUKyRq6kYIYAg/nRYHS7M8jor0i58N6Vcg5tVjJ7xkrj8BxWJd+CWGTaXQI7LIOfzH+FFiHTktjkqKv3eiajZE+davtH8aDcD75H9aoUiGmtyzaX93ZSA207oSegPB+o6GvR7e4mg0hbm/YeYse5yBjtnH1rlPC2iG5nW+uFIhjOYwR94+v0FWvF+rggadC2eQZSP0H9aa2NYNpNs5a7uWu7uWd/vSMWPtUNFFIyep0vg2y82/kumXKxLhSRxk//AFv513NcNoXiO20y0FtLbPjcSZFIJJPqDj+ddVa61p14oMN1HkjlWO0j8DVI3p2SMbxneiOzitFPzSHcwHoOn6/yria0ddvv7Q1aaZTlAdqfQcVnUnuZTd2FeieFrI2mjozDDzHefoen6Vwum2jX+oQ2yjhmGT6Acn9K9SRAiKijAUAAegFCLpLW46iiimbBRRRQAUUUUAFFFFABXFeNLsPdw2qnIjUsw9z0/Suj1fWbfSrcs7BpiPkjB5J9T6CvN7m4kurmSeVizuSSaTZnUkkrEdFFaOh6a2p6lHEQfKU7pD2AHb8elIw1bsjuPDlsbXQ4FYYZgXI+pzWrSKoVQqjAAwAOwpao6krKwUUUUDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK5DxJ4cZme+skyTzJGB+ZH9RXX0UNXFKKkrM8hIwcEYorv9Y8L2+oFprciCcnJIHysfcdj71x19pF9p7kTwMFHR1GVP4j+tJo55QcSjU8N/d2wIgupoweoRyB+hqCikSnYnnvbq5wJ7maQDpvcn+ZqCigAnoOT2oC9woHJwOTWnY+H9RvyCkJjjPV5Bgfh3P4V1+leGLTTyssv7+4HO5hwD7D+pppFRg2Ymg+GHuWW6vlKQjlYzwW+voK7ZVVFCqAFAwABgAUtFO1jeMeVBRRRQUFFFFAHN+M5ymlxRA48yTJ+gH/1xXC12fjdCba0YDgOwP4gVxlJmFT4h0UTTSpEgy7sFA9STivTdJ0uHS7NYo1BkIBd8csf8K84sJ1ttQt52GVjcMfpnmvVEdZY1kQhlYAgjoQaEOkluOooopmwUUUUAFFFFABRRRQAVn3WiadesXmtULE5LKME/UjrV9mVFLMwVQMkk4ArltZ8WJEGg04h5OhmI4H0Hc+/Shku1tS5rmtw6RbC1tQv2grhVHSMep/oK4F3aSRndizsSSSckmiR3lkZ3YszHJJOSTTaTZhKVwoqzYWM2o3aW8Kksx5OOFHcmty68GXcQLW0yTAdiNp/wpCUW9kc1RVi5sLqzYrcW8kZHcrx+fQ1XoFsFFFFAG54ZvbGwvJJrt2Viu1CFJAz1Jxz6dq7aHVbC5AMV3CxIyBuAP5HmvLaKaZcZ8vQ9dBDAFSCD0IORS15LHczwsGimkQjoVYgj8qux69qsWdt9Mf8AfO7+eaLlqqup6bRXnC+J9WBz9qz9VH+FPbxVqzDHnqPogFO6H7WJ6JSMyopZiFA6knAFebSeItWkUqb1wD/dAB/MDNUJru5uW3TTySH1dif50ridVdD0a88QabZZD3Ku4/gj+Y/pwPxNc5qHjKeUFLKIQg9XflvwHQfrXL0UXJdR9B8s0k8rSyuzuxyWY5JplFWrDTrnUZxFbRlj3Y8BR6k0jPVsit7aW7nWGFC8jHAAr0jRdKTSrIRDDStgyP6n0HsKj0bQ4NJiyMPcMPmkI/QegrVqkjeELasKKKKDQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACggEYIBB6g0UUAZ9xoemXRLS2ce4nJKjaSfcjGapN4S0okkRyj2EhxW7RRYTinujEj8KaSh5hd/ZpD/TFaFtpdjaYMFrEhAxkKCfzPNW6KLAopbIKKKKBhRRRQAUUUUAFFFFAGR4lsmvdGlCDLxkSADqcdf0zXnFevEAggjINcB4j0J7C4a5gUm2kOTgfcJ7H29KTRlUjfVGBW9ofiSXTAIJwZLbPAzyv09vasGikYptO56nZanZ6hGGtp1YnqpOGH1B5q3XkKsyMGViCOhBwa1LXxHqlqoVbpnUdpAG/U8/rTubKqup6VRXCR+M9QX70UD/VSP5GpP+E2u/8An1gz9T/jTuivaRO3org5PGeot92OBPopP8zVGfxHqtwCGu2QE9IwF/Uc/rRdCdSJ6LNcwWylppkjAHJdgP51g33jGygBW1Vp3HAOCq5+p5P5VwzyPKxZ3Zie5JJptK5LqvoaOo63famcTSkR5yI14X8R3/Gs6iikZNtu7Cp7O0mvrhIIELOx7dAPUnsKuaVoV3qjAopSEHmRhx+Hqa77TdKttKg8uBcsfvOerH3/AMKaRcYOXoQ6No8Ok2u1cNMwBkf1PoPatOiuc1/xKlkrW1owe4PDMOQn+J/lTN9Iog8Va2sUR0+BgZGH70jnaPT6muLpXdncs7FmJySTkk0lSznlLmYVLFaXM8bSQwSSIpwxVSQD74piI0siogLOxAAHUk16bo2nLpmnRwcFyNzn1Y9f8KaQQjzM8xKspwwII7EYNJXq89la3IInt4pAf76g/wA6y5/CmlSklYnjJ/uMcfkc0WKdJ9Dzyiuym8EQnmG9dfZ0DfyIqnJ4KvQ37u5gYepyD+WDRZkuEl0OZoroG8HamDgGFh6h8f0pv/CIaoTgiEf9tP8A61FmLll2MGiujXwXqBI3TQKO/JP9KvQ+CFBzPekj0RMfqSf5UWY1CXY46pra0uLuQJbwvIxOMKpOPqe1d9beFtLtyGMLTMO8rZH5dK144o4VCxIqKOgUAAflRYtUn1OQ07wa7EPqEgVevlock/U9vwrrLa0t7KEQ28axoOwHX3PqamoppGkYKIUUUUFBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABTXRZUKOoZWGCCMgj6U6igDkNW8Hkky6cwwTkwuen0P8AQ1y1xaz2kpjnieNh2YEfl616xUc0ENwhSaJJFPZ1BH60NGcqaeqPJaK9BufCemTksiPCT18tuPyOR+VZ8vghT/qb5h7PHn9QRSsZunI46iulk8FX4b93PbsPUlgfywaZ/wAIZqX/AD0tv++z/hRZk8kuxztFdLH4Kvif3tzbqPVSx/mBVuPwOo5lvifZI8fqSaLMfJJ9Dj6ACTgAk+grvoPB2mxkGQzS+xbAP5YP61rW2m2VoAILWJCO4UZ/M80WKVJs8/svD2pX2GSAoh/jk+Uf4n8BXUab4RtLUrJdMbiQc4IwoP07/jXRUU0jSNNIRVVFCqoUAYAAwBS0UUFnH+IvEriSSysmKgZWSQdSe4Hp9a5HJJJOST1Jq/rNjLYanNHIpALFlYjhgTwaoUmc022woqW3tpruURQRNI56BRn8/Suy0Twqtsy3N8A8wOVjHKr7n1P6UJCUW3oR+FtBMO2/ulw5H7pCOgPc+/pXV0Djiinax0RjyoKKKKCgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAILqztr2PZcwpIvYMM4+h7Vnr4Y0dGDCzBIPQuxH5E4rXooE0nuRQW0FsmyCFI19EUCpaKKBhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRVz+y7z/nj/wCPD/Gj+y7z/nj/AOPD/Gq5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYCnRVz+y7z/nj/AOPD/Gj+y7z/AJ4/+PD/ABo5X2Ap0Vc/su8/54/+PD/Gj+y7z/nj/wCPD/GjlfYDoqKKK6hhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==" alt="Stayful"></div>
+  <div class="prep">Prepared exclusively for Caixia Ye</div>
+  <h1>Your Brent flat &mdash; getting back to earning, properly</h1>
+  <p class="sub">Everything from our call on 25 August 2026: where your 90-night position actually stands, what genuinely fixes it, how Stayful would run the property, and the honest answers to what you asked.</p>
+  <div class="pills">
+    <span class="pill">London Borough of Brent</span>
+    <span class="pill">Tower block flat</span>
+    <span class="pill">Currently Airbnb only</span>
+    <span class="pill">Live since 28 June 2026</span>
+    <span class="pill">Prepared 25 Aug 2026</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><span>Listing status</span><strong>Blocked</strong><em>90-night cap hit 23 Aug</em></div>
+    <div class="stat"><span>Open nights to 30 Nov</span><strong>29</strong><em>Sept 21 &middot; Oct 8</em></div>
+    <div class="stat"><span>Management fee</span><strong>15% + VAT</strong><em>of gross bookings</em></div>
+  </div>
+</div>
+
+<div class="prog">
+  <div class="pstep done"><span class="dot">&#10003;</span>Enquiry</div>
+  <div class="pstep done"><span class="dot">&#10003;</span>Web Meeting</div>
+  <div class="pstep now"><span class="dot"></span>Documents Sent</div>
+  <div class="pstep"><span class="dot"></span>Agreement</div>
+  <div class="pstep"><span class="dot"></span>Setup</div>
+  <div class="pstep"><span class="dot"></span>Live</div>
+</div>
+
+<div class="wrap">
+
+<h2>1. Where you actually stand</h2>
+<p class="lede">Before anything else, an accurate picture of your current position &mdash; including a correction to something I told you on the call.</p>
+
+<div class="card alert">
+  <h3>&#9888;&#65039; An important correction from our call</h3>
+  <p>On our call I told you that bookings of <strong>28 nights or more</strong> are exempt from London's 90-night rule, and that moving your property onto Stayful's management account would <strong>reset your 90 nights</strong>. I also said direct bookings through our own site wouldn't count. I've checked all three properly since, and I got them wrong. I'd rather correct that now than have you make a decision on it.</p>
+  <p>The rule comes from section 25 of the Greater London Council (General Powers) Act 1973, as amended by the Deregulation Act 2015. What it actually says:</p>
+  <ul>
+    <li><strong>The exempt stay length is 90 consecutive nights, not 28.</strong> A 28-night booking still counts toward your annual 90.</li>
+    <li><strong>The 90 nights attach to the property, not the listing or the account.</strong> A new listing resets Airbnb's automatic counter, but not your legal position. If two operators let the same property in one year, both count toward the same 90.</li>
+    <li><strong>Direct bookings count too.</strong> The limit applies across every channel. A platform not being able to see a booking isn't the same as that booking being exempt.</li>
+  </ul>
+  <p style="margin-bottom:0">This matters because the plan we sketched out on the call &mdash; forcing 28-night minimums &mdash; would not have protected you. The rest of this plan is built on the correct position.</p>
+</div>
+
+<div class="card good">
+  <h3>&#128161; And some genuinely good news</h3>
+  <p style="margin-bottom:0">You told me you'd spent ages hunting for a "short-let licence" on Brent's website and that Brent's own staff didn't know what you were talking about. That's because <strong>there is no short-let licence in England</strong> &mdash; you were both using different words for different things. What you need is a <strong>planning application for change of use</strong>, made to Brent's <em>planning</em> department, not licensing. That one word should unblock you straight away.</p>
+</div>
+
+<div class="card">
+  <h3>Your calendar between now and 30 November</h3>
+  <p>From the figures you gave me on the call. Your last checkout is 30 November, and there are open nights before then that currently have nothing in them.</p>
+  <div class="chart">
+    <div class="barcol">
+      <div class="barwrap">
+        <div class="bar booked" style="height:74px" title="9 nights booked"></div>
+        <div class="bar gap" style="height:172px" title="21 nights open"></div>
+      </div>
+      <div class="barlab">September</div>
+      <div class="barsub">9 booked &middot; 21 open</div>
+    </div>
+    <div class="barcol">
+      <div class="barwrap">
+        <div class="bar booked" style="height:180px" title="22 nights booked"></div>
+        <div class="bar gap" style="height:65px" title="8 nights open"></div>
+      </div>
+      <div class="barlab">October</div>
+      <div class="barsub">22 booked &middot; 8 open</div>
+    </div>
+    <div class="barcol">
+      <div class="barwrap">
+        <div class="bar booked" style="height:106px" title="13 nights booked"></div>
+        <div class="bar gap" style="height:0px" title="0 nights open"></div>
+      </div>
+      <div class="barlab">November</div>
+      <div class="barsub">13 booked &middot; 0 open</div>
+    </div></div>
+  <div class="legend"><span><i class="key" style="background:#3d5c38"></i>Booked</span><span><i class="key" style="background:#b8cdb0"></i>Open</span></div>
+  <table>
+    <tr><th>Month</th><th>Booked</th><th>Open</th><th>Note</th></tr>
+    <tr><td>September</td><td>~9 nights</td><td>~21 nights</td><td>Largest gap</td></tr>
+    <tr><td>October</td><td>~22 nights</td><td>~8 nights</td><td>Close to full</td></tr>
+    <tr><td>November</td><td>13 nights</td><td>&mdash;</td><td>Last checkout 30 Nov</td></tr>
+  </table>
+  <p class="disc">Figures as stated by you on the call, not yet verified against your calendar. Please send the screenshot we discussed so we can confirm and block these dates precisely.</p>
+</div>
+
+<div class="gate" id="g1">
+  <p>Having read the correction above &mdash; how does that change things for you?</p>
+  <div class="opts">
+    <button class="opt" onclick="ans(1,'It changes things a lot, I need to rethink',this)">It changes things a lot &mdash; I need to rethink</button>
+    <button class="opt" onclick="ans(1,'Glad you told me, I still want to proceed',this)">Glad you told me &mdash; I still want to proceed</button>
+    <button class="opt" onclick="ans(1,'I need to speak to the council or a planner first',this)">I need to speak to the council or a planner first</button>
+  </div>
+</div>
+
+<div class="locked" id="s2">
+<h2>2. What genuinely fixes this</h2>
+<p class="lede">There are two real routes, and one natural reset. All three are worth using together.</p>
+
+<div class="card">
+  <h3>Route 1 &mdash; Planning permission for change of use <span style="color:#5d8156">(the real fix)</span></h3>
+  <p>This is the only thing that removes the 90-night ceiling permanently. You apply to <strong>Brent Council's planning department</strong> for permission to change the use of the flat from residential (C3) to short-term letting use. If granted, the cap no longer applies to your property.</p>
+  <p><strong>What to expect honestly:</strong> it is a planning application, not a form-filling exercise. Neighbours are consulted by post &mdash; you raised a worry about that given you're in a tower block, and the honest answer is yes, they will be written to, and objections are possible. London boroughs under housing pressure refuse a meaningful proportion of these. Brent may also ask about noise, waste and access. It is worth doing, and it is worth being realistic that it may not be granted.</p>
+  <p style="margin-bottom:0">We'd strongly suggest a short conversation with a local planning consultant before you submit &mdash; they'll tell you quickly whether your building and block make it viable.</p>
+</div>
+
+<div class="card">
+  <h3>Route 2 &mdash; Genuine long stays of 90+ consecutive nights</h3>
+  <p>A single continuous stay of <strong>90 nights or more to the same occupier</strong> falls outside the definition of temporary sleeping accommodation, so it doesn't count toward your 90 at all. This is the legitimate version of what we discussed on the call &mdash; the threshold is just 90, not 28.</p>
+  <p style="margin-bottom:0">Being straight about the trade-off: this is a mid-let or corporate-let business, not a nightly one. Nightly rates on 90+ night stays are materially lower than short-stay rates, turnover is minimal, and the guest profile is relocations, contractors and corporate placements rather than tourists. It produces steadier, lower income. It is not the business you've been running since June, and you should decide on that basis.</p>
+</div>
+
+<div class="card">
+  <h3>Route 3 &mdash; The 1 January 2027 reset</h3>
+  <p style="margin-bottom:0">The 90-night count runs by calendar year and resets on 1 January regardless of what else happens. From January you have a fresh 90 nights of short-let capacity. That gives you roughly three to four months of normal nightly operation in early 2027 &mdash; which is a sensible window in which to have the planning application resolved.</p>
+</div>
+
+<div class="card alert">
+  <h3>Two things to check before we go live</h3>
+  <p><strong>Your lease.</strong> You mentioned you're in a tower block. Leases on blocks like yours very commonly prohibit lettings shorter than six months, and short-letting in breach of a lease covenant has been upheld by the courts. This is separate from the council question and can put your lease at risk on its own. Please check your lease, or send it to us and we'll flag anything obvious.</p>
+  <p style="margin-bottom:0"><strong>The council tax condition.</strong> The statutory exemption has two limbs, not one: the 90-night limit <em>and</em> a requirement that at least one person providing the accommodation is liable for council tax at the property. We want to confirm how that reads where Stayful is operating the listing before we commit either of us to anything. We'll come back to you on this.</p>
+</div>
+
+<div class="card">
+  <h3>What Stayful changes for you regardless</h3>
+  <p>Separate from the compliance question, the things you said were making this unsustainable:</p>
+  <table>
+    <tr><th>What you're doing now</th><th>With Stayful</th></tr>
+    <tr><td>One platform (Airbnb only)</td><td>Airbnb, Booking.com and Stayful Direct</td></tr>
+    <tr><td>Husband cleans, or ad-hoc hourly cleaners booked online</td><td>Professional cleaner and linen, coordinated by us</td></tr>
+    <tr><td>You handle every guest message, around a full-time job</td><td>We handle all guest communication and vetting</td></tr>
+    <tr><td>Pricing set manually</td><td>Dynamic pricing software</td></tr>
+    <tr><td>Two properties, no time, back at work 4 September</td><td>Slack channel, monthly statement, oversight without the work</td></tr>
+  </table>
+</div>
+
+<div class="gate" id="g2">
+  <p>Which of these routes feels most realistic for you?</p>
+  <div class="opts">
+    <button class="opt" onclick="ans(2,'Apply for planning permission',this)">Apply for planning permission and push for the permanent fix</button>
+    <button class="opt" onclick="ans(2,'Switch to 90+ night long stays',this)">Switch to 90+ night long stays for now</button>
+    <button class="opt" onclick="ans(2,'Wait for the January reset',this)">Sit tight and wait for the January reset</button>
+    <button class="opt" onclick="ans(2,'Not sure, need advice',this)">Not sure &mdash; I need advice first</button>
+  </div>
+</div>
+</div>
+
+<div class="locked" id="s3">
+<h2>3. How we work, and see for yourself</h2>
+<p class="lede">Real numbers from properties we actually manage, and the places you can go to check us out independently.</p>
+<div class="grid2">
+    <div class="card cs">
+      <div class="badge">Jan&ndash;Dec 2025</div>
+      <h4>17 Park Crescent</h4><div class="loc">York</div>
+      <div class="csgrid">
+        <div><span>Gross</span><strong>£54,687.85</strong></div>
+        <div><span>Owner net</span><strong>£34,726.79</strong></div>
+        <div><span>Occupancy</span><strong>73.9%</strong></div>
+        <div><span>Avg rate</span><strong>£186.51</strong></div>
+        <div><span>Booked nights</span><strong>270</strong></div>
+      </div>
+      <a class="btn-sm" href="https://drive.google.com/file/d/1wBDU2RxrOw0di244IlBxZOWWlfu_ORHn/view" target="_blank">View case study &rarr;</a>
+    </div>
+    <div class="card cs">
+      <div class="badge">Jan&ndash;Dec 2025</div>
+      <h4>7 Beechwood Mount</h4><div class="loc">Burley, Leeds</div>
+      <div class="csgrid">
+        <div><span>Gross</span><strong>£40,664.90</strong></div>
+        <div><span>Owner net</span><strong>£25,781.55</strong></div>
+        <div><span>Occupancy</span><strong>50.4%</strong></div>
+        <div><span>Avg rate</span><strong>£201.37</strong></div>
+        <div><span>Booked nights</span><strong>184</strong></div>
+      </div>
+      <a class="btn-sm" href="https://drive.google.com/file/d/1j7E50JvCz8r9G38p-pjnYJ8AIp_7bZX1/view" target="_blank">View case study &rarr;</a>
+    </div>
+    <div class="card cs">
+      <div class="badge">Jan&ndash;Dec 2025</div>
+      <h4>803 Eastbank Tower</h4><div class="loc">Manchester</div>
+      <div class="csgrid">
+        <div><span>Gross</span><strong>£56,920.99</strong></div>
+        <div><span>Owner net</span><strong>£35,917.14</strong></div>
+        <div><span>Occupancy</span><strong>68.7%</strong></div>
+        <div><span>Avg rate</span><strong>£211.56</strong></div>
+        <div><span>Booked nights</span><strong>251</strong></div>
+      </div>
+      <a class="btn-sm" href="https://drive.google.com/file/d/14J1Zb8c79YLywOXEWpbXLPrRsXsOPcm8/view" target="_blank">View case study &rarr;</a>
+    </div>
+    <div class="card cs">
+      <div class="badge">Jan&ndash;Dec 2025</div>
+      <h4>Museum Court</h4><div class="loc">Lincoln</div>
+      <div class="csgrid">
+        <div><span>Gross</span><strong>£57,327.65</strong></div>
+        <div><span>Owner net</span><strong>£36,288.40</strong></div>
+        <div><span>Occupancy</span><strong>64.2%</strong></div>
+        <div><span>Avg rate</span><strong>£225.15</strong></div>
+        <div><span>Booked nights</span><strong>234</strong></div>
+      </div>
+      <span class="muted-sm">Case study link coming soon</span>
+    </div></div>
+<p class="disc">Actual Airbnb platform data Jan&ndash;Dec 2025. Past performance of other properties does not guarantee future results for your property. None of these are London properties and none are subject to the 90-night rule &mdash; they are included to show how we operate and report, not as a forecast for your flat.</p>
+
+<div class="card">
+  <h3>What Stayful handles</h3>
+  <div class="grid2">
+    <div>&#128172; Guest communication &amp; vetting<br>&#129529; Cleaning &amp; linen coordination<br>&#128176; Dynamic pricing<br>&#128295; Maintenance coordination</div>
+    <div>&#128273; Key &amp; access management<br>&#128241; Multi-platform listing &amp; remarketing<br>&#128202; Monthly reporting &amp; payout<br>&#128247; Professional photography</div>
+  </div>
+  <p style="margin:14px 0 0"><strong>Your responsibilities:</strong> mortgage, council tax, utilities &amp; WiFi, buildings and landlord insurance, safety certificates.</p>
+</div>
+
+<div class="card">
+  <h3>How you'll see what's happening</h3>
+  <div class="grid2">
+    <div><strong>Slack channel</strong><br><span style="font-size:14px;color:#5a6152">All property communication in one place. We reply within 24 hours during office hours (Mon&ndash;Fri, 8:30am&ndash;6pm).</span></div>
+    <div><strong>Booking calendar</strong><br><span style="font-size:14px;color:#5a6152">Live view of every booking across all platforms, what each guest pays, and your payout. Block dates yourself any time.</span></div>
+    <div><strong>Monthly statement</strong><br><span style="font-size:14px;color:#5a6152">Sent on the 1st, covering bookings that ended the previous month, with every deduction itemised.</span></div>
+    <div><strong>Review calls</strong><br><span style="font-size:14px;color:#5a6152">A video review one month after going live, then quarterly if you want them.</span></div>
+  </div>
+</div>
+
+<h3 style="margin-top:26px">See for yourself</h3>
+<div class="trust">
+  <a href="https://www.airbnb.co.uk/users/profile/1465927855339112491?previous_page_name=PdpHomeMarketplace" target="_blank"><strong>Airbnb Reviews</strong><span>Read what guests and owners say about Stayful on Airbnb</span></a>
+  <a href="https://share.google/yZ1HexwdVAmlM8TOo" target="_blank"><strong>Google Reviews</strong><span>Stayful's verified Google reviews from owners and guests</span></a>
+  <a href="https://drive.google.com/file/d/1Ja1yEDno_nS-te7y9qh-UcaaHLt0enPR/view" target="_blank"><strong>Monthly Income Statement</strong><span>See the exact statement format owners receive on the 1st of every month</span></a>
+  <a href="https://www.stayful.co.uk/free-airbnb-setup-guide" target="_blank"><strong>Free Setup Guide</strong><span>Download Stayful's free Airbnb setup guide &mdash; everything you need to get your property guest-ready.</span></a>
+</div>
+
+<div class="gate" id="g3">
+  <p>What feels like your biggest open question right now?</p>
+  <div class="opts">
+    <button class="opt" onclick="ans(3,'Whether I can get planning permission',this)">Whether I can actually get planning permission</button>
+    <button class="opt" onclick="ans(3,'Whether long stays are worth it financially',this)">Whether long stays are worth it financially</button>
+    <button class="opt" onclick="ans(3,'My lease and the tower block',this)">My lease and the tower block</button>
+    <button class="opt" onclick="ans(3,'The commitment and contract terms',this)">The commitment and contract terms</button>
+  </div>
+</div>
+</div>
+
+<div class="locked" id="s4">
+<h2>4. Your plan and next steps</h2>
+
+<div class="card">
+  <h3>The management agreement</h3>
+  <p>Have a proper read before signing anything. The walkthrough video runs through the parts that matter most.</p>
+  <a class="btn" href="https://drive.google.com/file/d/1ct_Br_7XR69s6beyFfqHSnSPoRouKkG6/view?usp=sharing" target="_blank">Read Agreement</a>
+  <a class="btn alt" href="https://www.loom.com/share/50756d81baf4426987cb5300ecbee951" target="_blank">Watch Walkthrough Video</a>
+  <p class="disc">Given the open compliance questions above, we'd suggest resolving the lease and planning position before you sign rather than after. We're not going to rush you into this one.</p>
+</div>
+
+<div class="card">
+  <h3>Suggested sequence</h3>
+  <ol class="tl">
+    <li><strong>Send us your booking screenshot</strong><span>So we can confirm your exact booked dates to 30 November and see the real gaps. &mdash; this week</span></li>
+    <li><strong>Check your lease</strong><span>Look for any minimum letting term. Send it over and we'll read it with you. &mdash; this week</span></li>
+    <li><strong>Contact Brent planning (not licensing)</strong><span>Ask about a change of use application for short-term letting. Use the word "planning". &mdash; this week</span></li>
+    <li><strong>We come back on the council tax point</strong><span>We'll confirm how the second limb of the exemption works with us operating the listing. &mdash; within a few days</span></li>
+    <li><strong>Decide the route together</strong><span>Planning, long stays, January reset, or a combination. Then sign if you're happy. &mdash; next week's call</span></li>
+    <li><strong>Onboarding and go-live</strong><span>Listing build, photos, cleaner, Slack channel. Typically 7&ndash;14 working days once we start. Target: from 30 November, earlier if we agree to fill gaps.</span></li>
+  </ol>
+</div>
+
+<div class="card">
+  <h3>Documents coming to you</h3>
+  <div class="grid2">
+    <div><strong>&#128196; Management agreement</strong><br><span style="font-size:14px;color:#5a6152">Full terms, fees, notice periods and responsibilities.</span></div>
+    <div><strong>&#128203; This action plan</strong><br><span style="font-size:14px;color:#5a6152">Summary of the call and the corrected compliance position.</span></div>
+  </div>
+</div>
+
+<h3 style="margin-top:26px">Your questions, answered honestly</h3>
+<div class="card" style="padding:4px 20px">
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(0)">Does moving to Stayful's account reset my 90 nights?<span id="fi0">+</span></button>
+      <div class="faqa" id="fa0">It resets Airbnb's automatic counter, because that counter is attached to a listing. It does <strong>not</strong> reset the legal position. The 90-night limit in the Greater London Council (General Powers) Act 1973 attaches to the <em>property</em>, not to the listing, the account or the operator &mdash; and where two operators let the same property in one year, both periods count toward the same 90 nights. We want to be straight with you about this rather than let you find out later. Practically it means the listing can go live again, but the underlying compliance question still has to be solved, and the way to solve it is planning permission.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(1)">Are bookings of 28 nights or more exempt from the 90-night rule?<span id="fi1">+</span></button>
+      <div class="faqa" id="fa1">No &mdash; and this was stated incorrectly on our call, so we want to correct it clearly. The statutory threshold is <strong>90 consecutive nights to the same occupier</strong>, not 28. A 28-night booking is still classed as temporary sleeping accommodation and still counts toward your annual 90. Only a single continuous stay of 90 nights or more falls outside the definition. This matters, because a plan built on 28-night minimums would not have protected you.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(2)">Do direct bookings through Stayful's own website count?<span id="fi2">+</span></button>
+      <div class="faqa" id="fa2">Yes. The limit counts nights of short-term letting of the property across every channel &mdash; Airbnb, Booking.com, Vrbo and direct. A booking platform not being able to see a direct booking is a question of detection, not a legal exemption. We'd rather tell you that plainly than have you rely on something that doesn't hold.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(3)">So what actually solves this?<span id="fi3">+</span></button>
+      <div class="faqa" id="fa3">Two things. First, <strong>planning permission for change of use</strong> from Brent &mdash; this is the real fix and it removes the 90-night ceiling entirely. Second, in the meantime, <strong>genuine long stays of 90+ consecutive nights</strong>, which sit outside the rule. That is a mid-let or corporate-let strategy rather than a nightly one, it produces a lower nightly rate, and we should be honest that it is a different business to the one you have been running. The counter also resets naturally on 1 January 2027.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(4)">Why can't I find the licence application on Brent's website?<span id="fi4">+</span></button>
+      <div class="faqa" id="fa4">Because it doesn't exist. There is no short-let licence in England, which is why Brent's staff didn't know what you were describing &mdash; you were both using different words for different things. What you need is a <strong>planning application for change of use</strong>, submitted to Brent's planning department (not licensing). A national short-term let registration scheme has been announced for England but has been repeatedly delayed and is not yet live. Getting the terminology right should unblock you immediately.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(5)">What is the honest worst case here?<span id="fi5">+</span></button>
+      <div class="faqa" id="fa5">The worst case is that the property is let beyond 90 nights in a calendar year without planning permission, Brent takes enforcement action, and you face a fine &mdash; up to £20,000 per offence, with a ten-year enforcement window. A secondary risk is your lease: tower-block leases very commonly prohibit lettings under six months, and breaching one can put your lease at risk regardless of what the council does. Neither risk is removed by changing which account the listing sits on. We'd want both checked before we go live.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(6)">What do I still have to handle myself?<span id="fi6">+</span></button>
+      <div class="faqa" id="fa6">Mortgage, council tax, utilities and bills, buildings and landlord insurance, and safety certificates. We handle guest communication, bookings across platforms, pricing, cleaning and linen coordination, maintenance coordination, and monthly reporting and payout.</div>
+    </div>
+    <div class="faq">
+      <button class="faqq" onclick="toggleFaq(7)">How and when do I get paid?<span id="fi7">+</span></button>
+      <div class="faqa" id="fa7">You receive a statement on the 1st of each month covering every booking that ended the month before, with all deductions itemised, and payment follows between the 1st and 5th. Our fee is 15% + VAT of gross bookings, billed monthly.</div>
+    </div></div>
+
+<div class="card good">
+  <h3>Next call</h3>
+  <p style="margin-bottom:0">We agreed to touch base next week but didn't fix a day or time. Reply to Zac's email with a couple of times that work and he'll send an invite. Worth doing after you've spoken to Brent planning, so we can make a decision with real information.</p>
+</div>
+
+<div class="gate" id="g4">
+  <p>Where are you in your thinking?</p>
+  <div class="opts">
+    <button class="opt" onclick="ans(4,'Ready to sign',this)">Ready to sign the agreement</button>
+    <button class="opt" onclick="ans(4,'Nearly there, a couple of questions',this)">Nearly there &mdash; just a couple of questions</button>
+    <button class="opt" onclick="ans(4,'Want the compliance position resolved first',this)">I want the compliance position resolved first</button>
+    <button class="opt" onclick="ans(4,'Need more time',this)">Need more time to think this over</button>
+  </div>
+</div>
+<div class="thanks" id="ty"><h3>Thanks Rosy</h3><p style="margin-bottom:0">Zac will be in touch shortly. The agreement is above whenever you're ready &mdash; and there's no rush on it until the lease and planning questions are answered.</p></div>
+</div>
+
+<footer>
+  <strong>Stayful</strong> &mdash; MWB Stays Ltd &middot; Prepared for Caixia Ye, 25 August 2026<br>
+  stayful.co.uk &middot; zac@stayful.co.uk<br>
+  <span class="disc">This plan summarises a sales conversation and general information about the London 90-night rule. It is not legal or planning advice. Please take independent advice from a planning consultant or solicitor before relying on it. Any figures shown are projections, not guarantees.</span>
+</footer>
+</div>
+
+<a class="lucy" href="https://lucy.stayful.co.uk/" target="_blank">&#128172; Speak to Lucy</a>
+<button class="vo" id="vob" onclick="toggleVo()">&#128266; Play summary</button>
+
+<script>
+const ITEM_ID = "12891270816";
+const RESP = [];
+function ans(n, txt, el) {
+  el.parentNode.querySelectorAll('.opt').forEach(b => { b.disabled = true; b.style.cursor='default'; });
+  el.classList.add('sel'); el.innerHTML = '&#10003; ' + el.innerHTML;
+  RESP.push('S' + n + ': ' + txt);
+  try {
+    fetch('https://stayful.app.n8n.cloud/webhook/action-plan-session-end', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({item_id:ITEM_ID, responses:RESP, timestamp:new Date().toISOString()})
+    }).catch(()=>{});
+  } catch(e) {}
+  unlock(n);
+}
+function unlock(n) {
+  if (n < 4) {
+    const s = document.getElementById('s' + (n+1));
+    if (s) { s.style.display = 'block'; setTimeout(()=>s.scrollIntoView({behavior:'smooth',block:'start'}), 120); }
+  } else {
+    const t = document.getElementById('ty');
+    t.style.display = 'block'; setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}), 120);
+  }
+}
+function toggleFaq(i) {
+  const a = document.getElementById('fa'+i), ic = document.getElementById('fi'+i);
+  document.querySelectorAll('.faqa').forEach((x,j)=>{ if(j!==i){x.style.display='none'; document.getElementById('fi'+j).textContent='+';} });
+  const open = a.style.display === 'block';
+  a.style.display = open ? 'none' : 'block'; ic.textContent = open ? '+' : '\u2212';
+}
+const VO = [
+ "This is your Stayful action plan, prepared for Caixia Ye following our call on the 25th of August 2026.",
+ "First, an important correction. On our call I said that bookings of 28 nights or more are exempt from London's 90 night rule, that moving to Stayful's account would reset your 90 nights, and that direct bookings would not count. All three were wrong, and I want to correct them properly.",
+ "The actual position is this. The exempt stay length is 90 consecutive nights to the same occupier, not 28. The 90 night limit attaches to the property itself, not to the listing or the account, so a new listing resets Airbnb's counter but not your legal position. And direct bookings count toward the limit just like platform bookings.",
+ "There is also some good news. There is no short let licence in England, which is why you and Brent's staff could not find one. What you need is a planning application for change of use, made to Brent's planning department rather than licensing.",
+ "Between now and the 30th of November you have roughly 29 open nights, mostly in September.",
+ "There are three real routes forward. Planning permission for change of use is the permanent fix. Genuine stays of 90 or more consecutive nights sit outside the rule, though that is a mid let business with lower nightly rates. And the count resets naturally on the 1st of January 2027.",
+ "Two things need checking before we go live. Your lease, because tower block leases often prohibit lettings under six months. And the council tax condition, which is the second limb of the exemption. We will come back to you on that one.",
+ "Separately from all of this, Stayful handles guest communication, cleaning and linen, dynamic pricing, maintenance, multi platform listing, and monthly reporting and payout. Our fee is 15 percent plus VAT of gross bookings.",
+ "Section three has real figures from properties we manage, and links to our Airbnb and Google reviews so you can check us out independently.",
+ "Section four sets out the suggested sequence: send your booking screenshot, check your lease, contact Brent planning, and let us come back to you on the council tax point before you sign anything.",
+ "The honest worst case is enforcement action from Brent, with fines up to twenty thousand pounds per offence. That is why we would rather resolve this properly than move quickly. Speak to Lucy any time, or reply to Zac's email."
+];
+let vi=0, playing=false;
+function toggleVo() {
+  const b = document.getElementById('vob');
+  if (!('speechSynthesis' in window)) { b.textContent='Audio unavailable'; return; }
+  if (playing) { speechSynthesis.pause(); playing=false; b.innerHTML='&#128266; Resume'; return; }
+  if (speechSynthesis.paused) { speechSynthesis.resume(); playing=true; b.innerHTML='&#9208; Pause ('+(vi)+' / '+VO.length+')'; return; }
+  vi=0; speak();
+}
+function speak() {
+  if (vi >= VO.length) { playing=false; document.getElementById('vob').innerHTML='&#128266; Play summary'; return; }
+  const u = new SpeechSynthesisUtterance(VO[vi]); u.rate=0.95;
+  u.onend = () => { vi++; document.getElementById('vob').innerHTML='&#9208; Pause ('+(vi)+' / '+VO.length+')'; speak(); };
+  playing=true; document.getElementById('vob').innerHTML='&#9208; Pause ('+(vi+1)+' / '+VO.length+')';
+  speechSynthesis.speak(u);
+}
+</script>
+</body></html>
